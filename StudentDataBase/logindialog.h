@@ -22,6 +22,8 @@ class LoginDialog;
 
 class Client;
 
+#define LOGIN  LoginDialog::getInstance()
+
 class LoginDialog : public QDialog
 {
     Q_OBJECT
@@ -29,6 +31,16 @@ class LoginDialog : public QDialog
 public:
     explicit LoginDialog(QWidget *parent = 0);
     ~LoginDialog();
+
+    static LoginDialog * getInstance()
+    {
+        if(NULL == instance)
+        {
+            instance = new LoginDialog();
+        }
+
+        return instance;
+    }
 
 private slots:
     void on_pushButtonLogin_clicked();                                //登录按钮
@@ -38,10 +50,10 @@ private slots:
     void on_comboBoxUserName_currentTextChanged(const QString &arg1); //用户名改变
     void on_checkBoxAuto_clicked();                                   //自动登录
     void on_checkBoxRemeber_clicked();                                //记住密码
-    void readJson(QString arrayData);                              //读取json数据
 
 private:
     Ui::LoginDialog *ui;
+    static LoginDialog *instance;                         //静态对象
     QPoint mousePosition;                                 //自己实现拖动操作
     bool isMousePressed;                                  //自己实现拖动操作
     QToolButton *minButton;                               //最小化按钮

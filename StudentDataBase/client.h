@@ -15,20 +15,19 @@ public:
 
     void netSend(QByteArray &arrayData);  //向服务端发送请求
 
-signals:
-    void sendData(QString);
-
 public slots:
     void displayError(QAbstractSocket::SocketError);
     void readData();
 
 private:
-    QTcpSocket * tcpSocket;  //客户端套接字
-    void connectServer();    //连接服务器
+    QTcpSocket * tcpSocket;           //客户端套接字
+    void connectServer();             //连接服务器
+    int protocolNumber;               //协议号
+    QMap<QString, QString>mapData;    //存储接收到的JSON数据
 
 public:
-    void writeJson(int protocol);         //组合json数据
-    void readJson(QByteArray arrayData);  //读取json数据
+    void writeJson(int protocol, QMap<QString, QString> &mapData);         //组合json数据
+    void readJson(QString arrayData);                                   //读取json数据
 };
 
 #endif // CLIENT_H

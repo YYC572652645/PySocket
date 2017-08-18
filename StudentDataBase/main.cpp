@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
     QFont font("ZYSong20");
     a.setFont(font);
     MainWindow w;
-    LoginDialog login;
-    if(login.exec()==QDialog::Accepted)
+
+    if(LOGIN->exec()==QDialog::Accepted)
     {
         w.show();
         return a.exec();
@@ -19,6 +19,4 @@ int main(int argc, char *argv[])
     {
         return 0;
     }
-
-
 }

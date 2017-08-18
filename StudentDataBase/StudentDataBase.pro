@@ -15,12 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     logindialog.cpp \
-    client.cpp
+    client.cpp \
+    messagehandler.cpp
 
 HEADERS  += mainwindow.h \
     logindialog.h \
     globaldef.h \
-    client.h
+    client.h \
+    protocol.h \
+    messagehandler.h
 
 FORMS    += mainwindow.ui \
     logindialog.ui

@@ -30,7 +30,19 @@ class DataHandler(BaseRequestHandler):
 
             print(self.index)
 
+            myjson = MyJson()
+
+            myjson.dataDictionary["test1"] = "嘻嘻"
+            myjson.dataDictionary["test2"] = "哈哈"
+            myjson.dataDictionary["test3"] = "呵呵"
+            myjson.dataDictionary["test4"] = "哦哦"
+
+            myjson.writeJson(PROTOCOL.LOGIN)
+
             while True:
+                # 发送消息
+                self.netSend(myjson.encodejson)
+
                 # 接收客户端发来的消息
                 data = self.userList[self.index].recv(globaldef.DATASIZE).decode()
 
@@ -42,7 +54,7 @@ class DataHandler(BaseRequestHandler):
                     break
 
                 # 发送消息
-                self.netSend(data)
+                self.netSend(myjson.encodejson)
 
                 print("接收到消息", data)
 

@@ -3,8 +3,11 @@
 #include <QJsonParseError>
 #include <QJsonArray>
 #include "globaldef.h"
+#include "protocol.h"
+#include "messagehandler.h"
+
 /**********************    构造函数     *************************/
-Client::Client()
+Client::Client(): protocolNumber(Protocol::INVALID)
 {
     //实例化套接字对象
     tcpSocket = new QTcpSocket(this);
@@ -14,6 +17,7 @@ Client::Client()
     connect(tcpSocket, SIGNAL(readyRead()),this, SLOT(readData()));
 
     this->connectServer();
+
 }
 
 /**********************    析构函数     *************************/
@@ -22,14 +26,12 @@ Client::~Client()
     delete tcpSocket;
 }
 
-
 /**********************    连接服务器     *************************/
 void Client::connectServer()
 {
     tcpSocket->abort();                                       //终止过去的连接
     tcpSocket->connectToHost(QHostAddress("127.0.0.1"), 8080);//连接到服务器
 }
-
 
 /**********************    输出错误信息     *************************/
 void Client::displayError(QAbstractSocket::SocketError)
@@ -50,19 +52,29 @@ void Client::readData()
 
         QString str = data.data();
 
-        emit sendData(str);
+        if(!str.isEmpty())
+        {
+            this->readJson(str);
+
+            if(protocolNumber == Protocol::INVALID) continue;
+
+            MESSAGEHANDLE->onCommand(mapData, protocolNumber);
+        }
     }
 }
 
 /**********************    组合Json数据     *************************/
-void Client::writeJson(int protocol)
+void Client::writeJson(int protocol, QMap<QString, QString> & mapData)
 {
     QJsonObject jsonTotal;
     QJsonObject jsonData;
 
     jsonData.insert("protocol", QString::number(protocol));
-    jsonData.insert("username", "1305120114");
-    jsonData.insert("password", "1305120114");
+
+    for(auto iter = mapData.begin(); iter != mapData.end(); ++ iter)
+    {
+        jsonData.insert(iter.key(), iter.value());
+    }
 
     jsonTotal.insert("data", jsonData);
 
@@ -71,7 +83,6 @@ void Client::writeJson(int protocol)
 
     QByteArray arrayData = document.toJson();
 
-    qDebug()<<arrayData;
     this->netSend(arrayData);
 }
 
@@ -79,4 +90,28 @@ void Client::writeJson(int protocol)
 void Client::netSend(QByteArray &arrayData)
 {
     tcpSocket->write(arrayData, arrayData.length());
+}
+
+/**********************    读取Json数据     *************************/
+void Client::readJson(QString arrayData)
+{
+    mapData.clear();
+    protocolNumber = Protocol::INVALID;
+
+    QJsonDocument jsonDom = QJsonDocument::fromJson(arrayData.toUtf8());
+    QJsonObject jsonObject = jsonDom.object();
+    QJsonValue jsonValue = jsonObject.value(QString("data"));
+
+    QJsonObject objectItem = jsonValue.toObject();
+    QStringList stringList = objectItem.keys();
+
+    for(int i = 0; i < stringList.size(); i ++)
+    {
+        mapData[stringList[i]] = objectItem[stringList[i]].toString();
+    }
+
+    if(jsonObject.contains("protocol"))
+    {
+        protocolNumber = objectItem["protocol"].toInt();
+    }
 }

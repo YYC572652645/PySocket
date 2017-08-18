@@ -1,15 +1,15 @@
 #include "logindialog.h"
 #include "ui_logindialog.h"
 #include "client.h"
+#include "protocol.h"
 #include "globaldef.h"
 
 /**********************    鼠标作用域     *************************/
 using namespace std;
-const static int posMinX=0;
-const static int posMaxX=20000;
 
-const static int posMinY=0;
-const static int posMaxY=40;
+
+
+LoginDialog * LoginDialog::instance = NULL;
 
 
 /**********************    构造函数       *************************/
@@ -70,9 +70,9 @@ LoginDialog::LoginDialog(QWidget *parent) :
 
     //客户端运行线程
     client = new Client();
-    connect(client, SIGNAL(sendData(QString)), this, SLOT(readJson(QString)));
 
-    client->writeJson(Protocol::LOGINREQUEST);
+    QByteArray byteArray =QString("哈哈哈哈").toLatin1();
+    client->netSend(byteArray);
 }
 
 /**********************    析构函数        *************************/
@@ -87,7 +87,6 @@ void LoginDialog::on_pushButtonLogin_clicked()
 {
     int Count=0;
     QString tempRem,tempAuto;
-
 
     if(true)
     {
@@ -436,18 +435,4 @@ void LoginDialog::on_checkBoxRemeber_clicked()
     {
         ui->checkBoxAuto->setChecked(false);
     }
-}
-
-/**********************    读取Json数据     *************************/
-void LoginDialog::readJson(QString arrayData)
-{
-    QJsonDocument jsonDom = QJsonDocument::fromJson(arrayData.toUtf8());
-    QJsonObject jsonObject = jsonDom.object();
-    QJsonValue jsonValue = jsonObject.value(QString("data"));
-
-
-    QJsonObject objectItem = jsonValue.toObject();
-
-    qDebug()<<objectItem["username"].toString();
-    qDebug()<<objectItem["password"].toString();
 }
