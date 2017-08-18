@@ -9,12 +9,14 @@ class  Client():
             # 连接服务端
             self.dataConn()
 
-            # while (True):
-            #     sendData = input("请输入发送信息:")         # 输入需要发送的消息
-            #     self.dataSend(sendData)                     # 发送输入的消息
-            #     self.dataRecv()                             # 接收客户端消息
-            #     if (sendData == globaldef.EXIT):
-            #         break
+            while (True):
+                sendData = input("请输入发送信息:")         # 输入需要发送的消息
+                self.dataSend(sendData)                     # 发送输入的消息
+                self.dataRecv()                             # 接收客户端消息
+                if (sendData == globaldef.EXIT):
+                    break
+
+            self.sock.close()
 
         except Exception as e:
             print(e.args)

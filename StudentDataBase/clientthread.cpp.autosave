@@ -1,0 +1,89 @@
+#include "clientthread.h"
+#include <QJsonObject>
+#include <QJsonParseError>
+#include <QJsonArray>
+#include "globaldef.h"
+/**********************    构造函数     *************************/
+ClientThread::ClientThread()
+{
+    //实例化套接字对象
+    tcpSocket = new QTcpSocket(this);
+
+    //连接信号与槽，如果发现运行中套接字出现错误，则输出错误信息
+    connect(tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(displayError(QAbstractSocket::SocketError)));
+    connect(tcpSocket, SIGNAL(readyRead()),this, SLOT(readData()));
+}
+
+/**********************    析构函数     *************************/
+ClientThread::~ClientThread()
+{
+    delete tcpSocket;
+}
+
+
+/**********************    连接服务器     *************************/
+void ClientThread::connectServer()
+{
+    tcpSocket->abort();                                       //终止过去的连接
+    tcpSocket->connectToHost(QHostAddress("127.0.0.1"), 8080);//连接到服务器
+}
+
+/**********************    线程运行函数     *************************/
+void ClientThread::run()
+{
+    this->connectServer();
+
+    while (true)
+    {
+        this->writeJson(Protocol::LOGINREQUEST);
+
+        QByteArray byteArray = tcpSocket->readAll();         //读取服务器发来的消息
+
+        if (!byteArray.isEmpty())  emit sendData(byteArray); //将读取到的数据发送
+    }
+}
+
+/**********************    输出错误信息     *************************/
+void ClientThread::displayError(QAbstractSocket::SocketError)
+{
+    qDebug()<<tcpSocket->errorString();      //输出错误提示
+    tcpSocket->close();                      //关闭套接字
+}
+
+void ClientThread::readData()
+{
+    while(tcpSocket->bytesAvailable() > 0)
+    {
+        QByteArray data;
+        
+        data.res
+    }
+}
+
+/**********************    组合Json数据     *************************/
+void ClientThread::writeJson(int protocol)
+{
+    QJsonObject jsonTotal;
+
+    jsonTotal.insert("protocol", QString::number(protocol));
+
+    QJsonObject jsonData;
+    jsonData.insert("username", "1305120114");
+    jsonData.insert("password", "1305120114");
+
+    jsonTotal.insert("data", jsonData);
+
+    QJsonArray array;
+    array.push_back(jsonTotal);
+
+    QJsonDocument jsonDoc(array);
+    QByteArray arrayData = jsonDoc.toJson();
+
+    this->netSend(arrayData);
+}
+
+/**********************    向服务端发送请求     *************************/
+void ClientThread::netSend(QByteArray &arrayData)
+{
+    tcpSocket->write(arrayData);
+}

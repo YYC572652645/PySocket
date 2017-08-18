@@ -1,6 +1,8 @@
 from socketserver  import  BaseRequestHandler
-
+from myjson import MyJson
 import globaldef
+from protocol import PROTOCOL
+
 
 # 处理来自客户端的消息
 class DataHandler(BaseRequestHandler):
@@ -26,9 +28,14 @@ class DataHandler(BaseRequestHandler):
             #获取该用户的在列表中的Socket下表
             self.index = self.userList.index(connSock)
 
+            print(self.index)
+
             while True:
                 # 接收客户端发来的消息
                 data = self.userList[self.index].recv(globaldef.DATASIZE).decode()
+
+                if(len(data) <= 0):
+                    break
 
                 if(data == globaldef.EXIT):
                     self.removeSock()
@@ -37,7 +44,10 @@ class DataHandler(BaseRequestHandler):
                 # 发送消息
                 self.netSend(data)
 
+                print("接收到消息", data)
+
         except Exception as e:
+            self.removeSock()
             print(e.args)
 
     # 向客户端发送消息
