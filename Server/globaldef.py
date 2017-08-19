@@ -12,9 +12,3 @@ TABLEUSER = "user"             # user表
 userName  = "username";
 passWord  = "password";
 countData = "countData"
-
-
-class UserData():
-    def __init__(self):
-        self.userName = ""
-        self.passWord = ""

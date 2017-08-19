@@ -19,13 +19,13 @@ public:
 public:
     void onCommand(QMap<QString, QString> &mapData, int protocolNumber);
 
-
 private:
     static MessageHandler * instance;
 
     MessageHandler();
     ~MessageHandler();
 
+    //使用函数指针
     typedef void (MessageHandler::*CommandFunc)(QMap<QString, QString> &mapData);
 
     typedef struct DataMessage

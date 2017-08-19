@@ -21,7 +21,6 @@ class MessageHandler():
 
     # 接收客户端的登录请求
     def receiveLoginData(self, dict, sock):
-
         countData = self.dataBase.dataSelect(dict[globaldef.userName], dict[globaldef.passWord])
 
         count = 0

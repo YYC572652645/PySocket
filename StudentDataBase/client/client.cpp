@@ -44,6 +44,7 @@ void Client::displayError(QAbstractSocket::SocketError)
 void Client::closeSocket()
 {
     QMap<QString, QString> mapData;
+
     this->netSend(Protocol::CLOSESOCKET, mapData);
 
     tcpSocket->close();
