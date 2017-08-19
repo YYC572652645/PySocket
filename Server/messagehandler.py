@@ -12,10 +12,11 @@ class MessageHandler():
     # 所有接收客户端数据函数存储到列表
     def initCommandList(self):
         self.commandList.append(self.receiveLoginData)
+        self.commandList.append(None)
+        self.commandList.append(self.receiveCloseRequest)
 
     # 所有接收客户端数据函数的调用
     def onCommand(self, protocolNumber, dict, sock):
-        print(protocolNumber, dict)
         self.commandList[protocolNumber](dict, sock)
 
     # 接收客户端的登录请求
@@ -31,6 +32,10 @@ class MessageHandler():
         data = {}
         data[globaldef.countData] = str(count)
         sock.netSend(PROTOCOL.LOGINDATA, data)
+
+        # 接收客户端的关闭请求
+    def receiveCloseRequest(self, dict, sock):
+        sock.exit = globaldef.EXIT
 
 
 

@@ -8,14 +8,21 @@ class DataBase():
 
     # 连接数据库
     def dataConn(self):
-        conn = sqlite3.connect("student.db")
-        self.cursor = conn.cursor()
+        try:
+            conn = sqlite3.connect("student.db")
+            self.cursor = conn.cursor()
+        except Exception as e:
+            print(e.args)
 
     # 查询数据
     def dataSelect(self, userName, passWord):
-        str = "select count(*) from " + globaldef.TABLEUSER + " where username = '" + userName + "' and password = '" + passWord + "';"
+        try:
+            str = "select count(*) from " + globaldef.TABLEUSER + " where username = '" + userName + "' and password = '" + passWord + "';"
 
-        return self.cursor.execute(str)
+            return self.cursor.execute(str)
+        except Exception as e:
+            print(e.args)
+            return None
 
     # 插入数据
     def insertData(self):

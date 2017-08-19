@@ -13,21 +13,22 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    logindialog.cpp \
-    client.cpp \
-    messagehandler.cpp
+    mainwindow/mainwindow.cpp \
+    client/client.cpp \
+    messagehandler/messagehandler.cpp \
+    logindialog/logindialog.cpp
 
-HEADERS  += mainwindow.h \
-    logindialog.h \
-    globaldef.h \
-    client.h \
+HEADERS  += client/client.h \
+    messagehandler/messagehandler.h \
+    logindialog/logindialog.h \
+    mainwindow/mainwindow.h\
     protocol.h \
-    messagehandler.h
+    globaldef.h
 
-FORMS    += mainwindow.ui \
-    logindialog.ui
 
-DISTFILES +=
+FORMS    += \
+    logindialog/logindialog.ui
+    mainwindow/mainwindow.ui
 
-RESOURCES +=
+RESOURCES += \
+    res.qrc

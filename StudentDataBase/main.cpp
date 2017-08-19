@@ -1,7 +1,7 @@
-#include "mainwindow.h"
-#include "logindialog.h"
+#include "mainwindow/mainwindow.h"
+#include "logindialog/logindialog.h"
 #include <QApplication>
-#include "client.h"
+#include "client/client.h"
 
 int main(int argc, char *argv[])
 {

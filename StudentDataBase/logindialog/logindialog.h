@@ -64,6 +64,7 @@ private:
     QList<QString>listStringID;                           //用来存储是否自动登录
 
 protected:
+    void closeEvent(QCloseEvent* event);
     void mouseMoveEvent(QMouseEvent*event);               //鼠标移动
     void mousePressEvent(QMouseEvent*event);              //鼠标点击
     void mouseReleaseEvent(QMouseEvent*event);            //鼠标释放

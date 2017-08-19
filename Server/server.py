@@ -19,6 +19,7 @@ class DataHandler(BaseRequestHandler):
             connSock = self.request
             self.flage = False;
             self.index = 0
+            self.exit = ""
 
             #判断该用户是否已经连接
             for user in self.userList:
@@ -32,6 +33,8 @@ class DataHandler(BaseRequestHandler):
             #获取该用户的在列表中的Socket下表
             self.index = self.userList.index(connSock)
 
+            print("用户", connSock.getpeername(), "进行了连接请求")
+
             while True:
                 # 接收客户端发来的消息
                 jsonStr = self.userList[self.index].recv(globaldef.DATASIZE).decode()
@@ -39,11 +42,13 @@ class DataHandler(BaseRequestHandler):
                 if(len(jsonStr) <= 0):
                     continue
 
+                print("接收到用户信息", jsonStr)
+
                 # 读取json包
                 data = self.readJson(jsonStr)
                 self.messageHandler.onCommand(self.protocolNumber, data, self)
 
-                if(data == globaldef.EXIT):
+                if(self.exit == globaldef.EXIT):
                     self.removeSock()
                     break
 
@@ -53,6 +58,9 @@ class DataHandler(BaseRequestHandler):
 
     # 去除已经关闭的Socket
     def removeSock(self):
+        if(self.index >= len(self.userList)):
+            return
+        print("已关闭...", self.userList[self.index].getpeername())
         self.userList.remove(self.userList[self.index])
 
     # 读取json数据

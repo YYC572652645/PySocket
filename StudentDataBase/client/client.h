@@ -23,10 +23,10 @@ public:
     }
 
     void connectServer();             //连接服务器
+    void closeSocket();               //关闭Socket
 
 public slots:
     void displayError(QAbstractSocket::SocketError); //显示错误信息
-    void closeSocket();                              //关闭Socket
     void readData();                                 //读取数据
 
 private:

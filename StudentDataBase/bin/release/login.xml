@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<data>
+    <user id="1">
+        <username>1305120114</username>
+        <password>1305120114</password>
+        <remember>1</remember>
+        <autologin>1</autologin>
+    </user>
+    <user id="2">
+        <username>1305120115</username>
+        <password>1305120115</password>
+        <remember>0</remember>
+        <autologin>0</autologin>
+    </user>
+    <user id="3">
+        <username>1305120116</username>
+        <password>1305120116</password>
+        <remember>1</remember>
+        <autologin>0</autologin>
+    </user>
+    <user id="4">
+        <username>1305120117</username>
+        <password>1305120117</password>
+        <remember>1</remember>
+        <autologin>1</autologin>
+    </user>
+</data>

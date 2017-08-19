@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void closeEvent(QCloseEvent* event);
 };
 
 #endif // MAINWINDOW_H

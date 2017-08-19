@@ -1,6 +1,6 @@
 #include "logindialog.h"
 #include "ui_logindialog.h"
-#include "client.h"
+#include "client/client.h"
 #include "protocol.h"
 #include "globaldef.h"
 
@@ -438,4 +438,9 @@ void LoginDialog::on_checkBoxRemeber_clicked()
     {
         ui->checkBoxAuto->setChecked(false);
     }
+}
+
+void LoginDialog::closeEvent(QCloseEvent *event)
+{
+    CLIENT->closeSocket();
 }

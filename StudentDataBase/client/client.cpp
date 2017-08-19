@@ -4,7 +4,7 @@
 #include <QJsonArray>
 #include "globaldef.h"
 #include "protocol.h"
-#include "messagehandler.h"
+#include "messagehandler/messagehandler.h"
 
  Client * Client::instance = NULL;         //单例模式
 
@@ -17,7 +17,6 @@ Client::Client(): protocolNumber(Protocol::INVALID)
     //连接信号与槽
     connect(tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(displayError(QAbstractSocket::SocketError)));
     connect(tcpSocket, SIGNAL(readyRead()),this, SLOT(readData()));
-    connect(tcpSocket, SIGNAL(disconnected()), this, SLOT(closeSocket()));
 }
 
 /**********************    析构函数     *************************/
