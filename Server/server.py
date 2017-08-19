@@ -7,7 +7,7 @@ import json
 # 处理来自客户端的消息
 class DataHandler(BaseRequestHandler):
     # 客户端列表
-    userList = []
+    userDict = {}
 
     # 处理客户端请求
     def handle(self):
@@ -17,27 +17,17 @@ class DataHandler(BaseRequestHandler):
 
             # 接收客户端的Socket
             connSock = self.request
-            self.flage = False;
-            self.index = 0
             self.exit = ""
 
-            #判断该用户是否已经连接
-            for user in self.userList:
-                if (user == connSock):
-                    self.flage = True
+            self.address = connSock.getpeername()
 
-            # 如果不存在则添加至列表
-            if(self.flage == False) :
-                self.userList.append(self.request)
-
-            #获取该用户的在列表中的Socket下表
-            self.index = self.userList.index(connSock)
+            self.userDict[self.address[1]] = connSock
 
             print("用户", connSock.getpeername(), "进行了连接请求")
 
             while True:
                 # 接收客户端发来的消息
-                jsonStr = self.userList[self.index].recv(globaldef.DATASIZE).decode()
+                jsonStr = self.userDict[self.address[1]].recv(globaldef.DATASIZE).decode()
 
                 if(len(jsonStr) <= 0):
                     continue
@@ -58,10 +48,9 @@ class DataHandler(BaseRequestHandler):
 
     # 去除已经关闭的Socket
     def removeSock(self):
-        if(self.index >= len(self.userList)):
-            return
-        print("已关闭...", self.userList[self.index].getpeername())
-        self.userList.remove(self.userList[self.index])
+        print("已关闭...", self.userDict[self.address[1]].getpeername())
+
+        del self.userDict[self.address[1]]
 
     # 读取json数据
     def readJson(self, jsonStr):
@@ -84,7 +73,7 @@ class DataHandler(BaseRequestHandler):
         # 编码成json格式的数据
         encodejson = json.dumps(self.dataTotal, ensure_ascii = False)
 
-        self.userList[self.index].sendall(encodejson.encode())
+        self.userDict[self.address[1]].sendall(encodejson.encode())
 
 
 

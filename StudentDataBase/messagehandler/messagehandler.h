@@ -22,7 +22,6 @@ public:
 
 private:
     static MessageHandler * instance;
-    /*************************************************************************************************/
 
     MessageHandler();
     ~MessageHandler();

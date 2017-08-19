@@ -1,7 +1,7 @@
 #include "messagehandler.h"
 #include "protocol.h"
 #include <QDebug>
-#include "logindialog.h"
+#include "logindialog/logindialog.h"
 
 MessageHandler * MessageHandler::instance = NULL;
 

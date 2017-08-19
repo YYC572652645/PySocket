@@ -6,7 +6,8 @@
 #include "protocol.h"
 #include "messagehandler/messagehandler.h"
 
- Client * Client::instance = NULL;         //单例模式
+Client * Client::instance = NULL;
+
 
 /**********************    构造函数     *************************/
 Client::Client(): protocolNumber(Protocol::INVALID)
@@ -72,6 +73,12 @@ void Client::readData()
     }
 }
 
+/**********************    是否连接到服务器     *************************/
+bool Client::isConnect()
+{
+    return tcpSocket->isWritable();
+}
+
 /**********************    组合json数据，然后发送     *************************/
 void Client::netSend(int protocol, QMap<QString, QString> &mapData)
 {
@@ -93,11 +100,6 @@ void Client::netSend(int protocol, QMap<QString, QString> &mapData)
     QByteArray arrayData = document.toJson();
 
     tcpSocket->write(arrayData, arrayData.length());
-}
-
-bool Client::isConnect()
-{
-    return tcpSocket->isWritable();
 }
 
 /**********************    读取Json数据     *************************/
