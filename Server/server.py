@@ -19,8 +19,8 @@ class DataHandler(BaseRequestHandler):
             connSock = self.request
             self.exit = ""
 
+            # 获取客户端的IP
             self.address = connSock.getpeername()
-
             self.userDict[self.address[1]] = connSock
 
             print("用户", connSock.getpeername(), "进行了连接请求")
@@ -38,6 +38,7 @@ class DataHandler(BaseRequestHandler):
                 data = self.readJson(jsonStr)
                 self.messageHandler.onCommand(self.protocolNumber, data, self)
 
+                # 如果客户端退出了，则去除该套接字
                 if(self.exit == globaldef.EXIT):
                     self.removeSock()
                     break
