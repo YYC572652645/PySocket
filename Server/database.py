@@ -13,12 +13,9 @@ class DataBase():
 
     # 查询数据
     def dataSelect(self, userName, passWord):
-        #self.cursor.execute("select count(*) from ? where username = ? and password = ?", globaldef.TABLEUSER, userName, passWord)
-        #self.cursor.fetchall()
+        str = "select count(*) from " + globaldef.TABLEUSER + " where username = '" + userName + "' and password = '" + passWord + "';"
 
-        for item in self.cursor.fetchall():
-            for element in item:
-                print(element)
+        return self.cursor.execute(str)
 
     # 插入数据
     def insertData(self):

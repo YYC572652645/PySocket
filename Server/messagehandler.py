@@ -1,23 +1,36 @@
-import protocol
+from protocol import PROTOCOL
+from database import DataBase
+import globaldef
+
 class MessageHandler():
     # 构造函数
     def __init__(self):
         self.commandList = []
         self.initCommandList()
+        self.dataBase =  DataBase()
 
     # 所有接收客户端数据函数存储到列表
     def initCommandList(self):
         self.commandList.append(self.receiveLoginData)
 
     # 所有接收客户端数据函数的调用
-    def onCommand(self, protocolNumber, dict):
+    def onCommand(self, protocolNumber, dict, sock):
         print(protocolNumber, dict)
-        self.commandList[protocolNumber](dict)
+        self.commandList[protocolNumber](dict, sock)
 
     # 接收客户端的登录请求
-    def receiveLoginData(self, dict):
-        for item in dict.items():
-            pass
+    def receiveLoginData(self, dict, sock):
+
+        countData = self.dataBase.dataSelect(dict[globaldef.userName], dict[globaldef.passWord])
+
+        count = 0
+        for item in countData:
+            for element in item:
+                count = element
+
+        data = {}
+        data[globaldef.countData] = str(count)
+        sock.netSend(PROTOCOL.LOGINDATA, data)
 
 
 

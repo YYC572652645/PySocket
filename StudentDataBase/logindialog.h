@@ -39,8 +39,7 @@ public:
         return instance;
     }
 
-
-    void loginData();
+    void loginData(int count);
 
 private slots:
     void on_pushButtonLogin_clicked();                                //登录按钮

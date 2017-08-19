@@ -9,8 +9,9 @@ DATANAME = "data"              # 协议数据
 TABLEUSER = "user"             # user表
 
 #***************************   对应0号和1号协议，登录请求，和登陆数据   ****************************#
-userName = "username";
-passWord = "password";
+userName  = "username";
+passWord  = "password";
+countData = "countData"
 
 
 class UserData():

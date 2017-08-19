@@ -76,11 +76,11 @@ LoginDialog::~LoginDialog()
 }
 
 /**********************    登录按钮        *************************/
-void LoginDialog::loginData()
+void LoginDialog::loginData(int count)
 {
     int Count=0;
     QString tempRem, tempAuto;
-    if(true)
+    if(count != 0)
     {
         //判断出输入的用户名是否存在，如果存在则不写入xml中，如果不存在则写入xml中
         for(int i=0;i<listStringUsnm.count();i++)

@@ -1,6 +1,7 @@
 #include "messagehandler.h"
 #include "protocol.h"
 #include <QDebug>
+#include "logindialog.h"
 
 MessageHandler * MessageHandler::instance = NULL;
 
@@ -34,8 +35,11 @@ void MessageHandler::onCommand(QMap<QString, QString> &mapData, int protocolNumb
 
 void MessageHandler::receiveLoginData(QMap<QString, QString> &mapData)
 {
+    int count = 0;
     for(auto iter = mapData.begin(); iter != mapData.end(); ++ iter)
     {
-        qDebug()<<iter.key()<<iter.value();
+        count = iter.value().toInt();
     }
+
+    LOGIN->loginData(count);
 }

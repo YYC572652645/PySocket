@@ -41,7 +41,7 @@ class DataHandler(BaseRequestHandler):
 
                 # 读取json包
                 data = self.readJson(jsonStr)
-                self.messageHandler.onCommand(self.protocolNumber, data)
+                self.messageHandler.onCommand(self.protocolNumber, data, self)
 
                 if(data == globaldef.EXIT):
                     self.removeSock()
@@ -50,10 +50,6 @@ class DataHandler(BaseRequestHandler):
         except Exception as e:
             self.removeSock()
             print(e.args)
-
-    # 向客户端发送消息
-    def netSend(self, data):
-        self.userList[self.index].sendall(data.encode())
 
     # 去除已经关闭的Socket
     def removeSock(self):
@@ -69,24 +65,18 @@ class DataHandler(BaseRequestHandler):
 
         return data
 
-    # 写json数据
-    def writeJson(self, protocol):
+    # 向客户端发送消息
+    def netSend(self, protocol, dataDictionary):
         self.dataTotal = {}       # 总的json数据
-        self.dataDictionary = {}  # json中的data区
-        self.encodejson.clear()   # 清空组包的数据
 
         # json组包
-        self.dataDictionary[globaldef.PROTOCOLNAME] = protocol
-        self.dataTotal[globaldef.DATANAME] = self.dataDictionary
+        dataDictionary[globaldef.PROTOCOLNAME] = protocol
+        self.dataTotal[globaldef.DATANAME] = dataDictionary
 
         # 编码成json格式的数据
-        self.encodejson = json.dumps(self.dataTotal, ensure_ascii=False)
+        encodejson = json.dumps(self.dataTotal, ensure_ascii = False)
 
-        # 清空字典
-        self.dataDictionary.clear()
-        self.dataTotal.clear()
-
-        print(self.encodejson)
+        self.userList[self.index].sendall(encodejson.encode())
 
 
 
