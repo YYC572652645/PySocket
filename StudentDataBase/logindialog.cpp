@@ -67,27 +67,19 @@ LoginDialog::LoginDialog(QWidget *parent) :
     /*************************************背景色与父对话框一样************************/
     minButton->setStyleSheet("background-color:transparent");
     closeButton->setStyleSheet("background-color:transparent");
-
-    //客户端运行线程
-    client = new Client();
-
-    QByteArray byteArray =QString("哈哈哈哈").toLatin1();
-    client->netSend(byteArray);
 }
 
 /**********************    析构函数        *************************/
 LoginDialog::~LoginDialog()
 {
-    delete client;
     delete ui;
 }
 
 /**********************    登录按钮        *************************/
-void LoginDialog::on_pushButtonLogin_clicked()
+void LoginDialog::loginData()
 {
     int Count=0;
-    QString tempRem,tempAuto;
-
+    QString tempRem, tempAuto;
     if(true)
     {
         //判断出输入的用户名是否存在，如果存在则不写入xml中，如果不存在则写入xml中
@@ -126,6 +118,22 @@ void LoginDialog::on_pushButtonLogin_clicked()
     {
         QMessageBox::information(this,tr("系统提示"),tr("登录失败"));//登录失败
     }
+}
+
+/**********************    登录按钮        *************************/
+void LoginDialog::on_pushButtonLogin_clicked()
+{
+    if(!CLIENT->isConnect())
+    {
+       CLIENT->connectServer();
+    }
+
+    QMap<QString, QString> mapData;
+
+    mapData[Protocol::userName] = ui->comboBoxUserName->currentText();
+    mapData[Protocol::passWord] = ui->lineEditPassWord->text();
+
+    CLIENT->netSend(Protocol::LOGINREQUEST, mapData);
 }
 
 /**********************    最小化          *************************/
@@ -202,18 +210,18 @@ void LoginDialog::writeXml()
     file.close();
 
     //创建一个新的用户
-    QDomElement root=dom.documentElement();
-    QDomElement user=dom.createElement("user");
-    QDomAttr    id=dom.createAttribute("id");
-    QDomElement usernm=dom.createElement("username");
-    QDomElement passwd=dom.createElement("password");
-    QDomElement remember=dom.createElement("remember");
-    QDomElement autoLogin=dom.createElement("autologin");
+    QDomElement root = dom.documentElement();
+    QDomElement user = dom.createElement("user");
+    QDomAttr    id = dom.createAttribute("id");
+    QDomElement usernm = dom.createElement("username");
+    QDomElement passwd = dom.createElement("password");
+    QDomElement remember = dom.createElement("remember");
+    QDomElement autoLogin = dom.createElement("autologin");
 
     QDomText text;
 
-    QString num=root.lastChild().toElement().attribute("id");  //获取xml文件最后一个id的大小是多少
-    int count=num.toInt()+1;
+    QString num = root.lastChild().toElement().attribute("id");  //获取xml文件最后一个id的大小是多少
+    int count = num.toInt()+1;
     id.setValue(QString::number(count));                       //将id+1后添加到新建的用户中
     user.setAttributeNode(id);
 
@@ -224,23 +232,23 @@ void LoginDialog::writeXml()
     passwd.appendChild(text);
     if(ui->checkBoxRemeber->isChecked())
     {
-        text=dom.createTextNode("1");
+        text = dom.createTextNode("1");
         remember.appendChild(text);
     }
     else
     {
-        text=dom.createTextNode("0");
+        text = dom.createTextNode("0");
         remember.appendChild(text);
     }
 
     if(ui->checkBoxAuto->isChecked())
     {
-        text=dom.createTextNode("1");
+        text = dom.createTextNode("1");
         autoLogin.appendChild(text);
     }
     else
     {
-        text=dom.createTextNode("0");
+        text = dom.createTextNode("0");
         autoLogin.appendChild(text);
     }
 
@@ -405,18 +413,13 @@ void LoginDialog::on_comboBoxUserName_activated(const QString &arg1)
 void LoginDialog::on_comboBoxUserName_currentTextChanged(const QString &arg1)
 {
     int Count=0;
-    //判断出如果不是已经在此登录过的密码,则清空
+
     for(int j=0;j<listStringUsnm.count();j++)
     {
-        if(ui->comboBoxUserName->currentText()==listStringUsnm[j])
-        {
-            Count++;
-        }
+        if(ui->comboBoxUserName->currentText() == listStringUsnm[j]) Count++;
     }
-    if(Count==0)
-    {
-        ui->lineEditPassWord->clear();
-    }
+
+    if(Count==0)  ui->lineEditPassWord->clear();
 }
 
 /**********************    自动登陆         *************************/

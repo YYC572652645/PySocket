@@ -29,9 +29,6 @@ class LoginDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit LoginDialog(QWidget *parent = 0);
-    ~LoginDialog();
-
     static LoginDialog * getInstance()
     {
         if(NULL == instance)
@@ -41,6 +38,9 @@ public:
 
         return instance;
     }
+
+
+    void loginData();
 
 private slots:
     void on_pushButtonLogin_clicked();                                //登录按钮
@@ -63,7 +63,7 @@ private:
     QList<QString>listStringRemember;                     //用来存储是否密码
     QList<QString>listStringAuto;                         //用来存储是否自动登录
     QList<QString>listStringID;                           //用来存储是否自动登录
-    Client * client;
+
 protected:
     void mouseMoveEvent(QMouseEvent*event);               //鼠标移动
     void mousePressEvent(QMouseEvent*event);              //鼠标点击
@@ -71,6 +71,10 @@ protected:
     void writeXml();                                      //写xml文件
     bool readXml();                                       //读取xml文件
     void updateXml(QString id, QString rem, QString aut); //更新xml文件
+
+private:
+    explicit LoginDialog(QWidget *parent = 0);
+    ~LoginDialog();
 };
 
 #endif // LOGINDIALOG_H

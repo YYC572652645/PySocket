@@ -6,18 +6,18 @@
 #include "protocol.h"
 #include "messagehandler.h"
 
+ Client * Client::instance = NULL;         //单例模式
+
 /**********************    构造函数     *************************/
 Client::Client(): protocolNumber(Protocol::INVALID)
 {
     //实例化套接字对象
     tcpSocket = new QTcpSocket(this);
 
-    //连接信号与槽，如果发现运行中套接字出现错误，则输出错误信息
+    //连接信号与槽
     connect(tcpSocket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(displayError(QAbstractSocket::SocketError)));
     connect(tcpSocket, SIGNAL(readyRead()),this, SLOT(readData()));
-
-    this->connectServer();
-
+    connect(tcpSocket, SIGNAL(disconnected()), this, SLOT(closeSocket()));
 }
 
 /**********************    析构函数     *************************/
@@ -40,6 +40,16 @@ void Client::displayError(QAbstractSocket::SocketError)
     tcpSocket->close();                      //关闭套接字
 }
 
+/**********************    关闭Socket     *************************/
+void Client::closeSocket()
+{
+    QMap<QString, QString> mapData;
+    this->netSend(Protocol::CLOSESOCKET, mapData);
+
+    tcpSocket->close();
+}
+
+/**********************    读取数据     *************************/
 void Client::readData()
 {
     while(tcpSocket->bytesAvailable() > 0)
@@ -63,8 +73,8 @@ void Client::readData()
     }
 }
 
-/**********************    组合Json数据     *************************/
-void Client::writeJson(int protocol, QMap<QString, QString> & mapData)
+/**********************    组合json数据，然后发送     *************************/
+void Client::netSend(int protocol, QMap<QString, QString> &mapData)
 {
     QJsonObject jsonTotal;
     QJsonObject jsonData;
@@ -83,13 +93,12 @@ void Client::writeJson(int protocol, QMap<QString, QString> & mapData)
 
     QByteArray arrayData = document.toJson();
 
-    this->netSend(arrayData);
+    tcpSocket->write(arrayData, arrayData.length());
 }
 
-/**********************    向服务端发送请求     *************************/
-void Client::netSend(QByteArray &arrayData)
+bool Client::isConnect()
 {
-    tcpSocket->write(arrayData, arrayData.length());
+    return tcpSocket->isWritable();
 }
 
 /**********************    读取Json数据     *************************/
@@ -110,8 +119,10 @@ void Client::readJson(QString arrayData)
         mapData[stringList[i]] = objectItem[stringList[i]].toString();
     }
 
-    if(jsonObject.contains("protocol"))
+    if(objectItem.contains("protocol"))
     {
         protocolNumber = objectItem["protocol"].toInt();
+
+        mapData.remove("protocol");
     }
 }

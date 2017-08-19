@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "logindialog.h"
 #include <QApplication>
+#include "client.h"
 
 int main(int argc, char *argv[])
 {
@@ -8,6 +9,7 @@ int main(int argc, char *argv[])
     QFont font("ZYSong20");
     a.setFont(font);
     MainWindow w;
+    CLIENT->connectServer();
 
     if(LOGIN->exec()==QDialog::Accepted)
     {

@@ -1,20 +1,24 @@
 from socketserver  import  BaseRequestHandler
-from myjson import MyJson
 import globaldef
 from protocol import PROTOCOL
-
+from messagehandler import MessageHandler
+import json
 
 # 处理来自客户端的消息
 class DataHandler(BaseRequestHandler):
-
+    # 客户端列表
     userList = []
+
+    # 处理客户端请求
     def handle(self):
         try:
+            # 初始化
+            self.messageHandler = MessageHandler()
+
             # 接收客户端的Socket
+            connSock = self.request
             self.flage = False;
             self.index = 0
-
-            connSock = self.request
 
             #判断该用户是否已经连接
             for user in self.userList:
@@ -28,35 +32,20 @@ class DataHandler(BaseRequestHandler):
             #获取该用户的在列表中的Socket下表
             self.index = self.userList.index(connSock)
 
-            print(self.index)
-
-            myjson = MyJson()
-
-            myjson.dataDictionary["test1"] = "嘻嘻"
-            myjson.dataDictionary["test2"] = "哈哈"
-            myjson.dataDictionary["test3"] = "呵呵"
-            myjson.dataDictionary["test4"] = "哦哦"
-
-            myjson.writeJson(PROTOCOL.LOGIN)
-
             while True:
-                # 发送消息
-                self.netSend(myjson.encodejson)
-
                 # 接收客户端发来的消息
-                data = self.userList[self.index].recv(globaldef.DATASIZE).decode()
+                jsonStr = self.userList[self.index].recv(globaldef.DATASIZE).decode()
 
-                if(len(data) <= 0):
-                    break
+                if(len(jsonStr) <= 0):
+                    continue
+
+                # 读取json包
+                data = self.readJson(jsonStr)
+                self.messageHandler.onCommand(self.protocolNumber, data)
 
                 if(data == globaldef.EXIT):
                     self.removeSock()
                     break
-
-                # 发送消息
-                self.netSend(myjson.encodejson)
-
-                print("接收到消息", data)
 
         except Exception as e:
             self.removeSock()
@@ -69,5 +58,35 @@ class DataHandler(BaseRequestHandler):
     # 去除已经关闭的Socket
     def removeSock(self):
         self.userList.remove(self.userList[self.index])
+
+    # 读取json数据
+    def readJson(self, jsonStr):
+        data = json.loads(jsonStr)
+        data = data["data"]
+
+        self.protocolNumber = int(data[globaldef.PROTOCOLNAME])
+        del data[globaldef.PROTOCOLNAME]
+
+        return data
+
+    # 写json数据
+    def writeJson(self, protocol):
+        self.dataTotal = {}       # 总的json数据
+        self.dataDictionary = {}  # json中的data区
+        self.encodejson.clear()   # 清空组包的数据
+
+        # json组包
+        self.dataDictionary[globaldef.PROTOCOLNAME] = protocol
+        self.dataTotal[globaldef.DATANAME] = self.dataDictionary
+
+        # 编码成json格式的数据
+        self.encodejson = json.dumps(self.dataTotal, ensure_ascii=False)
+
+        # 清空字典
+        self.dataDictionary.clear()
+        self.dataTotal.clear()
+
+        print(self.encodejson)
+
 
 

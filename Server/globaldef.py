@@ -6,9 +6,14 @@ PORT = 8080                    # 端口号
 EXIT = "exit"                  # 退出
 PROTOCOLNAME = "protocol"      # 协议
 DATANAME = "data"              # 协议数据
+TABLEUSER = "user"             # user表
+
+#***************************   对应0号和1号协议，登录请求，和登陆数据   ****************************#
+userName = "username";
+passWord = "password";
 
 
-
-class LOGIN :
-    USERNAME = 0
-    PASSWORD = 1
+class UserData():
+    def __init__(self):
+        self.userName = ""
+        self.passWord = ""
