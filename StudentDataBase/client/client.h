@@ -40,7 +40,7 @@ private:
 private:
     Client();
     ~Client();
-    void readJson(QString arrayData);  //读取json数据
+    bool readJson(QString arrayData);  //读取json数据
 
 };
 

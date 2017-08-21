@@ -44,6 +44,8 @@ void PersonInfoDialog::showDialog()
     ui->lineEditPhone->setText(personData.phone);
     ui->lineEditRealName->setText(personData.realName);
     ui->textEditPersonInfo->setText(personData.personInfo);
+    photoImage = QImage::fromData(QByteArray::fromHex(personData.photo.toLatin1()));
+    ui->labelPhoto->setPixmap(QPixmap::fromImage(photoImage));
 
     this->exec();
 }
@@ -51,6 +53,8 @@ void PersonInfoDialog::showDialog()
 void PersonInfoDialog::on_pushButtonPhoto_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this,"更换头像", ".", "Image(*.png *.jpg *.tif *.bmp *.ico)");
+
+    if(fileName.isEmpty()) return;
 
     photoImage.load(fileName);
 

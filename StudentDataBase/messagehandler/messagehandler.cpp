@@ -54,7 +54,6 @@ void MessageHandler::receivePersonInfo(QMap<QString, QString> &mapData)
     personData.photo = mapData[Protocol::photo];
 
 
-
     MAINWINDOW->getPersonInfoDialog()->setPersonData(personData);
     MAINWINDOW->getPersonInfoDialog()->showDialog();
 }

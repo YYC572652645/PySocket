@@ -53,26 +53,27 @@ void Client::closeSocket()
 /**********************    读取数据     *************************/
 void Client::readData()
 {
-    QString str;
     while(tcpSocket->bytesAvailable() > 0)
     {
         QByteArray data;
 
         data.resize(tcpSocket->bytesAvailable());
 
-        int size = tcpSocket->read(data.data(), data.size());
+        tcpSocket->read(data.data(), data.size());
 
+        static QString str;
         str += data.data();
 
         if(!str.isEmpty())
         {
-            this->readJson(str);
+            if(this->readJson(str))
+            {
+                str.clear();
 
-            str.clear();
+                if(protocolNumber == Protocol::INVALID) continue;
 
-            if(protocolNumber == Protocol::INVALID) continue;
-
-            MESSAGEHANDLE->onCommand(mapData, protocolNumber);
+                MESSAGEHANDLE->onCommand(mapData, protocolNumber);
+            }
         }
     }
 }
@@ -107,26 +108,33 @@ void Client::netSend(int protocol, QMap<QString, QString> &mapData)
 }
 
 /**********************    读取Json数据     *************************/
-void Client::readJson(QString arrayData)
+bool Client::readJson(QString arrayData)
 {
     mapData.clear();
     protocolNumber = Protocol::INVALID;
     QJsonParseError err;
     QJsonDocument jsonDom = QJsonDocument::fromJson(arrayData.toUtf8(), &err);
 
-    QJsonObject jsonObject = jsonDom.object();
-    QJsonValue jsonValue = jsonObject.value(QString("data"));
-
-    QJsonObject objectItem = jsonValue.toObject();
-    QStringList stringList = objectItem.keys();
-
-    for(int i = 0; i < stringList.size(); i ++)
+    if(err.error == QJsonParseError::NoError)
     {
-        mapData[stringList[i]] = objectItem[stringList[i]].toString();
+        QJsonObject jsonObject = jsonDom.object();
+        QJsonValue jsonValue = jsonObject.value(QString("data"));
+
+        QJsonObject objectItem = jsonValue.toObject();
+        QStringList stringList = objectItem.keys();
+
+        for(int i = 0; i < stringList.size(); i ++)
+        {
+            mapData[stringList[i]] = objectItem[stringList[i]].toString();
+        }
+
+        auto iter = mapData.find("protocol");
+
+        protocolNumber = iter.value().toInt();
+        mapData.remove("protocol");
+
+        return true;
     }
 
-    auto iter = mapData.find("protocol");
-
-    protocolNumber = iter.value().toInt();
-    mapData.remove("protocol");
+    return false;
 }
