@@ -22,8 +22,10 @@ public:
         return instance;
     }
 
-    void connectServer();             //连接服务器
-    void closeSocket();               //关闭Socket
+    void connectServer();                                           //连接服务器
+    void closeSocket();                                             //关闭Socket
+    void netSend(int protocol, QMap<QString, QString> &mapData);    //组合json数据，然后发送
+    bool isConnect();                                               //判断是否与服务器连接
 
 public slots:
     void displayError(QAbstractSocket::SocketError); //显示错误信息
@@ -32,13 +34,8 @@ public slots:
 private:
     static Client * instance;         //单例模式
     QTcpSocket * tcpSocket;           //客户端套接字
-
     int protocolNumber;               //协议号
     QMap<QString, QString>mapData;    //存储接收到的JSON数据
-
-public:
-    void netSend(int protocol, QMap<QString, QString> &mapData);    //组合json数据，然后发送
-    bool isConnect();
 
 private:
     Client();

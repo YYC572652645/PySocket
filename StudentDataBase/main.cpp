@@ -8,17 +8,15 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     QFont font("ZYSong20");
     a.setFont(font);
-    MainWindow w;
+
+    //连接服务器
     CLIENT->connectServer();
 
     if(LOGIN->exec()==QDialog::Accepted)
     {
-        w.show();
+        MAINWINDOW->showMaximized();
         return a.exec();
+    }
 
-    }
-    else
-    {
-        return 0;
-    }
+    return 0;
 }

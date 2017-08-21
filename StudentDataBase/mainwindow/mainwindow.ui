@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>408</width>
-    <height>272</height>
+    <width>535</width>
+    <height>533</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,20 +19,32 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>408</width>
+     <width>535</width>
      <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
+   <property name="movable">
+    <bool>false</bool>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionPersonInfo"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionPersonInfo">
+   <property name="text">
+    <string>个人信息</string>
+   </property>
+   <property name="toolTip">
+    <string>个人信息</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -45,7 +45,7 @@ void Client::closeSocket()
 {
     QMap<QString, QString> mapData;
 
-    this->netSend(Protocol::CLOSESOCKET, mapData);
+    this->netSend(Protocol::CLOSEREQ, mapData);
 
     tcpSocket->close();
 }
@@ -53,19 +53,22 @@ void Client::closeSocket()
 /**********************    读取数据     *************************/
 void Client::readData()
 {
+    QString str;
     while(tcpSocket->bytesAvailable() > 0)
     {
         QByteArray data;
 
         data.resize(tcpSocket->bytesAvailable());
 
-        tcpSocket->read(data.data(), data.size());
+        int size = tcpSocket->read(data.data(), data.size());
 
-        QString str = data.data();
+        str += data.data();
 
         if(!str.isEmpty())
         {
             this->readJson(str);
+
+            str.clear();
 
             if(protocolNumber == Protocol::INVALID) continue;
 
@@ -108,8 +111,9 @@ void Client::readJson(QString arrayData)
 {
     mapData.clear();
     protocolNumber = Protocol::INVALID;
+    QJsonParseError err;
+    QJsonDocument jsonDom = QJsonDocument::fromJson(arrayData.toUtf8(), &err);
 
-    QJsonDocument jsonDom = QJsonDocument::fromJson(arrayData.toUtf8());
     QJsonObject jsonObject = jsonDom.object();
     QJsonValue jsonValue = jsonObject.value(QString("data"));
 
@@ -121,10 +125,8 @@ void Client::readJson(QString arrayData)
         mapData[stringList[i]] = objectItem[stringList[i]].toString();
     }
 
-    if(objectItem.contains("protocol"))
-    {
-        protocolNumber = objectItem["protocol"].toInt();
+    auto iter = mapData.find("protocol");
 
-        mapData.remove("protocol");
-    }
+    protocolNumber = iter.value().toInt();
+    mapData.remove("protocol");
 }

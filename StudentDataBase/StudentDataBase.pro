@@ -16,19 +16,22 @@ SOURCES += main.cpp\
     mainwindow/mainwindow.cpp \
     client/client.cpp \
     messagehandler/messagehandler.cpp \
-    logindialog/logindialog.cpp
+    logindialog/logindialog.cpp \
+    personinfodialog/personinfodialog.cpp
 
 HEADERS  += client/client.h \
     messagehandler/messagehandler.h \
     logindialog/logindialog.h \
     mainwindow/mainwindow.h\
     protocol.h \
-    globaldef.h
+    globaldef.h \
+    personinfodialog/personinfodialog.h
 
 
 FORMS    += \
-    logindialog/logindialog.ui
-    mainwindow/mainwindow.ui
+    logindialog/logindialog.ui \
+    mainwindow/mainwindow.ui \
+    personinfodialog/personinfodialog.ui
 
 RESOURCES += \
     res.qrc

@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\client.o
+./release\messagehandler.o
+./release\logindialog.o
+./release\personinfodialog.o
+./release\qrc_res.o
+./release\moc_client.o
+./release\moc_logindialog.o
+./release\moc_mainwindow.o
+./release\moc_personinfodialog.o
+);

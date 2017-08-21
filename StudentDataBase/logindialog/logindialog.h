@@ -41,6 +41,8 @@ public:
 
     void loginData(int count);
 
+    QString getUserName() const;
+
 private slots:
     void on_pushButtonLogin_clicked();                                //登录按钮
     void actionMin();                                                 //最小化窗口
@@ -55,6 +57,7 @@ private:
     static LoginDialog *instance;                         //静态对象
     QPoint mousePosition;                                 //自己实现拖动操作
     bool isMousePressed;                                  //自己实现拖动操作
+    QString userName;                                     //用户名
     QToolButton *minButton;                               //最小化按钮
     QToolButton *closeButton;                             //关闭按钮
     QList<QString>listStringUsnm;                         //用来存储用户名

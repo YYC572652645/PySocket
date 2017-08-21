@@ -24,12 +24,12 @@ LoginDialog::LoginDialog(QWidget *parent) :
         for(int i=0;i<listStringUsnm.count();i++)
         {
             //将listFloat存储的信息读取出来，进行实时改变lineEdit的密码
-            if(ui->comboBoxUserName->currentText()==listStringUsnm[i]&&listStringRemember[i]=="1")
+            if(ui->comboBoxUserName->currentText()==listStringUsnm[i] && listStringRemember[i] == "1")
             {
 
                 ui->lineEditPassWord->setText(listStringPsd[i]);
                 ui->checkBoxRemeber->setChecked(true);
-                if(listStringAuto[i]=="1")
+                if(listStringAuto[i] == "1")
                 {
                     ui->checkBoxAuto->setChecked(true);
                 }
@@ -123,17 +123,16 @@ void LoginDialog::loginData(int count)
 /**********************    登录按钮        *************************/
 void LoginDialog::on_pushButtonLogin_clicked()
 {
-    if(!CLIENT->isConnect())
-    {
-       CLIENT->connectServer();
-    }
+    if(!CLIENT->isConnect()) CLIENT->connectServer();
 
     QMap<QString, QString> mapData;
 
     mapData[Protocol::userName] = ui->comboBoxUserName->currentText();
     mapData[Protocol::passWord] = ui->lineEditPassWord->text();
 
-    CLIENT->netSend(Protocol::LOGINREQUEST, mapData);
+    this->userName = ui->comboBoxUserName->currentText();
+
+    CLIENT->netSend(Protocol::LOGINREQ, mapData);
 }
 
 /**********************    最小化          *************************/
@@ -438,6 +437,11 @@ void LoginDialog::on_checkBoxRemeber_clicked()
     {
         ui->checkBoxAuto->setChecked(false);
     }
+}
+
+QString LoginDialog::getUserName() const
+{
+    return userName;
 }
 
 void LoginDialog::closeEvent(QCloseEvent *event)

@@ -30,13 +30,19 @@ private:
 
     typedef struct DataMessage
     {
-        char messageName[DATASIZE];
+        DataMessage() : messageName(""),commandhandler(0) {}
+        DataMessage(QString message, CommandFunc func) : messageName(message),commandhandler(func) {}
+
+        QString messageName;
         CommandFunc commandhandler;
     }DataMessage;
 
-    DataMessage *getCommandMessage();
+    DataMessage dataMessageList[MSGSIZE];
 
+private:
+    /********************************   接收函数      ******************************/
     void receiveLoginData(QMap<QString, QString> &mapData);
+    void receivePersonInfo(QMap<QString, QString> &mapData);
 };
 
 #endif // MESSAGEHANDLER_H

@@ -59,6 +59,8 @@ class DataHandler(BaseRequestHandler):
         data = data["data"]
 
         self.protocolNumber = int(data[globaldef.PROTOCOLNAME])
+
+
         del data[globaldef.PROTOCOLNAME]
 
         return data
@@ -68,11 +70,13 @@ class DataHandler(BaseRequestHandler):
         self.dataTotal = {}       # 总的json数据
 
         # json组包
-        dataDictionary[globaldef.PROTOCOLNAME] = protocol
+        dataDictionary[globaldef.PROTOCOLNAME] = str(protocol)
         self.dataTotal[globaldef.DATANAME] = dataDictionary
 
         # 编码成json格式的数据
         encodejson = json.dumps(self.dataTotal, ensure_ascii = False)
+
+        print(encodejson)
 
         self.userDict[self.address[1]].sendall(encodejson.encode())
 

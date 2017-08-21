@@ -25,6 +25,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionPersonInfo;
     QWidget *centralWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -34,20 +35,25 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(408, 272);
+        MainWindow->resize(535, 533);
+        actionPersonInfo = new QAction(MainWindow);
+        actionPersonInfo->setObjectName(QStringLiteral("actionPersonInfo"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 408, 22));
+        menuBar->setGeometry(QRect(0, 0, 535, 22));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
+        mainToolBar->setMovable(false);
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+
+        mainToolBar->addAction(actionPersonInfo);
 
         retranslateUi(MainWindow);
 
@@ -57,6 +63,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        actionPersonInfo->setText(QApplication::translate("MainWindow", "\344\270\252\344\272\272\344\277\241\346\201\257", 0));
+#ifndef QT_NO_TOOLTIP
+        actionPersonInfo->setToolTip(QApplication::translate("MainWindow", "\344\270\252\344\272\272\344\277\241\346\201\257", 0));
+#endif // QT_NO_TOOLTIP
     } // retranslateUi
 
 };

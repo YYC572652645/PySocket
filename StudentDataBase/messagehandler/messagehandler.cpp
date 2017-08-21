@@ -2,6 +2,7 @@
 #include "protocol.h"
 #include <QDebug>
 #include "logindialog/logindialog.h"
+#include "mainwindow/mainwindow.h"
 
 MessageHandler * MessageHandler::instance = NULL;
 
@@ -9,30 +10,20 @@ MessageHandler * MessageHandler::instance = NULL;
 MessageHandler::MessageHandler()
 {
 
-}
+    dataMessageList[Protocol::LOGININFO]   = DataMessage("logindata", &MessageHandler::receiveLoginData);
+    dataMessageList[Protocol::PERSONINFO] = DataMessage("personinfo", &MessageHandler::receivePersonInfo);
 
-/*************************   获取函数结构体数组首地址    *********************/
-MessageHandler::DataMessage *MessageHandler::getCommandMessage()
-{
-    static DataMessage setDataMessage[] =
-    {
-        {"logindata"  , &MessageHandler::receiveLoginData},
-    };
-
-    return &setDataMessage[0];
 }
 
 /*************************   根据协议号调取对应函数       *********************/
 void MessageHandler::onCommand(QMap<QString, QString> &mapData, int protocolNumber)
 {
-    DataMessage *messageList = this->getCommandMessage();
+    if(NULL == dataMessageList[protocolNumber].commandhandler)  return;
 
-    if(NULL != messageList && protocolNumber != Protocol::INVALID)
+    if(protocolNumber != Protocol::INVALID && protocolNumber < MSGSIZE)
     {
-        (this->*messageList[protocolNumber].commandhandler)(mapData);
+        (this->*(dataMessageList[protocolNumber].commandhandler))(mapData);
     }
-
-    delete messageList;
 }
 
 /*************************   接收到客户端登录消息    *********************/
@@ -45,4 +36,25 @@ void MessageHandler::receiveLoginData(QMap<QString, QString> &mapData)
     }
 
     LOGIN->loginData(count);
+}
+
+/*************************   接收到个人信息          *********************/
+void MessageHandler::receivePersonInfo(QMap<QString, QString> &mapData)
+{
+    PersonData personData;
+
+    personData.personUserName = mapData[Protocol::personUserName];
+    personData.name = mapData[Protocol::name];
+    personData.sex = mapData[Protocol::sex];
+    personData.address = mapData[Protocol::address];
+    personData.personInfo = mapData[Protocol::personInfo];
+    personData.realName = mapData[Protocol::realName];
+    personData.email = mapData[Protocol::email];
+    personData.phone = mapData[Protocol::phone];
+    personData.photo = mapData[Protocol::photo];
+
+
+
+    MAINWINDOW->getPersonInfoDialog()->setPersonData(personData);
+    MAINWINDOW->getPersonInfoDialog()->showDialog();
 }
