@@ -7,6 +7,7 @@
 #include "client/client.h"
 #include "protocol.h"
 
+/************************   构造函数    ************************/
 PersonInfoDialog::PersonInfoDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::personinfodialog)
@@ -25,16 +26,19 @@ PersonInfoDialog::PersonInfoDialog(QWidget *parent) :
     ui->labelPhoto->setScaledContents(true);
 }
 
+/************************   析构函数    ************************/
 PersonInfoDialog::~PersonInfoDialog()
 {
     delete ui;
 }
 
+/************************   设置个人信息    ************************/
 void PersonInfoDialog::setPersonData(const PersonData &value)
 {
     personData = value;
 }
 
+/************************   显示窗口    ************************/
 void PersonInfoDialog::showDialog()
 {
     ui->lineEditName->setText(personData.name);
@@ -50,9 +54,12 @@ void PersonInfoDialog::showDialog()
     this->exec();
 }
 
+/************************   更换头像    ************************/
 void PersonInfoDialog::on_pushButtonPhoto_clicked()
 {
-    QString fileName = QFileDialog::getOpenFileName(this,"更换头像", ".", "Image(*.png *.jpg *.tif *.bmp *.ico)");
+    photoImage = QImage();
+
+    fileName = QFileDialog::getOpenFileName(this,"更换头像", ".", "Image(*.png *.jpg *.tif *.bmp *.ico)");
 
     if(fileName.isEmpty()) return;
 
@@ -61,11 +68,18 @@ void PersonInfoDialog::on_pushButtonPhoto_clicked()
     ui->labelPhoto->setPixmap(QPixmap::fromImage(photoImage));
 }
 
+/************************   保存信息    ************************/
 void PersonInfoDialog::on_pushButtonSave_clicked()
 {
     if(photoImage.isNull()) return;
 
     QByteArray byteArray;
+    if(!fileName.isEmpty())
+    {
+        photoImage = photoImage.scaled(200, 200, Qt::KeepAspectRatio, Qt::FastTransformation);
+        fileName.clear();
+    }
+
     QBuffer buffer(&byteArray);
     photoImage.save(&buffer, "png");
     buffer.close();
@@ -85,6 +99,7 @@ void PersonInfoDialog::on_pushButtonSave_clicked()
     CLIENT->netSend(Protocol::SAVEPERSONREQ, mapData);
 }
 
+/************************   取消按钮    ************************/
 void PersonInfoDialog::on_pushButtonCancel_clicked()
 {
     this->close();

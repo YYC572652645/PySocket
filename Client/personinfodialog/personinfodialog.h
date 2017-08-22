@@ -7,6 +7,8 @@ namespace Ui {
 class personinfodialog;
 }
 
+
+//个人信息数据
 typedef struct PersonData
 {
     QString personUserName;
@@ -28,21 +30,19 @@ public:
     explicit PersonInfoDialog(QWidget *parent = 0);
     ~PersonInfoDialog();
 
-    void showDialog();
-    void setPersonData(const PersonData &value);
+    void showDialog();                           //显示当前窗口
+    void setPersonData(const PersonData &value); //设置个人信息
 
 private slots:
-    void on_pushButtonPhoto_clicked();
-
-    void on_pushButtonSave_clicked();
-
-    void on_pushButtonCancel_clicked();
+    void on_pushButtonPhoto_clicked();           //更换头像
+    void on_pushButtonSave_clicked();            //保存信息
+    void on_pushButtonCancel_clicked();          //取消按钮
 
 private:
     Ui::personinfodialog *ui;
-
-    PersonData personData;
-    QImage photoImage;
+    PersonData personData;  //个人信息
+    QImage photoImage;      //头像图片
+    QString fileName;       //文件名称
 
 
 };

@@ -9,16 +9,21 @@ class DataBase():
     # 连接数据库
     def dataConn(self):
         try:
-            conn = sqlite3.connect("student.db")
-            self.cursor = conn.cursor()
+            self.conn = sqlite3.connect("student.db")
+            self.cursor = self.conn.cursor()
         except Exception as e:
             print(e.args)
 
     # 查询登录数据
     def dataSelectUser(self, userName, passWord):
         try:
+            self.dataConn()
+
             str = "select count(*) from " + globaldef.TABLEUSER + " where username = '" + userName + "' and password = '" + passWord + "';"
-            return self.cursor.execute(str)
+            data = self.cursor.execute(str)
+            self.conn.commit()
+
+            return data
         except Exception as e:
             print(e.args)
             return None
@@ -26,11 +31,15 @@ class DataBase():
     # 查询个人信息数据
     def dataSelectPersonData(self, userName):
         try:
+            self.dataConn()
+
             str = "select * from " + globaldef.TABLEPERSONDATA + "  where username = '" + userName + "';"
-            return self.cursor.execute(str)
+            data = self.cursor.execute(str)
+            self.conn.commit()
+            return data
         except Exception as e:
             print(e.args)
-            return None
+        return None
 
     # 插入数据
     def insertData(self):
@@ -39,14 +48,18 @@ class DataBase():
     # 更新个人信息数据
     def updatePersonData(self, dict):
         try:
-            str = "update " + globaldef.TABLEPERSONDATA + " set name = '" + dict[globaldef.personUserName] + "', sex = '" + dict[globaldef.sex] +"', "
-            str += "address = '" + dict[globaldef.address] + "'," + "personinfo = '" + dict[globaldef.personInfo] + "', "
-            str += "realname = '" + dict[globaldef.realName] + "'," + "email = '" + dict[globaldef.email] + "', "
-            str += "phone = '" + dict[globaldef.phone] + "'," + "photo = '" + dict[globaldef.photo] + "' "
+            self.dataConn()
+
+            str =  "update "            + globaldef.TABLEPERSONDATA      + " set name = '" + dict[globaldef.personUserName] + "', sex = '" + dict[globaldef.sex] +"', "
+            str += "address = '"        + dict[globaldef.address]        + "',"            + "personinfo = '"               + dict[globaldef.personInfo] + "', "
+            str += "realname = '"       + dict[globaldef.realName]       + "',"            + "email = '"                    + dict[globaldef.email] + "', "
+            str += "phone = '"          + dict[globaldef.phone]          + "',"            + "photo = '"                    + dict[globaldef.photo] + "' "
             str += "where username = '" + dict[globaldef.personUserName] + "';"
 
-            print(str)
             self.cursor.execute(str)
+            self.conn.commit()
+            self.cursor.close()
+            self.conn.close()
         except Exception as e:
             print(e.args)
             return None
