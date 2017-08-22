@@ -22,7 +22,6 @@ class DataBase():
             str = "select count(*) from " + globaldef.TABLEUSER + " where username = '" + userName + "' and password = '" + passWord + "';"
             data = self.cursor.execute(str)
             self.conn.commit()
-
             return data
         except Exception as e:
             print(e.args)
