@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
     //连接服务器
     CLIENT->connectServer();
 
-    if(LOGIN->exec()==QDialog::Accepted)
+    if(LOGIN->exec() == QDialog::Accepted)
     {
-        MAINWINDOW->showMaximized();
+        MAINWINDOW->show();
         return a.exec();
     }
 

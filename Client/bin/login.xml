@@ -4,7 +4,7 @@
         <username>1305120114</username>
         <password>1305120114</password>
         <remember>1</remember>
-        <autologin>1</autologin>
+        <autologin>0</autologin>
     </user>
     <user id="2">
         <username>1305120115</username>

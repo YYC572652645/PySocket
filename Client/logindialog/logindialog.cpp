@@ -4,13 +4,7 @@
 #include "protocol.h"
 #include "globaldef.h"
 
-/**********************    鼠标作用域     *************************/
-using namespace std;
-
-
-
 LoginDialog * LoginDialog::instance = NULL;
-
 
 /**********************    构造函数       *************************/
 LoginDialog::LoginDialog(QWidget *parent) :
@@ -26,7 +20,6 @@ LoginDialog::LoginDialog(QWidget *parent) :
             //将listFloat存储的信息读取出来，进行实时改变lineEdit的密码
             if(ui->comboBoxUserName->currentText()==listStringUsnm[i] && listStringRemember[i] == "1")
             {
-
                 ui->lineEditPassWord->setText(listStringPsd[i]);
                 ui->checkBoxRemeber->setChecked(true);
                 if(listStringAuto[i] == "1")
@@ -39,7 +32,7 @@ LoginDialog::LoginDialog(QWidget *parent) :
 
     minButton=new QToolButton(this);   //最小化按钮
     closeButton=new QToolButton(this); //关闭按钮
-    int width=this->width();           //获取软件占得像素大小
+    int width = this->width();         //获取软件占得像素大小
     isMousePressed=false;              //鼠标点击标志位
 
     this->setWindowFlags(Qt::FramelessWindowHint);                                          //去掉标题栏
@@ -47,9 +40,9 @@ LoginDialog::LoginDialog(QWidget *parent) :
     move((desktop->width()- this->width()) / 2, (desktop->height() - this->height()) / 2);  //程序显示在屏幕中间
 
     /*************************************加载图标********************************/
-    QPixmap closePix=style()->standardPixmap(QStyle::SP_TitleBarCloseButton);
+    QPixmap closePix = style()->standardPixmap(QStyle::SP_TitleBarCloseButton);
     closeButton->setIcon(closePix);
-    QPixmap minPix =style()->standardPixmap(QStyle::SP_TitleBarMinButton);
+    QPixmap minPix = style()->standardPixmap(QStyle::SP_TitleBarMinButton);
     minButton->setIcon(minPix);
 
     /*************************************加载位置********************************/
@@ -78,7 +71,7 @@ LoginDialog::~LoginDialog()
 /**********************    登录按钮        *************************/
 void LoginDialog::loginData(int count)
 {
-    int Count=0;
+    int tempCount=0;
     QString tempRem, tempAuto;
     if(count != 0)
     {
@@ -87,7 +80,7 @@ void LoginDialog::loginData(int count)
         {
             if(ui->comboBoxUserName->currentText()==listStringUsnm[i]&&ui->lineEditPassWord->text()==listStringPsd[i])
             {
-                Count ++;
+                tempCount ++;
                 if(ui->checkBoxRemeber->isChecked())
                 {
                     tempRem = "1";
@@ -110,7 +103,7 @@ void LoginDialog::loginData(int count)
                 }
             }
         }
-        if(Count == 0) writeXml();
+        if(tempCount == 0) writeXml();
 
         accept();
     }

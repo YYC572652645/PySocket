@@ -5,9 +5,11 @@ INPUT(
 ./debug\messagehandler.o
 ./debug\logindialog.o
 ./debug\personinfodialog.o
+./debug\titlebar.o
 ./debug\qrc_res.o
 ./debug\moc_client.o
 ./debug\moc_logindialog.o
 ./debug\moc_mainwindow.o
 ./debug\moc_personinfodialog.o
+./debug\moc_titlebar.o
 );

@@ -6,7 +6,7 @@ from globaldef import PERSONINFO
 class MessageHandler():
     # 构造函数
     def __init__(self):
-        self.commandList = [None] * 100
+        self.commandList = [None] * globaldef.FUNSIZE
         self.initCommandList()
         self.dataBase =  DataBase()
 

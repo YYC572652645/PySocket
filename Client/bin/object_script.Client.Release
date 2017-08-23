@@ -5,9 +5,11 @@ INPUT(
 ./release\messagehandler.o
 ./release\logindialog.o
 ./release\personinfodialog.o
+./release\titlebar.o
 ./release\qrc_res.o
 ./release\moc_client.o
 ./release\moc_logindialog.o
 ./release\moc_mainwindow.o
 ./release\moc_personinfodialog.o
+./release\moc_titlebar.o
 );

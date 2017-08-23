@@ -17,7 +17,8 @@ SOURCES += main.cpp\
     client/client.cpp \
     messagehandler/messagehandler.cpp \
     logindialog/logindialog.cpp \
-    personinfodialog/personinfodialog.cpp
+    personinfodialog/personinfodialog.cpp \
+    titlebar/titlebar.cpp
 
 HEADERS  += client/client.h \
     messagehandler/messagehandler.h \
@@ -25,7 +26,8 @@ HEADERS  += client/client.h \
     mainwindow/mainwindow.h\
     protocol.h \
     globaldef.h \
-    personinfodialog/personinfodialog.h
+    personinfodialog/personinfodialog.h \
+    titlebar/titlebar.h
 
 
 FORMS    += \

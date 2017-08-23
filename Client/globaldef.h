@@ -11,6 +11,9 @@ const static int posMaxX=20000;
 const static int posMinY=0;
 const static int posMaxY=40;
 
+const static int TITLEBARHEIGHT = 50;
+const static int TITLECONTROLWIDTH = 40;
+
 namespace Protocol
 {
 

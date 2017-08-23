@@ -8,6 +8,8 @@ namespace Ui {
 class MainWindow;
 }
 
+class TitleBar;
+
 #define MAINWINDOW MainWindow::getInstance()
 
 class MainWindow : public QMainWindow
@@ -33,6 +35,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    TitleBar * titleBar;                      //标题栏
 
     static MainWindow * instance;              //单例模式
     PersonInfoDialog * personInfoDialog;       //个人信息窗口
@@ -41,6 +44,7 @@ private:
     void closeEvent(QCloseEvent* event);       //关闭事件
     explicit MainWindow(QWidget *parent = 0);  //构造函数
     ~MainWindow();                             //析构函数
+    void resizeEvent(QResizeEvent * event);
 
 };
 
