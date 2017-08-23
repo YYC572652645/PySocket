@@ -10,7 +10,6 @@
 
 MainWindow * MainWindow::instance = NULL;
 
-
 /************************   构造函数    ************************/
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -38,6 +37,8 @@ MainWindow::MainWindow(QWidget *parent) :
     vBoxLayout->setSpacing(0);
     vBoxLayout->setContentsMargins(0, 0, 0, 0);
     this->setLayout(vBoxLayout);
+
+    connect(titleBar, SIGNAL(sendIndex(int)), this, SLOT(receiveIndex(int)));
 }
 
 
@@ -60,7 +61,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
 }
 
 /************************   个人信息按钮           ************************/
-void MainWindow::on_actionPersonInfo_triggered()
+void MainWindow::sendPersonInfo()
 {
     if(!CLIENT->isConnect()) CLIENT->connectServer();
 
@@ -69,6 +70,15 @@ void MainWindow::on_actionPersonInfo_triggered()
     mapData[Protocol::userName] = LOGIN->getUserName();
 
     CLIENT->netSend(Protocol::PERSONINFOREQ, mapData);
+}
+
+/************************   接收下标    ************************/
+void MainWindow::receiveIndex(int index)
+{
+   if(index == USERNAME)
+   {
+       sendPersonInfo();
+   }
 }
 
 /************************   获取个人信息窗口对象    ************************/

@@ -49,8 +49,12 @@ LoginDialog::LoginDialog(QWidget *parent) :
     minButton->setGeometry(width - 60, 0, 30, 30);
     closeButton->setGeometry(width - 30, 0, 30, 30);
 
-    setPalette(QPalette(Qt::darkCyan));                      //设置背景色
-    setAutoFillBackground(true);
+    //设置背景色
+    QPalette paletteColor(palette());
+    paletteColor.setColor(QPalette::Background, QColor(50, 50, 50));
+    this->setAutoFillBackground(true);
+    this->setPalette(paletteColor);
+
     ui->lineEditPassWord->setEchoMode(QLineEdit::Password);  //设置为加密形式
 
     /*************************************信号与槽连接******************************/
@@ -60,6 +64,7 @@ LoginDialog::LoginDialog(QWidget *parent) :
     /*************************************背景色与父对话框一样************************/
     minButton->setStyleSheet("background-color:transparent");
     closeButton->setStyleSheet("background-color:transparent");
+
 }
 
 /**********************    析构函数        *************************/

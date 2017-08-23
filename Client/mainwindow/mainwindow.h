@@ -31,7 +31,8 @@ public:
     PersonInfoDialog *getPersonInfoDialog() const;
 
 private slots:
-    void on_actionPersonInfo_triggered();     //个人信息窗口按钮
+
+    void receiveIndex(int index);
 
 private:
     Ui::MainWindow *ui;
@@ -45,6 +46,7 @@ private:
     explicit MainWindow(QWidget *parent = 0);  //构造函数
     ~MainWindow();                             //析构函数
     void resizeEvent(QResizeEvent * event);
+     void sendPersonInfo();
 
 };
 

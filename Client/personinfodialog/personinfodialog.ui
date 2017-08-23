@@ -63,6 +63,9 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string>更换头像</string>
          </property>

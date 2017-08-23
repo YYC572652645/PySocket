@@ -2,4 +2,7 @@
     <qresource prefix="/image">
         <file>image/image.png</file>
     </qresource>
+    <qresource prefix="/qss">
+        <file>qss/style.qss</file>
+    </qresource>
 </RCC>

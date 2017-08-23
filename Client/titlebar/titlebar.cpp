@@ -2,6 +2,8 @@
 #include <QStyle>
 #include <QHBoxLayout>
 #include <QDebug>
+#include <QAction>
+#include <QListView>
 #include "globaldef.h"
 
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
@@ -27,8 +29,12 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
     spaceLabel = new QLabel(this);
     spaceLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
+    titleCombox->addItem("个人信息");
+    titleCombox->addItem("我的账户");
+    titleCombox->addItem("会员");
+    titleCombox->addItem("注销当前账户");
+
     //设置标题栏控件内容
-    titleCombox->setCurrentText("客户端");
     imgLabel->setPixmap(QPixmap(":/image/image/image.png"));
 
     imgLabel->setFixedSize(TITLECONTROLWIDTH , TITLECONTROLWIDTH);
@@ -88,16 +94,17 @@ void TitleBar::initValue()
     closeButton->setStyleSheet("background-color:transparent;");
     minButton->setStyleSheet("background-color:transparent;");
     maxButton->setStyleSheet("background-color:transparent;");
-    titleCombox->setStyleSheet("background-color:transparent;color:white;");
     nodeButton->setStyleSheet("background-color:transparent; color:white;");
     teamButton->setStyleSheet("background-color:transparent; color:white;");
     vipButton->setStyleSheet("background-color:transparent;  color:white;");
-
+    titleCombox->setObjectName("titleCombox");
+    titleCombox->setView(new QListView());
 
     //连接信号与槽
     connect(minButton,   SIGNAL(clicked(bool)), this, SLOT(showMin()));
     connect(maxButton,   SIGNAL(clicked(bool)), this, SLOT(showMax()));
     connect(closeButton, SIGNAL(clicked(bool)), this, SLOT(showClose()));
+    connect(titleCombox, SIGNAL(activated(int)), this, SLOT(receiveIndex(int)));
 
     //按钮点击标志位
     mousePress = false;
@@ -130,10 +137,17 @@ void TitleBar::showMin()
     parentWidget->showMinimized();
 }
 
-/***************************            关闭              ***************************/
+/***************************            关闭                 ***************************/
 void TitleBar::showClose()
 {
     parentWidget->close();
+}
+
+/***************************            接收下标              ***************************/
+void TitleBar::receiveIndex(int index)
+{
+    sendIndex(index);
+    titleCombox->setCurrentIndex(0);
 }
 
 QLabel *TitleBar::getImgLabel() const

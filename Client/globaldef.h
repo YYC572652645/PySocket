@@ -5,6 +5,19 @@
 #define MSGSIZE  100
 #define BUFFERSIZE 4096 * 1024
 
+#define LOADQSS()                             \
+{                                             \
+    QString strQss;                           \
+    QFile file(":/qss/qss/style.qss");        \
+    file.open(QFile::ReadOnly);               \
+    if(file.isOpen())                         \
+    {                                         \
+        strQss=QLatin1String(file.readAll()); \
+        qApp->setStyleSheet(strQss);          \
+        file.close();                         \
+    }                                         \
+}
+
 const static int posMinX=0;
 const static int posMaxX=20000;
 
@@ -13,6 +26,15 @@ const static int posMaxY=40;
 
 const static int TITLEBARHEIGHT = 50;
 const static int TITLECONTROLWIDTH = 40;
+
+enum NODETEXT
+{
+    USERNAME,
+    PERSONINFO,
+    MYACCOUNT,
+    VIP,
+    LOGOUT,
+};
 
 namespace Protocol
 {

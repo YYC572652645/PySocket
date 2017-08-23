@@ -88,6 +88,7 @@ public:
         pushButtonPhoto->setObjectName(QStringLiteral("pushButtonPhoto"));
         pushButtonPhoto->setMinimumSize(QSize(90, 0));
         pushButtonPhoto->setMaximumSize(QSize(90, 16777215));
+        pushButtonPhoto->setStyleSheet(QStringLiteral(""));
 
         horizontalLayout->addWidget(pushButtonPhoto);
 

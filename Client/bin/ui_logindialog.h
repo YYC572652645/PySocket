@@ -46,14 +46,16 @@ public:
         pushButtonLogin = new QPushButton(LoginDialog);
         pushButtonLogin->setObjectName(QStringLiteral("pushButtonLogin"));
         pushButtonLogin->setGeometry(QRect(80, 220, 221, 31));
-        pushButtonLogin->setStyleSheet(QLatin1String("\n"
-"background-color: rgb(85, 170, 255);"));
+        pushButtonLogin->setStyleSheet(QLatin1String("background-color: rgb(85, 170, 255);\n"
+"color:white;"));
         label = new QLabel(LoginDialog);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(70, 70, 54, 21));
+        label->setStyleSheet(QStringLiteral("color:white;"));
         label_2 = new QLabel(LoginDialog);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(70, 115, 54, 21));
+        label_2->setStyleSheet(QStringLiteral("color:white;"));
         lineEditPassWord = new QLineEdit(LoginDialog);
         lineEditPassWord->setObjectName(QStringLiteral("lineEditPassWord"));
         lineEditPassWord->setGeometry(QRect(140, 120, 171, 20));
@@ -61,9 +63,11 @@ public:
         checkBoxRemeber = new QCheckBox(LoginDialog);
         checkBoxRemeber->setObjectName(QStringLiteral("checkBoxRemeber"));
         checkBoxRemeber->setGeometry(QRect(72, 169, 91, 21));
+        checkBoxRemeber->setStyleSheet(QStringLiteral("color:white;"));
         checkBoxAuto = new QCheckBox(LoginDialog);
         checkBoxAuto->setObjectName(QStringLiteral("checkBoxAuto"));
         checkBoxAuto->setGeometry(QRect(220, 167, 91, 21));
+        checkBoxAuto->setStyleSheet(QStringLiteral("color:white;"));
         comboBoxUserName = new QComboBox(LoginDialog);
         comboBoxUserName->setObjectName(QStringLiteral("comboBoxUserName"));
         comboBoxUserName->setGeometry(QRect(140, 70, 171, 22));

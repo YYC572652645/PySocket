@@ -17,11 +17,13 @@ public:
     QLabel *getImgLabel() const;
 
 signals:
+    void sendIndex(int);
 
 public slots:
     void showMax();
     void showMin();
     void showClose();
+    void receiveIndex(int index);
 
 private:
     bool mousePress;             //按钮点击标志位
@@ -36,6 +38,7 @@ private:
     QPushButton *teamButton;     //云协作
     QPushButton *vipButton;      //会员
     QLabel *spaceLabel;          //用来占位
+    QAction * action;
 
 private:
     void initValue();
