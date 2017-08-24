@@ -6,6 +6,7 @@
 #include <QListView>
 #include "globaldef.h"
 
+/***************************            构造函数              ***************************/
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
 {
     //最大化按钮设置图标

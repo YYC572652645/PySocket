@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     a.setFont(font);
 
     //加载qss
-    LOADQSS();
+    LOADQSS(":/qss/qss/style.qss");
 
     //连接服务器
     CLIENT->connectServer();
@@ -24,3 +24,6 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+
+

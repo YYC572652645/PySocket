@@ -3,6 +3,8 @@
 #include "client/client.h"
 #include "protocol.h"
 #include "globaldef.h"
+#include <QListView>
+#include <QMovie>
 
 LoginDialog * LoginDialog::instance = NULL;
 
@@ -64,7 +66,16 @@ LoginDialog::LoginDialog(QWidget *parent) :
     /*************************************背景色与父对话框一样************************/
     minButton->setStyleSheet("background-color:transparent");
     closeButton->setStyleSheet("background-color:transparent");
+    ui->comboBoxUserName->setView(new QListView());
 
+    //播放gif
+    QMovie *movie = new QMovie(":/image/image/login.gif");
+    ui->labelImage->setMovie(movie);
+    movie->start();
+
+    ui->labelImage->setScaledContents(true);
+    ui->labelNode->setScaledContents(true);
+    ui->labelNode->setPixmap(QPixmap(":/image/image/logo.png"));
 }
 
 /**********************    析构函数        *************************/
@@ -437,12 +448,26 @@ void LoginDialog::on_checkBoxRemeber_clicked()
     }
 }
 
+/**********************    获取用户名         *************************/
 QString LoginDialog::getUserName() const
 {
     return userName;
 }
 
+/**********************    关闭事件         *************************/
 void LoginDialog::closeEvent(QCloseEvent *event)
 {
     CLIENT->closeSocket();
+}
+
+/**********************    注册         *************************/
+void LoginDialog::on_pushButtonRegister_clicked()
+{
+
+}
+
+/**********************    忘记密码         *************************/
+void LoginDialog::on_pushButtonForgetPassWord_clicked()
+{
+
 }

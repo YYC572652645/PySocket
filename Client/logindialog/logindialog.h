@@ -52,6 +52,10 @@ private slots:
     void on_checkBoxAuto_clicked();                                   //自动登录
     void on_checkBoxRemeber_clicked();                                //记住密码
 
+    void on_pushButtonRegister_clicked();
+
+    void on_pushButtonForgetPassWord_clicked();
+
 private:
     Ui::LoginDialog *ui;
     static LoginDialog *instance;                         //静态对象

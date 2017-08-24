@@ -60,7 +60,6 @@ class DataHandler(BaseRequestHandler):
 
         self.protocolNumber = int(data[globaldef.PROTOCOLNAME])
 
-
         del data[globaldef.PROTOCOLNAME]
 
         return data

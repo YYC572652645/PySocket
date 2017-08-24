@@ -1,6 +1,11 @@
 <RCC>
     <qresource prefix="/image">
         <file>image/image.png</file>
+        <file>image/logo.png</file>
+        <file>image/login.gif</file>
+        <file>image/background.png</file>
+        <file>image/loginbackground.png</file>
+        <file>image/down.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file>qss/style.qss</file>

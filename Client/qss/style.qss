@@ -4,23 +4,22 @@ min-height: 50px;
 min-width: 60px;
 background-color:transparent;
 color:white;
+selection-background-color: rgb(80, 80, 80);
 }
 
-QComboBox QAbstractItemView
+QComboBox#titleCombox QAbstractItemView
 {
-    selection-color:white;
-    selection-background-color:rgb(80, 80, 80);
-    background-color:rgb(80, 80, 80);
+selection-color:white;
+selection-background-color:rgb(80, 80, 80);
+background-color:rgb(80, 80, 80);
+font:14px;
 }
 
-QComboBox QAbstractItemView::item
+
+QComboBox#titleCombox QAbstractItemView::item
 {
 min-height: 50px;
 min-width: 60px;
 color:white;
 }
 
-QComboBox:enabled:hover, QComboBox:enabled:focus {
-        color: white;
-        background-color: rgb(80, 80, 80);
-}

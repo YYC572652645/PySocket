@@ -5,10 +5,10 @@
 #define MSGSIZE  100
 #define BUFFERSIZE 4096 * 1024
 
-#define LOADQSS()                             \
+#define LOADQSS(qssFile)                      \
 {                                             \
     QString strQss;                           \
-    QFile file(":/qss/qss/style.qss");        \
+    QFile file(qssFile);                      \
     file.open(QFile::ReadOnly);               \
     if(file.isOpen())                         \
     {                                         \
