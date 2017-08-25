@@ -49,11 +49,16 @@ class DataBase():
         try:
             self.dataConn()
 
-            str =  "update "            + globaldef.TABLEPERSONDATA      + " set name = '" + dict[globaldef.personUserName] + "', sex = '" + dict[globaldef.sex] +"', "
-            str += "address = '"        + dict[globaldef.address]        + "',"            + "personinfo = '"               + dict[globaldef.personInfo] + "', "
-            str += "realname = '"       + dict[globaldef.realName]       + "',"            + "email = '"                    + dict[globaldef.email] + "', "
-            str += "phone = '"          + dict[globaldef.phone]          + "',"            + "photo = '"                    + dict[globaldef.photo] + "' "
-            str += "where username = '" + dict[globaldef.personUserName] + "';"
+            str  = "update "             + globaldef.TABLEPERSONDATA       + " set "
+            str += "name = '"            + dict[globaldef.personUserName]  + "', "
+            str += "sex = '"             + dict[globaldef.sex]             + "', "
+            str += "address = '"         + dict[globaldef.address]         + "', "
+            str += "personinfo = '"      + dict[globaldef.personInfo]      + "', "
+            str += "realname = '"        + dict[globaldef.realName]        + "', "
+            str += "email = '"           + dict[globaldef.email]           + "', "
+            str += "phone = '"           + dict[globaldef.phone]           + "', "
+            str += "photo = '"           + dict[globaldef.photo]           + "' "
+            str += "where username = '"  + dict[globaldef.personUserName]  + "';"
 
             self.cursor.execute(str)
             self.conn.commit()

@@ -9,7 +9,8 @@
 /***************************            构造函数              ***************************/
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
 {
-    //最大化按钮设置图标
+    //最大化按钮设置图标+
+
     QPixmap pixMap = this->style()->standardPixmap(QStyle::SP_TitleBarMaxButton);
     maxButton = new QPushButton(this);
     maxButton->setIcon(pixMap);

@@ -12,7 +12,6 @@ MessageHandler::MessageHandler()
 
     dataMessageList[Protocol::LOGININFO]   = DataMessage("logindata", &MessageHandler::receiveLoginData);
     dataMessageList[Protocol::PERSONINFO] = DataMessage("personinfo", &MessageHandler::receivePersonInfo);
-
 }
 
 /*************************   根据协议号调取对应函数       *********************/
