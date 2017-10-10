@@ -6,6 +6,28 @@
         <file>image/background.png</file>
         <file>image/loginbackground.png</file>
         <file>image/down.png</file>
+        <file>image/add.png</file>
+        <file>image/Icon_Attachment@2x.png</file>
+        <file>image/Icon_Folder_open.png</file>
+        <file>image/Icon_Share.png</file>
+        <file>image/Icon_ShareToMe.png</file>
+        <file>image/Icon_Top.png</file>
+        <file>image/tag.png</file>
+        <file>image/trash.png</file>
+        <file>image/Icon_Category_Group.png</file>
+        <file>image/Icon_Category_LastMod.png</file>
+        <file>image/Icon_Category_Lock.png</file>
+        <file>image/Icon_Category_OPenGroup.png</file>
+        <file>image/Icon_Category_ShareToMe.png</file>
+        <file>image/Icon_Category_Tags.png</file>
+        <file>image/Icon_Category_Trash.png</file>
+        <file>image/Icon_Category_Unlock.png</file>
+        <file>image/Icon_Notebook_shared.png</file>
+        <file>image/Btn_Input_Search.png</file>
+        <file>image/top.png</file>
+        <file>image/color.png</file>
+        <file>image/Btn_Return_Icon.png</file>
+        <file>image/folder.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file>qss/style.qss</file>

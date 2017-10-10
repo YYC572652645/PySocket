@@ -125,7 +125,35 @@ compiler_rcc_make_all: debug/qrc_res.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_res.cpp
 debug/qrc_res.cpp: ../res.qrc \
-		../image/image.png
+		../qss/style.qss \
+		../image/background.png \
+		../image/color.png \
+		../image/folder.png \
+		../image/Icon_Category_ShareToMe.png \
+		../image/Icon_Category_LastMod.png \
+		../image/Icon_Share.png \
+		../image/Icon_Category_Group.png \
+		../image/Icon_Category_OPenGroup.png \
+		../image/login.gif \
+		../image/add.png \
+		../image/Icon_Category_Unlock.png \
+		../image/trash.png \
+		../image/Icon_Category_Trash.png \
+		../image/Icon_Notebook_shared.png \
+		../image/down.png \
+		../image/image.png \
+		../image/loginbackground.png \
+		../image/Icon_ShareToMe.png \
+		../image/top.png \
+		../image/tag.png \
+		../image/Icon_Category_Tags.png \
+		../image/Icon_Category_Lock.png \
+		../image/Icon_Folder_open.png \
+		../image/Btn_Input_Search.png \
+		../image/Icon_Attachment@2x.png \
+		../image/logo.png \
+		../image/Btn_Return_Icon.png \
+		../image/Icon_Top.png
 	D:\SoftWare\Qt\5.6\mingw49_32\bin\rcc.exe -name res ..\res.qrc -o debug\qrc_res.cpp
 
 compiler_moc_header_make_all: debug/moc_client.cpp debug/moc_logindialog.cpp debug/moc_mainwindow.cpp debug/moc_personinfodialog.cpp debug/moc_titlebar.cpp
@@ -556,6 +584,12 @@ debug/moc_mainwindow.cpp: D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QMainW
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qicon.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QMenu \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qmenu.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qaction.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QAction \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
 		../personinfodialog/personinfodialog.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qdialog.h \
@@ -782,6 +816,21 @@ debug/moc_titlebar.cpp: D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QObject \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QLabel \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlabel.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qframe.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QMouseEvent \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QComboBox \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qcombobox.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qvalidator.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qregularexpression.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qslider.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qstyle.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
 		../titlebar/titlebar.h
 	D:\SoftWare\Qt\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/SoftWare/Qt/5.6/mingw49_32/mkspecs/win32-g++ -IE:/Program/Python/PySocket/Client -ID:/SoftWare/Qt/5.6/mingw49_32/include -ID:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets -ID:/SoftWare/Qt/5.6/mingw49_32/include/QtGui -ID:/SoftWare/Qt/5.6/mingw49_32/include/QtANGLE -ID:/SoftWare/Qt/5.6/mingw49_32/include/QtXml -ID:/SoftWare/Qt/5.6/mingw49_32/include/QtNetwork -ID:/SoftWare/Qt/5.6/mingw49_32/include/QtCore -I. ..\titlebar\titlebar.h -o debug\moc_titlebar.cpp
 
@@ -919,6 +968,12 @@ debug/main.o: ../main.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qicon.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QMenu \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qmenu.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qaction.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QAction \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
 		../personinfodialog/personinfodialog.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qdialog.h \
@@ -1065,7 +1120,9 @@ debug/main.o: ../main.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtNetwork/qabstractsocket.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtNetwork/QHostAddress \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QThread
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QThread \
+		../globaldef.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\main.cpp
 
 debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
@@ -1176,14 +1233,17 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qicon.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QMenu \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qmenu.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qaction.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QAction \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
 		../personinfodialog/personinfodialog.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qdialog.h \
 		ui_mainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QVariant \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QAction \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QApplication \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qapplication.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
@@ -1193,13 +1253,8 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qinputmethod.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qframe.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QComboBox \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qcombobox.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
@@ -1210,13 +1265,40 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qstyle.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QMenuBar \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qmenubar.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qmenu.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qframe.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlayout.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QHeaderView \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QLineEdit \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qtextcursor.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qtextformat.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qtextoption.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QListWidget \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlistwidget.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlistview.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QPushButton \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QSpacerItem \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QSplitter \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qsplitter.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QStatusBar \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QToolBar \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtoolbar.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QTreeWidget \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtreewidget.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtreeview.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtreewidgetitemiterator.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QVBoxLayout \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QWidget \
 		../client/client.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QObject \
@@ -1235,7 +1317,6 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QPixmap \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QPoint \
@@ -1356,15 +1437,9 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtXml/QDomNodeList \
 		../titlebar/titlebar.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QPushButton \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QLabel \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlabel.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QVBoxLayout \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlayout.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qgridlayout.h
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QMouseEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\mainwindow\mainwindow.cpp
 
 debug/client.o: ../client/client.cpp ../client/client.h \
@@ -1705,6 +1780,12 @@ debug/messagehandler.o: ../messagehandler/messagehandler.cpp ../messagehandler/m
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QMainWindow \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QMenu \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qmenu.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qaction.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QAction \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
 		../personinfodialog/personinfodialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\messagehandler.o ..\messagehandler\messagehandler.cpp
 
@@ -1987,6 +2068,7 @@ debug/logindialog.o: ../logindialog/logindialog.cpp ../logindialog/logindialog.h
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qtextoption.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QPushButton \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QWidget \
 		../client/client.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
@@ -1996,7 +2078,13 @@ debug/logindialog.o: ../logindialog/logindialog.cpp ../logindialog/logindialog.h
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QThread \
 		../protocol.h \
 		../globaldef.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QString
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QString \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QListView \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlistview.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QMovie \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qmovie.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qimagereader.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qimageiohandler.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\logindialog.o ..\logindialog\logindialog.cpp
 
 debug/personinfodialog.o: ../personinfodialog/personinfodialog.cpp ../personinfodialog/personinfodialog.h \
@@ -2293,13 +2381,38 @@ debug/titlebar.o: ../titlebar/titlebar.cpp ../titlebar/titlebar.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QLabel \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlabel.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qframe.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QStyle \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/QMouseEvent \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QComboBox \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qcombobox.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtGui/qvalidator.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qregularexpression.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qslider.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qstyle.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QStyle \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlayout.h \
 		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
-		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qgridlayout.h
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QDebug \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QAction \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qaction.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/QListView \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qlistview.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
+		../globaldef.h \
+		D:/SoftWare/Qt/5.6/mingw49_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\titlebar.o ..\titlebar\titlebar.cpp
 
 debug/qrc_res.o: debug/qrc_res.cpp 

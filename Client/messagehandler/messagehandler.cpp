@@ -9,8 +9,7 @@ MessageHandler * MessageHandler::instance = NULL;
 /*************************  构造函数                  *********************/
 MessageHandler::MessageHandler()
 {
-
-    dataMessageList[Protocol::LOGININFO]   = DataMessage("logindata", &MessageHandler::receiveLoginData);
+    dataMessageList[Protocol::LOGININFO]  = DataMessage("logindata", &MessageHandler::receiveLoginData);
     dataMessageList[Protocol::PERSONINFO] = DataMessage("personinfo", &MessageHandler::receivePersonInfo);
 }
 
@@ -43,14 +42,14 @@ void MessageHandler::receivePersonInfo(QMap<QString, QString> &mapData)
     PersonData personData;
 
     personData.personUserName = mapData[Protocol::personUserName];
-    personData.name = mapData[Protocol::name];
-    personData.sex = mapData[Protocol::sex];
-    personData.address = mapData[Protocol::address];
-    personData.personInfo = mapData[Protocol::personInfo];
-    personData.realName = mapData[Protocol::realName];
-    personData.email = mapData[Protocol::email];
-    personData.phone = mapData[Protocol::phone];
-    personData.photo = mapData[Protocol::photo];
+    personData.name           = mapData[Protocol::name];
+    personData.sex            = mapData[Protocol::sex];
+    personData.address        = mapData[Protocol::address];
+    personData.personInfo     = mapData[Protocol::personInfo];
+    personData.realName       = mapData[Protocol::realName];
+    personData.email          = mapData[Protocol::email];
+    personData.phone          = mapData[Protocol::phone];
+    personData.photo          = mapData[Protocol::photo];
 
 
     MAINWINDOW->getPersonInfoDialog()->setPersonData(personData);

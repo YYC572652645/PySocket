@@ -9,8 +9,7 @@
 /***************************            构造函数              ***************************/
 TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
 {
-    //最大化按钮设置图标+
-
+    //最大化按钮设置图标
     QPixmap pixMap = this->style()->standardPixmap(QStyle::SP_TitleBarMaxButton);
     maxButton = new QPushButton(this);
     maxButton->setIcon(pixMap);
@@ -47,11 +46,11 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
     closeButton->setFixedSize(TITLECONTROLWIDTH, TITLECONTROLWIDTH);
 
     //云笔记
-    nodeButton= new QPushButton(this);
+    nodeButton = new QPushButton(this);
     nodeButton->setText("云笔记");
 
     //云协作
-    teamButton= new QPushButton(this);
+    teamButton = new QPushButton(this);
     teamButton->setText("云协作");
 
     //会员
@@ -76,7 +75,7 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
 
     //设置背景色
     QPalette paletteColor(palette());
-    paletteColor.setColor(QPalette::Background, QColor(80, 80, 80));
+    paletteColor.setColor(QPalette::Background, QColor(44, 62, 80));
     this->setAutoFillBackground(true);
     this->setPalette(paletteColor);
 
@@ -152,6 +151,7 @@ void TitleBar::receiveIndex(int index)
     titleCombox->setCurrentIndex(0);
 }
 
+/***************************            获取图标Label         ***************************/
 QLabel *TitleBar::getImgLabel() const
 {
     return imgLabel;
@@ -176,7 +176,7 @@ void TitleBar::mouseReleaseEvent(QMouseEvent *event)
 /**************************             鼠标移动              **************************/
 void TitleBar::mouseMoveEvent(QMouseEvent *event)
 {
-    if( mousePress)
+    if(mousePress)
     {
         QPoint movePos = event->globalPos();
         parentWidget->move(movePos - movePoint);

@@ -23,6 +23,11 @@ PersonInfoDialog::PersonInfoDialog(QWidget *parent) :
     ui->lineThird->setPalette(palette);
     ui->lineFourth->setPalette(palette);
 
+    QPalette paletteColor;
+    paletteColor.setColor(QPalette::Background, QColor(200, 200, 200));
+    this->setAutoFillBackground(true);
+    this->setPalette(paletteColor);
+
     ui->labelPhoto->setScaledContents(true);
 }
 

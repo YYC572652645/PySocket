@@ -43,8 +43,6 @@ private:
     PersonData personData;  //个人信息
     QImage photoImage;      //头像图片
     QString fileName;       //文件名称
-
-
 };
 
 #endif // PERSONINFODIALOG_H

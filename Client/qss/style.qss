@@ -4,17 +4,16 @@ min-height: 50px;
 min-width: 60px;
 background-color:transparent;
 color:white;
-selection-background-color: rgb(80, 80, 80);
+selection-background-color: rgb(44, 62, 80);
 }
 
 QComboBox#titleCombox QAbstractItemView
 {
 selection-color:white;
-selection-background-color:rgb(80, 80, 80);
-background-color:rgb(80, 80, 80);
+selection-background-color:rgb(44, 62, 80);
+background-color:rgb(44, 62, 80);
 font:14px;
 }
-
 
 QComboBox#titleCombox QAbstractItemView::item
 {
@@ -23,3 +22,92 @@ min-width: 60px;
 color:white;
 }
 
+QTreeWidget::item
+{
+height:40px;
+font-size:20px;
+color:black;
+}
+
+QTreeWidget::item::hover
+{
+background-color:rgb(9,150,200,100);
+}
+
+QTreeWidget::item:selected:active
+{
+background-color: rgb(9,150,220,100);
+color:black;
+}
+
+QTreeWidget::item:selected:!active
+{
+background-color: rgb(9,150,220,100);
+color:black;
+}
+
+QSpliter
+{
+background-color:rgb(50, 50, 50);
+}
+
+
+QListWidget::item::hover
+{
+background-color:rgb(9,150,200,100);
+color:black;
+}
+
+QListWidget::item:selected
+{
+background-color:rgb(9,150,200,255);
+color:black;
+}
+
+QListWidget
+{
+background-color:#2c3e50;
+color:black;
+font-weight:bold;
+}
+
+QMenu
+{
+background-color: rgb(200,200,200);
+border: 1px solid gray;
+color: black;
+padding: 1px;
+}
+
+QMenu::item
+{
+height:30px;
+font-size:14px;
+color:black;
+padding: 2px 25px 2px 20px;
+border: 1px solid transparent;
+}
+
+QMenu::item:disabled {
+color: #666666;
+}
+
+QMenu::item:selected {
+border-color: gray;
+background:rgb(44,62,80,225);
+color:white;
+}
+
+QMenu::separator {
+height: 1px;
+background: #222222;
+margin-left: 10px;
+margin-right: 10px;
+margin-top: 1px;
+margin-bottom: 1px;
+}
+
+QMenu::indicator {
+width: 13px;
+height: 13px;
+}

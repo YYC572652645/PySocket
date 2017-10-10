@@ -8,7 +8,6 @@
 
 Client * Client::instance = NULL;
 
-
 /**********************    构造函数     *************************/
 Client::Client(): protocolNumber(Protocol::INVALID)
 {

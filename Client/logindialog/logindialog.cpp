@@ -32,8 +32,8 @@ LoginDialog::LoginDialog(QWidget *parent) :
         }
     }
 
-    minButton=new QToolButton(this);   //最小化按钮
-    closeButton=new QToolButton(this); //关闭按钮
+    minButton = new QToolButton(this);   //最小化按钮
+    closeButton = new QToolButton(this); //关闭按钮
     int width = this->width();         //获取软件占得像素大小
     isMousePressed=false;              //鼠标点击标志位
 
@@ -87,7 +87,7 @@ LoginDialog::~LoginDialog()
 /**********************    登录按钮        *************************/
 void LoginDialog::loginData(int count)
 {
-    int tempCount=0;
+    int tempCount = 0;
     QString tempRem, tempAuto;
     if(count != 0)
     {
@@ -169,26 +169,17 @@ void LoginDialog::mouseMoveEvent(QMouseEvent *event)
 /**********************    鼠标点击         *************************/
 void LoginDialog::mousePressEvent(QMouseEvent *event)
 {
-    mousePosition=event->pos();
+    mousePosition = event->pos();
 
-    if(mousePosition.x()<=posMinX)
-    {
-        return;
-    }
-    if(mousePosition.x() >= posMaxX)
-    {
-        return;
-    }
-    if(mousePosition.y() <= posMinY)
-    {
-        return;
-    }
-    if(mousePosition.y() >= posMaxY)
-    {
-        return;
-    }
+    if(mousePosition.x() <= posMinX) return;
 
-    isMousePressed=true;
+    if(mousePosition.x() >= posMaxX) return;
+
+    if(mousePosition.y() <= posMinY) return;
+
+    if(mousePosition.y() >= posMaxY) return;
+
+    isMousePressed = true;
 }
 
 /**********************    鼠标释放         *************************/
@@ -218,12 +209,12 @@ void LoginDialog::writeXml()
     file.close();
 
     //创建一个新的用户
-    QDomElement root = dom.documentElement();
-    QDomElement user = dom.createElement("user");
-    QDomAttr    id = dom.createAttribute("id");
-    QDomElement usernm = dom.createElement("username");
-    QDomElement passwd = dom.createElement("password");
-    QDomElement remember = dom.createElement("remember");
+    QDomElement root      = dom.documentElement();
+    QDomElement user      = dom.createElement("user");
+    QDomAttr    id        = dom.createAttribute("id");
+    QDomElement usernm    = dom.createElement("username");
+    QDomElement passwd    = dom.createElement("password");
+    QDomElement remember  = dom.createElement("remember");
     QDomElement autoLogin = dom.createElement("autologin");
 
     QDomText text;
@@ -271,7 +262,7 @@ void LoginDialog::writeXml()
     if(!f.open(QIODevice::WriteOnly|QIODevice::Truncate)) return;
 
     QTextStream out(&f);
-    dom.save(out,4);
+    dom.save(out, 4);
     f.close();
 }
 
@@ -286,7 +277,7 @@ bool LoginDialog::readXml()
     listStringID.clear();      //清空list存储
 
     QDomDocument dom;
-    QFile *file=new QFile("login.xml");
+    QFile *file = new QFile("login.xml");
     if(file->open(QIODevice::ReadOnly))
     {
         if(!dom.setContent(file))  //将该xml文件导入到dom中
@@ -314,7 +305,7 @@ bool LoginDialog::readXml()
             QDomNodeList list=element.childNodes();//取出该元素的所有子节点放到list中
 
             //将子节点元素全部取出来
-            for(int i=0;i<list.count();i++)
+            for(int i = 0; i < list.count(); i ++)
             {
                 QDomNode domNode=list.at(i);
                 if(domNode.isElement())
@@ -374,10 +365,7 @@ void LoginDialog::updateXml(QString id,QString rem,QString aut)
 
 
     QFile f("login.xml");
-    if(!f.open(QIODevice::WriteOnly|QIODevice::Truncate))
-    {
-        return;
-    }
+    if(!f.open(QIODevice::WriteOnly | QIODevice::Truncate)) return;
 
     QTextStream out(&f);
     dom.save(out,4);
@@ -388,14 +376,14 @@ void LoginDialog::updateXml(QString id,QString rem,QString aut)
 /**********************    点击列表框       *************************/
 void LoginDialog::on_comboBoxUserName_activated(const QString &arg1)
 {
-    int Count=0;
+    int count=0;
     int tempCount=0;
     for(int i=0;i<ui->comboBoxUserName->count();i++)
     {
         //将listFloat存储的信息读取出来，进行实时改变lineEdit的密码
         if(ui->comboBoxUserName->currentText()==listStringUsnm[i]&&listStringRemember[i]=="1")
         {
-            Count++;
+            count++;
             ui->checkBoxRemeber->setChecked(true);
             ui->lineEditPassWord->setText(listStringPsd[i]);
             if(listStringAuto[i]=="1")
@@ -406,12 +394,12 @@ void LoginDialog::on_comboBoxUserName_activated(const QString &arg1)
         }
     }
 
-    if(Count==0)
+    if(0 == count)
     {
         ui->checkBoxRemeber->setChecked(false);
         ui->lineEditPassWord->clear();
     }
-    if(tempCount==0)
+    if(0 == tempCount)
     {
         ui->checkBoxAuto->setChecked(false);
     }
