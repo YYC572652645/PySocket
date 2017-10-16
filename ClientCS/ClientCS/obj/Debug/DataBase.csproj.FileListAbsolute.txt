@@ -1,0 +1,15 @@
+D:\Program\C#\DataBase\DataBase\bin\Debug\DataBase.exe.config
+D:\Program\C#\DataBase\DataBase\bin\Debug\DataBase.exe
+D:\Program\C#\DataBase\DataBase\bin\Debug\DataBase.pdb
+D:\Program\C#\DataBase\DataBase\obj\Debug\MainWindow.baml
+D:\Program\C#\DataBase\DataBase\obj\Debug\MainWindow.g.cs
+D:\Program\C#\DataBase\DataBase\obj\Debug\App.g.cs
+D:\Program\C#\DataBase\DataBase\obj\Debug\DataBase_MarkupCompile.cache
+D:\Program\C#\DataBase\DataBase\obj\Debug\DataBase.g.resources
+D:\Program\C#\DataBase\DataBase\obj\Debug\DataBase.csproj.GenerateResource.Cache
+D:\Program\C#\DataBase\DataBase\obj\Debug\DataBase.exe
+D:\Program\C#\DataBase\DataBase\obj\Debug\DataBase.pdb
+D:\Program\C#\DataBase\DataBase\obj\Debug\DataBase.csprojResolveAssemblyReference.cache
+D:\Program\C#\DataBase\DataBase\bin\Debug\com.force.json.xml
+D:\Program\C#\DataBase\DataBase\obj\Debug\Message.Properties.Resources.resources
+D:\Program\C#\DataBase\DataBase\bin\Debug\Client C#.exe.config

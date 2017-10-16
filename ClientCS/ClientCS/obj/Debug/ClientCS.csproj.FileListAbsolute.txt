@@ -1,0 +1,27 @@
+D:\Program\C#\DataBase\DataBase\bin\Debug\Client C#.exe.config
+D:\Program\C#\DataBase\DataBase\bin\Debug\Client C#.exe
+D:\Program\C#\DataBase\DataBase\bin\Debug\Client C#.pdb
+D:\Program\C#\DataBase\DataBase\bin\Debug\com.force.json.xml
+D:\Program\C#\DataBase\DataBase\obj\Debug\MainWindow.baml
+D:\Program\C#\DataBase\DataBase\obj\Debug\MainWindow.g.cs
+D:\Program\C#\DataBase\DataBase\obj\Debug\App.g.cs
+D:\Program\C#\DataBase\DataBase\obj\Debug\Client C#_MarkupCompile.cache
+D:\Program\C#\DataBase\DataBase\obj\Debug\Client C#.g.resources
+D:\Program\C#\DataBase\DataBase\obj\Debug\Message.Properties.Resources.resources
+D:\Program\C#\DataBase\DataBase\obj\Debug\ClientCS.csproj.GenerateResource.Cache
+D:\Program\C#\DataBase\DataBase\obj\Debug\Client C#.exe
+D:\Program\C#\DataBase\DataBase\obj\Debug\Client C#.pdb
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\App.g.cs
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\ClientCS.csproj.GenerateResource.Cache
+E:\Program\Python\PySocket\ClientCS\ClientCS\bin\Debug\ClientCS.exe.config
+E:\Program\Python\PySocket\ClientCS\ClientCS\bin\Debug\ClientCS.exe
+E:\Program\Python\PySocket\ClientCS\ClientCS\bin\Debug\ClientCS.pdb
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\ClientCS_MarkupCompile.cache
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\ClientCS.g.resources
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\ClientCS.exe
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\ClientCS.pdb
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\mainwidget.baml
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\mainwidget.g.cs
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\Client.Properties.Resources.resources
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\MainWindow.baml
+E:\Program\Python\PySocket\ClientCS\ClientCS\obj\Debug\MainWindow.g.cs
