@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Client.protocol;
 using Client;
+using System.Threading;
 
 namespace Client.messagehandler
 {
@@ -12,10 +13,10 @@ namespace Client.messagehandler
     {
         private int MSGSIZE = 100;
 
+        //delegate可看作为函数指针
         public delegate void CommandFunc(Dictionary<String, String> mapData);
 
         CommandFunc[] dataMessageList;
-
 
         /*************************      构造函数          ********************/
         public MessageHandler()
@@ -36,7 +37,6 @@ namespace Client.messagehandler
             }
         }
 
-
         /*************************   接收到客户端登录消息    *********************/
         public void receiveLoginData(Dictionary<String, String> mapData)
         {
@@ -50,11 +50,8 @@ namespace Client.messagehandler
 
             if (count != 0)
             {
-                MainWidget.GetInstance().showWidget();
+                Console.WriteLine(Thread.CurrentThread);
             }
-
         }
-
-
     }
 }

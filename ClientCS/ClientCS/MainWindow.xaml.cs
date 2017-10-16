@@ -21,9 +21,8 @@ namespace Client
 {
     public partial class MainWindow : Window
     {
-
         private ReadConfig readConfig;
-        private static Thread thread;
+        private Thread thread;
 
         /*****************************    主函数                 *************************/
         public MainWindow()
@@ -31,7 +30,7 @@ namespace Client
             InitializeComponent();
 
             //创建一个线程运行客户端接收数据
-            thread = new Thread(ClientCS.GetInstance().readData);
+            thread = new Thread(new ThreadStart(ClientCS.GetInstance().readData));
 
             //启动线程
             thread.Start();
@@ -120,5 +119,4 @@ namespace Client
             userNameComboBox.Focus();
         }
     }
-
 }

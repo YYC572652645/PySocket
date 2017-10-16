@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Client.MainWidget"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="mainwidget" Height="300" Width="300">
+        Title="mainwidget" Height="400" Width="600">
     <Grid>
         
     </Grid>

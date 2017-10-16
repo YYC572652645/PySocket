@@ -16,7 +16,6 @@ namespace Client
 {
     public partial class MainWidget : Window
     {
-
         private static MainWidget instance;
 
         public static MainWidget GetInstance()
@@ -32,6 +31,7 @@ namespace Client
         {
             InitializeComponent();
         }
+
 
         public void showWidget()
         {

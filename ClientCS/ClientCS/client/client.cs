@@ -8,6 +8,7 @@ using System.Net;
 using com.force.json;
 using Client.protocol;
 using Client.messagehandler;
+using System.Threading;
 
 namespace MySocket.Connect
 {
@@ -21,13 +22,24 @@ namespace MySocket.Connect
 
         private static ClientCS instance;
 
+        static Mutex mutex;
+
         /*****************************    单例模式                 *************************/
         public static ClientCS GetInstance()
         {
+            if (null == mutex)
+            {
+                mutex = new Mutex();
+            }
+
+            mutex.WaitOne();
+
             if (instance == null)
             {
                 instance = new ClientCS();
             }
+
+            mutex.ReleaseMutex();
             return instance;
         }
 
