@@ -1,7 +1,13 @@
+#****************************************************
+# 作者：YYC
+# 功能：数据库
+# 日期：2017-10-28
+#****************************************************
+
 import sqlite3
 import globaldef
 
-class DataBase():
+class PersonData():
     # 构造函数
     def __init__(self):
         self.dataConn()
@@ -68,6 +74,15 @@ class DataBase():
             print(e.args)
             return None
 
-    # 删除数据
-    def deleteData(self):
+    # 添加好友
+    def insertFriendData(self):
+        pass
+
+
+    # 删除好友
+    def deleteFriendData(self):
+        pass
+
+    # 查询好友
+    def selectFriendData(self):
         pass

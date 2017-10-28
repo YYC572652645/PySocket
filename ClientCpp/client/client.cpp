@@ -5,6 +5,7 @@
 #include "globaldef.h"
 #include "protocol.h"
 #include "messagehandler/messagehandler.h"
+#include "logindialog/logindialog.h"
 
 Client * Client::instance = NULL;
 
@@ -44,7 +45,7 @@ void Client::closeSocket()
 {
     QMap<QString, QString> mapData;
 
-    this->netSend(Protocol::CLOSEREQ, mapData);
+    this->netSend(Protocol::CLOSEREQ, LOGIN->getUserName(), mapData);
 
     tcpSocket->close();
 }
@@ -84,12 +85,13 @@ bool Client::isConnect()
 }
 
 /**********************    组合json数据，然后发送     *************************/
-void Client::netSend(int protocol, QMap<QString, QString> &mapData)
+void Client::netSend(int protocol, QString userName, QMap<QString, QString> &mapData)
 {
     QJsonObject jsonTotal;
     QJsonObject jsonData;
 
     jsonData.insert("protocol", QString::number(protocol));
+    jsonData.insert("username", userName);
 
     for(auto iter = mapData.begin(); iter != mapData.end(); ++ iter)
     {

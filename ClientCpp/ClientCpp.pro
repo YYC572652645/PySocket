@@ -18,7 +18,9 @@ SOURCES += main.cpp\
     messagehandler/messagehandler.cpp \
     logindialog/logindialog.cpp \
     personinfodialog/personinfodialog.cpp \
-    titlebar/titlebar.cpp
+    titlebar/titlebar.cpp \
+    maintitlebar/maintitlebar.cpp \
+    friendmanger/friendmanger.cpp
 
 HEADERS  += client/client.h \
     messagehandler/messagehandler.h \
@@ -27,13 +29,16 @@ HEADERS  += client/client.h \
     protocol.h \
     globaldef.h \
     personinfodialog/personinfodialog.h \
-    titlebar/titlebar.h
+    titlebar/titlebar.h \
+    maintitlebar/maintitlebar.h \
+    friendmanger/friendmanger.h
 
 
 FORMS    += \
     logindialog/logindialog.ui \
     mainwindow/mainwindow.ui \
-    personinfodialog/personinfodialog.ui
+    personinfodialog/personinfodialog.ui \
+    friendmanger/friendmanger.ui
 
 RESOURCES += \
     res.qrc

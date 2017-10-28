@@ -1,12 +1,12 @@
 #ifndef PERSONINFODIALOG_H
 #define PERSONINFODIALOG_H
 
-#include <QDialog>
+#include "titlebar/titlebar.h"
+#include <QMainWindow>
 
 namespace Ui {
 class personinfodialog;
 }
-
 
 //个人信息数据
 typedef struct PersonData
@@ -22,7 +22,7 @@ typedef struct PersonData
     QString photo;
 }PersonData;
 
-class PersonInfoDialog : public QDialog
+class PersonInfoDialog : public QMainWindow
 {
     Q_OBJECT
 
@@ -40,9 +40,12 @@ private slots:
 
 private:
     Ui::personinfodialog *ui;
+    TitleBar *titleBar;
     PersonData personData;  //个人信息
     QImage photoImage;      //头像图片
     QString fileName;       //文件名称
+
+    void resizeEvent(QResizeEvent *event);
 };
 
 #endif // PERSONINFODIALOG_H

@@ -6,12 +6,13 @@
 #include <QAction>
 #include <QContextMenuEvent>
 #include "personinfodialog/personinfodialog.h"
+#include "friendmanger/friendmanger.h"
 
 namespace Ui {
 class MainWindow;
 }
 
-class TitleBar;
+class MainTitleBar;
 
 #define MAINWINDOW MainWindow::getInstance()
 
@@ -32,6 +33,7 @@ public:
     }
 
     PersonInfoDialog *getPersonInfoDialog() const;
+    FriendManger *getFriendeManger() const;
 
 private slots:
     void receiveIndex(int index);              //接收下标
@@ -46,10 +48,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    TitleBar * titleBar;                       //标题栏
+    MainTitleBar * titleBar;                   //标题栏
 
     static MainWindow * instance;              //单例模式
     PersonInfoDialog * personInfoDialog;       //个人信息窗口
+    FriendManger * friendeManger;              //好友
 
 private:
     void closeEvent(QCloseEvent* event);       //关闭事件
@@ -58,9 +61,13 @@ private:
 
     void contextMenuEvent(QContextMenuEvent *event);
     void resizeEvent(QResizeEvent * event);
-    void sendPersonInfo();
+
     void initControl();
     void createActions();
+
+    /*******************   向服务端发起请求        *****************/
+    void sendPersonInfoReq();   //请求个人信息
+    void sendFriendListReq();   //请求好友列表
 
 private:
     QMenu   *menu;                             //菜单

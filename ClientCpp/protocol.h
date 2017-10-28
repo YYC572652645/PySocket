@@ -14,6 +14,11 @@ enum TCPPROTOCOL
     PERSONINFOREQ  = 3,  //个人信息请求
     PERSONINFO     = 4,  //个人信息数据
     SAVEPERSONREQ  = 5,  //保存个人信息
+
+
+    /*****************   好友相关   ***************/
+    FRIENDLISYREQ  = 10,  //好友列表请求
+    FRIENDLISTINFO = 11,  //好友列表信息
 };
 
 }

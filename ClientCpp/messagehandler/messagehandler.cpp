@@ -11,6 +11,7 @@ MessageHandler::MessageHandler()
 {
     dataMessageList[Protocol::LOGININFO]  = DataMessage("logindata", &MessageHandler::receiveLoginData);
     dataMessageList[Protocol::PERSONINFO] = DataMessage("personinfo", &MessageHandler::receivePersonInfo);
+    dataMessageList[Protocol::FRIENDLISTINFO] = DataMessage("friendinfo", &MessageHandler::receiveFriendList);
 }
 
 /*************************   根据协议号调取对应函数       *********************/
@@ -54,4 +55,10 @@ void MessageHandler::receivePersonInfo(QMap<QString, QString> &mapData)
 
     MAINWINDOW->getPersonInfoDialog()->setPersonData(personData);
     MAINWINDOW->getPersonInfoDialog()->showDialog();
+}
+
+void MessageHandler::receiveFriendList(QMap<QString, QString> &mapData)
+{
+    MAINWINDOW->getFriendeManger()->setFriendList(mapData);
+    MAINWINDOW->getFriendeManger()->showWidget();
 }

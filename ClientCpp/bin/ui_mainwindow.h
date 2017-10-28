@@ -77,6 +77,11 @@ public:
 
         splitter = new QSplitter(centralWidget);
         splitter->setObjectName(QStringLiteral("splitter"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(4);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(splitter->sizePolicy().hasHeightForWidth());
+        splitter->setSizePolicy(sizePolicy);
         splitter->setOrientation(Qt::Horizontal);
         layoutWidget = new QWidget(splitter);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
@@ -87,7 +92,12 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         comboBox = new QComboBox(layoutWidget);
         comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setMaximumSize(QSize(220, 16777215));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(comboBox->sizePolicy().hasHeightForWidth());
+        comboBox->setSizePolicy(sizePolicy1);
+        comboBox->setMaximumSize(QSize(200, 16777215));
         comboBox->setStyleSheet(QLatin1String("QComboBox\n"
 "{\n"
 "min-height: 50px;\n"
@@ -115,7 +125,7 @@ public:
 
         verticalLayout->addWidget(comboBox);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Maximum, QSizePolicy::Minimum);
 
         verticalLayout->addItem(horizontalSpacer);
 
@@ -145,7 +155,12 @@ public:
         QTreeWidgetItem *__qtreewidgetitem5 = new QTreeWidgetItem(treeWidget);
         __qtreewidgetitem5->setIcon(0, icon5);
         treeWidget->setObjectName(QStringLiteral("treeWidget"));
-        treeWidget->setMaximumSize(QSize(220, 16777215));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(treeWidget->sizePolicy().hasHeightForWidth());
+        treeWidget->setSizePolicy(sizePolicy2);
+        treeWidget->setMaximumSize(QSize(200, 16777215));
         treeWidget->setStyleSheet(QStringLiteral("*{outline:0px;}"));
 
         verticalLayout->addWidget(treeWidget);
@@ -153,6 +168,11 @@ public:
         splitter->addWidget(layoutWidget);
         widget_2 = new QWidget(splitter);
         widget_2->setObjectName(QStringLiteral("widget_2"));
+        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
+        widget_2->setSizePolicy(sizePolicy3);
         widget_2->setStyleSheet(QStringLiteral("background-image: url(:/image/image/color.png);"));
         verticalLayout_3 = new QVBoxLayout(widget_2);
         verticalLayout_3->setSpacing(0);
@@ -211,6 +231,11 @@ public:
         splitter->addWidget(widget_2);
         widget = new QWidget(splitter);
         widget->setObjectName(QStringLiteral("widget"));
+        QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy4.setHorizontalStretch(1);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
+        widget->setSizePolicy(sizePolicy4);
         widget->setStyleSheet(QStringLiteral("background-color: rgb(220, 220, 220);"));
         splitter->addWidget(widget);
 

@@ -29,8 +29,8 @@ const static int TITLECONTROLWIDTH = 40;
 
 enum NODETEXT
 {
-    USERNAME,
     PERSONINFO,
+    MYFRIEND,
     MYACCOUNT,
     VIP,
     LOGOUT,

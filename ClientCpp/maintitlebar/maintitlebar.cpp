@@ -1,11 +1,13 @@
-#include "titlebar.h"
+#include "maintitlebar.h"
 #include <QStyle>
 #include <QHBoxLayout>
 #include <QDebug>
+#include <QAction>
 #include <QListView>
+#include "globaldef.h"
 
 /***************************            构造函数              ***************************/
-TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
+MainTitleBar::MainTitleBar(QWidget *parent) : QWidget(parent)
 {
     //最大化按钮设置图标
     QPixmap pixMap = this->style()->standardPixmap(QStyle::SP_TitleBarMaxButton);
@@ -23,25 +25,48 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
     closeButton->setIcon(pixMap);
 
     //设置标签
+    titleCombox = new QComboBox(this);
     imgLabel = new QLabel(this);
-    titleLabel = new QLabel(this);
-    titleLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-    titleLabel->setStyleSheet("color:white");
+    spaceLabel = new QLabel(this);
+    spaceLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
-    //设置控件大小
-    imgLabel->setFixedSize(CONTROLWIDTH, CONTROLWIDTH);
+    titleCombox->addItem("个人信息");
+    titleCombox->addItem("我的好友");
+    titleCombox->addItem("我的账户");
+    titleCombox->addItem("会员");
+    titleCombox->addItem("注销当前账户");
+
+    //设置标题栏控件内容
+    imgLabel->setPixmap(QPixmap(":/image/image/image.png"));
+
+    imgLabel->setFixedSize(TITLECONTROLWIDTH , TITLECONTROLWIDTH);
     imgLabel->setScaledContents(true);
 
-    //设置控件大小
-    minButton->setFixedSize(CONTROLWIDTH, CONTROLWIDTH);
-    maxButton->setFixedSize(CONTROLWIDTH, CONTROLWIDTH);
-    closeButton->setFixedSize(CONTROLWIDTH, CONTROLWIDTH);
+    minButton->setFixedSize(TITLECONTROLWIDTH, TITLECONTROLWIDTH);
+    maxButton->setFixedSize(TITLECONTROLWIDTH, TITLECONTROLWIDTH);
+    closeButton->setFixedSize(TITLECONTROLWIDTH, TITLECONTROLWIDTH);
+
+    //云笔记
+    nodeButton = new QPushButton(this);
+    nodeButton->setText("云笔记");
+
+    //云协作
+    teamButton = new QPushButton(this);
+    teamButton->setText("云协作");
+
+    //会员
+    vipButton= new QPushButton(this);
+    vipButton->setText("会员");
 
     //设置布局
     QHBoxLayout *hBoxLayout = new QHBoxLayout(this);
     hBoxLayout->addWidget(imgLabel);
     hBoxLayout->addSpacing(5);
-    hBoxLayout->addWidget(titleLabel);
+    hBoxLayout->addWidget(titleCombox);
+    hBoxLayout->addWidget(nodeButton);
+    hBoxLayout->addWidget(teamButton);
+    hBoxLayout->addWidget(vipButton);
+    hBoxLayout->addWidget(spaceLabel);
     hBoxLayout->addWidget(minButton);
     hBoxLayout->addWidget(maxButton);
     hBoxLayout->addWidget(closeButton);
@@ -64,64 +89,31 @@ TitleBar::TitleBar(QWidget *parent) : QWidget(parent)
     this->initValue();
 }
 
-/***************************            设置标题              ***************************/
-void TitleBar::setTitle(const QString &title)
-{
-    titleLabel->setText(title);
-}
-
-/***************************            设置图标              ***************************/
-void TitleBar::setIcon(const QString &icon)
-{
-    imgLabel->setPixmap(QPixmap(icon));
-}
-
-/***************************            设置按钮              ***************************/
-void TitleBar::subButton(const int &type)
-{
-    if(type == TITLEBAR::MINWIDGET)
-    {
-        SAFEDELETE(minButton);
-    }
-    else if(type == TITLEBAR::MAXWIDGET)
-    {
-        SAFEDELETE(maxButton);
-    }
-    else if(type == TITLEBAR::MAXMINWIDGET)
-    {
-        SAFEDELETE(minButton);
-        SAFEDELETE(maxButton);
-    }
-}
-
 /***************************            初始化              ***************************/
-void TitleBar::initValue()
+void MainTitleBar::initValue()
 {
     //设置样式表
     closeButton->setStyleSheet("background-color:transparent;");
     minButton->setStyleSheet("background-color:transparent;");
     maxButton->setStyleSheet("background-color:transparent;");
+    nodeButton->setStyleSheet("background-color:transparent; color:white;");
+    teamButton->setStyleSheet("background-color:transparent; color:white;");
+    vipButton->setStyleSheet("background-color:transparent;  color:white;");
+    titleCombox->setObjectName("titleCombox");
+    titleCombox->setView(new QListView());
 
     //连接信号与槽
     connect(minButton,   SIGNAL(clicked(bool)), this, SLOT(showMin()));
     connect(maxButton,   SIGNAL(clicked(bool)), this, SLOT(showMax()));
     connect(closeButton, SIGNAL(clicked(bool)), this, SLOT(showClose()));
+    connect(titleCombox, SIGNAL(activated(int)), this, SLOT(receiveIndex(int)));
 
     //按钮点击标志位
     mousePress = false;
-
-    //将该窗口添加到父类窗口中
-    QVBoxLayout *vBoxLayout = new QVBoxLayout(parentWidget);
-
-    vBoxLayout->addWidget(this);
-    vBoxLayout->addStretch();
-    vBoxLayout->setSpacing(0);
-    vBoxLayout->setContentsMargins(0, 0, 0, 0);
-    parentWidget->setLayout(vBoxLayout);
 }
 
 /***************************            最大化              ***************************/
-void TitleBar::showMax()
+void MainTitleBar::showMax()
 {
     static int count = 0;
 
@@ -138,24 +130,36 @@ void TitleBar::showMax()
         maxButton->setIcon(maxPix);
         parentWidget->showNormal();
     }
-
     count ++;
 }
 
 /***************************            最小化              ***************************/
-void TitleBar::showMin()
+void MainTitleBar::showMin()
 {
     parentWidget->showMinimized();
 }
 
 /***************************            关闭                 ***************************/
-void TitleBar::showClose()
+void MainTitleBar::showClose()
 {
     parentWidget->close();
 }
 
+/***************************            接收下标              ***************************/
+void MainTitleBar::receiveIndex(int index)
+{
+    sendIndex(index);
+    titleCombox->setCurrentIndex(0);
+}
+
+/***************************            获取图标Label         ***************************/
+QLabel *MainTitleBar::getImgLabel() const
+{
+    return imgLabel;
+}
+
 /***************************            鼠标点击              ***************************/
-void TitleBar::mousePressEvent(QMouseEvent *event)
+void MainTitleBar::mousePressEvent(QMouseEvent *event)
 {
     if(event->button() == Qt::LeftButton)
     {
@@ -165,13 +169,13 @@ void TitleBar::mousePressEvent(QMouseEvent *event)
 }
 
 /**************************             鼠标释放              ***************************/
-void TitleBar::mouseReleaseEvent(QMouseEvent *event)
+void MainTitleBar::mouseReleaseEvent(QMouseEvent *event)
 {
     mousePress = false;
 }
 
 /**************************             鼠标移动              **************************/
-void TitleBar::mouseMoveEvent(QMouseEvent *event)
+void MainTitleBar::mouseMoveEvent(QMouseEvent *event)
 {
     if(mousePress)
     {

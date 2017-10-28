@@ -141,7 +141,7 @@ void LoginDialog::on_pushButtonLogin_clicked()
 
     this->userName = ui->comboBoxUserName->currentText();
 
-    CLIENT->netSend(Protocol::LOGINREQ, mapData);
+    CLIENT->netSend(Protocol::LOGINREQ, userName, mapData);
 }
 
 /**********************    最小化          *************************/

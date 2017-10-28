@@ -1,14 +1,22 @@
+#****************************************************
+# 作者：YYC
+# 功能：接收消息
+# 日期：2017-10-28
+#****************************************************
+
 from socketserver  import  BaseRequestHandler
 import globaldef
 from protocol import PROTOCOL
 from messagehandler import MessageHandler
 import json
+import time
 
 
 # 处理来自客户端的消息
 class DataHandler(BaseRequestHandler):
     # 客户端列表
     userDict = {}
+    data = {}
 
     # 处理客户端请求
     def handle(self):
@@ -22,13 +30,12 @@ class DataHandler(BaseRequestHandler):
 
             # 获取客户端的IP
             self.address = connSock.getpeername()
-            self.userDict[self.address[1]] = connSock
 
             print("用户", connSock.getpeername(), "进行了连接请求")
 
             while True:
                 # 接收客户端发来的消息
-                jsonStr = self.userDict[self.address[1]].recv(globaldef.DATASIZE).decode()
+                jsonStr = connSock.recv(globaldef.DATASIZE).decode()
 
                 if(len(jsonStr) <= 0):
                     continue
@@ -36,13 +43,17 @@ class DataHandler(BaseRequestHandler):
                 print("接收到用户信息", jsonStr)
 
                 # 读取json包
-                data = self.readJson(jsonStr)
-                self.messageHandler.onCommand(self.protocolNumber, data, self)
+                self.data = self.readJson(jsonStr)
+                self.userDict[self.data.get(globaldef.userName)] = connSock
+                self.messageHandler.onCommand(self.protocolNumber, self.data, self)
 
                 # 如果客户端退出了，则去除该套接字
                 if(self.exit == globaldef.EXIT):
                     self.removeSock()
                     break
+
+                # 休眠0.1秒，减小cpu消耗
+                time.sleep(0.1)
 
         except Exception as e:
             self.removeSock()
@@ -50,9 +61,12 @@ class DataHandler(BaseRequestHandler):
 
     # 去除已经关闭的Socket
     def removeSock(self):
-        print("已关闭...", self.userDict[self.address[1]].getpeername())
+        try:
+            print("已关闭...", self.userDict[self.data.get(globaldef.userName)].getpeername())
 
-        del self.userDict[self.address[1]]
+            del self.userDict[self.data.get(globaldef.userName)]
+        except Exception as e:
+            print(e.args)
 
     # 读取json数据
     def readJson(self, jsonStr):
@@ -78,7 +92,7 @@ class DataHandler(BaseRequestHandler):
 
         print(encodejson)
 
-        self.userDict[self.address[1]].sendall(encodejson.encode())
+        self.userDict[self.data.get(globaldef.userName)].sendall(encodejson.encode())
 
     # 做一个广播
     def netSendAll(self, protocol, dataDictionary):

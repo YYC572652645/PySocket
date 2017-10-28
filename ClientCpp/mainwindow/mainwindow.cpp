@@ -4,7 +4,7 @@
 #include "protocol.h"
 #include "globaldef.h"
 #include "logindialog/logindialog.h"
-#include "titlebar/titlebar.h"
+#include "maintitlebar/maintitlebar.h"
 #include <QVBoxLayout>
 #include "globaldef.h"
 
@@ -19,16 +19,14 @@ MainWindow::MainWindow(QWidget *parent) :
 
     this->setWindowTitle("客户端");
     this->setWindowIcon(QIcon(":/image/image/image.png"));
-    this->setWindowFlags(Qt::FramelessWindowHint);
-
-    personInfoDialog = new PersonInfoDialog(this);
+    this->setWindowFlags(Qt::Window | Qt::FramelessWindowHint);
 
     QPalette paletteColor(palette());
     paletteColor.setColor(QPalette::Background, QColor(200, 200, 200));
     this->setAutoFillBackground(true);
     this->setPalette(paletteColor);
 
-    titleBar = new TitleBar(this);
+    titleBar = new MainTitleBar(this);
     QVBoxLayout *vBoxLayout = new QVBoxLayout(this);
 
     vBoxLayout->addWidget(titleBar);
@@ -46,6 +44,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox->setView(new QListView());
 
     this->initControl();
+
+
+    personInfoDialog = new PersonInfoDialog();
+
+    friendeManger = new FriendManger(this);
 }
 
 /************************   析构函数              ************************/
@@ -64,18 +67,6 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     CLIENT->closeSocket();
-}
-
-/************************   个人信息按钮           ************************/
-void MainWindow::sendPersonInfo()
-{
-    if(!CLIENT->isConnect()) CLIENT->connectServer();
-
-    QMap<QString, QString> mapData;
-
-    mapData[Protocol::userName] = LOGIN->getUserName();
-
-    CLIENT->netSend(Protocol::PERSONINFOREQ, mapData);
 }
 
 /************************   初始化控件            ************************/
@@ -148,9 +139,13 @@ void MainWindow::contextMenuEvent(QContextMenuEvent *event)
 /************************   接收下标              ************************/
 void MainWindow::receiveIndex(int index)
 {
-    if(index == USERNAME)
+    switch(index)
     {
-        sendPersonInfo();
+    case PERSONINFO:  sendPersonInfoReq();break;
+    case MYFRIEND:    sendFriendListReq(); break;
+    case MYACCOUNT:   break;
+    case VIP:         break;
+    case LOGOUT:      break;
     }
 }
 
@@ -216,4 +211,33 @@ void MainWindow::uploadFloderSlot()
 void MainWindow::extendAllDataSlot()
 {
 
+}
+
+FriendManger *MainWindow::getFriendeManger() const
+{
+    return friendeManger;
+}
+
+/************************   获取个人信息             ************************/
+void MainWindow::sendPersonInfoReq()
+{
+    if(!CLIENT->isConnect()) CLIENT->connectServer();
+
+    QMap<QString, QString> mapData;
+
+    mapData[Protocol::userName] = LOGIN->getUserName();
+
+    CLIENT->netSend(Protocol::PERSONINFOREQ, LOGIN->getUserName(), mapData);
+}
+
+/************************   获取好友列表             ************************/
+void MainWindow::sendFriendListReq()
+{
+    if(!CLIENT->isConnect()) CLIENT->connectServer();
+
+    QMap<QString, QString> mapData;
+
+    mapData[Protocol::userName] = LOGIN->getUserName();
+
+    CLIENT->netSend(Protocol::FRIENDLISYREQ, LOGIN->getUserName(), mapData);
 }

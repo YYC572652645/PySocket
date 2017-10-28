@@ -1,3 +1,8 @@
+#****************************************************
+# 作者：YYC
+# 功能：全局定义
+# 日期：2017-10-28
+#****************************************************
 
 FUNSIZE = 100                  # 列表函数长度
 DATASIZE = 4096 * 1024         # 接收消息的最大长度
@@ -8,6 +13,7 @@ PROTOCOLNAME = "protocol"      # 协议
 DATANAME = "data"              # 协议数据
 TABLEUSER = "user"             # user表
 TABLEPERSONDATA = "persondata" # persondata表
+TABLEFRIENDDATA = "friend"      # friend表
 
 #***************************   对应0号和1号协议，登录请求，和登陆数据   ****************************#
 userName  = "username"

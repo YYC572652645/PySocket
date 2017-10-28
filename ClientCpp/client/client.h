@@ -24,7 +24,7 @@ public:
 
     void connectServer();                                           //连接服务器
     void closeSocket();                                             //关闭Socket
-    void netSend(int protocol, QMap<QString, QString> &mapData);    //组合json数据，然后发送
+    void netSend(int protocol, QString userName, QMap<QString, QString> &mapData);    //组合json数据，然后发送
     bool isConnect();                                               //判断是否与服务器连接
 
 public slots:

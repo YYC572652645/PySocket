@@ -6,15 +6,16 @@
 #include "globaldef.h"
 #include "client/client.h"
 #include "protocol.h"
+#include "logindialog/logindialog.h"
 
 /************************   构造函数    ************************/
 PersonInfoDialog::PersonInfoDialog(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::personinfodialog)
 {
     ui->setupUi(this);
-    this->setWindowTitle("个人信息");
-    this->setWindowFlags(Qt::Dialog | Qt::WindowCloseButtonHint);
+
+    this->setWindowFlags(Qt::CoverWindow | Qt::FramelessWindowHint);
 
     QPalette palette = ui->lineFirst->palette();
     palette.setColor(QPalette::Dark, Qt::darkCyan);
@@ -29,6 +30,18 @@ PersonInfoDialog::PersonInfoDialog(QWidget *parent) :
     this->setPalette(paletteColor);
 
     ui->labelPhoto->setScaledContents(true);
+
+    titleBar = new TitleBar(this);
+
+    titleBar->setIcon(":/image/image/image.png");
+    titleBar->setTitle("个人信息");
+    titleBar->subButton(TITLEBAR::MAXMINWIDGET);
+}
+
+/************************   改变事件              ************************/
+void PersonInfoDialog::resizeEvent(QResizeEvent *event)
+{
+    titleBar->resize(this->width(), TitleBar::TITLEBARHEIGHT);
 }
 
 /************************   析构函数    ************************/
@@ -56,7 +69,7 @@ void PersonInfoDialog::showDialog()
     photoImage = QImage::fromData(QByteArray::fromHex(personData.photo.toLatin1()));
     ui->labelPhoto->setPixmap(QPixmap::fromImage(photoImage));
 
-    this->exec();
+    this->show();
 }
 
 /************************   更换头像    ************************/
@@ -101,7 +114,7 @@ void PersonInfoDialog::on_pushButtonSave_clicked()
     mapData[Protocol::phone]          = ui->lineEditPhone->text();
     mapData[Protocol::photo]          = byteArray.toHex();
 
-    CLIENT->netSend(Protocol::SAVEPERSONREQ, mapData);
+    CLIENT->netSend(Protocol::SAVEPERSONREQ, LOGIN->getUserName(), mapData);
 }
 
 /************************   取消按钮    ************************/

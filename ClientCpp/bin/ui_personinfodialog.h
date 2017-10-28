@@ -13,22 +13,27 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_personinfodialog
 {
 public:
+    QWidget *centralWidget;
     QVBoxLayout *verticalLayout_2;
+    QSpacerItem *horizontalSpacer_2;
+    QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
     QLabel *labelPhoto;
@@ -64,27 +69,37 @@ public:
     QPushButton *pushButtonSave;
     QPushButton *pushButtonCancel;
 
-    void setupUi(QDialog *personinfodialog)
+    void setupUi(QMainWindow *personinfodialog)
     {
         if (personinfodialog->objectName().isEmpty())
             personinfodialog->setObjectName(QStringLiteral("personinfodialog"));
         personinfodialog->resize(389, 484);
         personinfodialog->setMinimumSize(QSize(389, 484));
         personinfodialog->setMaximumSize(QSize(389, 484));
-        verticalLayout_2 = new QVBoxLayout(personinfodialog);
+        centralWidget = new QWidget(personinfodialog);
+        centralWidget->setObjectName(QStringLiteral("centralWidget"));
+        verticalLayout_2 = new QVBoxLayout(centralWidget);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        horizontalSpacer_2 = new QSpacerItem(40, 25, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        verticalLayout_2->addItem(horizontalSpacer_2);
+
+        horizontalSpacer = new QSpacerItem(40, 25, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        verticalLayout_2->addItem(horizontalSpacer);
+
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        labelPhoto = new QLabel(personinfodialog);
+        labelPhoto = new QLabel(centralWidget);
         labelPhoto->setObjectName(QStringLiteral("labelPhoto"));
         labelPhoto->setMinimumSize(QSize(60, 60));
         labelPhoto->setMaximumSize(QSize(60, 60));
 
         horizontalLayout->addWidget(labelPhoto);
 
-        pushButtonPhoto = new QPushButton(personinfodialog);
+        pushButtonPhoto = new QPushButton(centralWidget);
         pushButtonPhoto->setObjectName(QStringLiteral("pushButtonPhoto"));
         pushButtonPhoto->setMinimumSize(QSize(90, 0));
         pushButtonPhoto->setMaximumSize(QSize(90, 16777215));
@@ -95,14 +110,14 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        line_4 = new QFrame(personinfodialog);
+        line_4 = new QFrame(centralWidget);
         line_4->setObjectName(QStringLiteral("line_4"));
         line_4->setFrameShape(QFrame::VLine);
         line_4->setFrameShadow(QFrame::Sunken);
 
         verticalLayout->addWidget(line_4);
 
-        lineFirst = new QFrame(personinfodialog);
+        lineFirst = new QFrame(centralWidget);
         lineFirst->setObjectName(QStringLiteral("lineFirst"));
         lineFirst->setMinimumSize(QSize(0, 20));
         lineFirst->setFrameShape(QFrame::HLine);
@@ -112,12 +127,12 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        label = new QLabel(personinfodialog);
+        label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
 
         horizontalLayout_3->addWidget(label);
 
-        lineEditName = new QLineEdit(personinfodialog);
+        lineEditName = new QLineEdit(centralWidget);
         lineEditName->setObjectName(QStringLiteral("lineEditName"));
 
         horizontalLayout_3->addWidget(lineEditName);
@@ -127,12 +142,12 @@ public:
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        label_2 = new QLabel(personinfodialog);
+        label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         horizontalLayout_4->addWidget(label_2);
 
-        lineEditSex = new QLineEdit(personinfodialog);
+        lineEditSex = new QLineEdit(centralWidget);
         lineEditSex->setObjectName(QStringLiteral("lineEditSex"));
 
         horizontalLayout_4->addWidget(lineEditSex);
@@ -142,12 +157,12 @@ public:
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        label_3 = new QLabel(personinfodialog);
+        label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
 
         horizontalLayout_5->addWidget(label_3);
 
-        lineEditAddress = new QLineEdit(personinfodialog);
+        lineEditAddress = new QLineEdit(centralWidget);
         lineEditAddress->setObjectName(QStringLiteral("lineEditAddress"));
 
         horizontalLayout_5->addWidget(lineEditAddress);
@@ -155,7 +170,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_5);
 
-        lineSecond = new QFrame(personinfodialog);
+        lineSecond = new QFrame(centralWidget);
         lineSecond->setObjectName(QStringLiteral("lineSecond"));
         lineSecond->setMinimumSize(QSize(0, 20));
         lineSecond->setFrameShape(QFrame::HLine);
@@ -165,12 +180,12 @@ public:
 
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        label_4 = new QLabel(personinfodialog);
+        label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
 
         horizontalLayout_6->addWidget(label_4);
 
-        textEditPersonInfo = new QTextEdit(personinfodialog);
+        textEditPersonInfo = new QTextEdit(centralWidget);
         textEditPersonInfo->setObjectName(QStringLiteral("textEditPersonInfo"));
 
         horizontalLayout_6->addWidget(textEditPersonInfo);
@@ -178,7 +193,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_6);
 
-        lineThird = new QFrame(personinfodialog);
+        lineThird = new QFrame(centralWidget);
         lineThird->setObjectName(QStringLiteral("lineThird"));
         lineThird->setMinimumSize(QSize(0, 20));
         lineThird->setFrameShape(QFrame::HLine);
@@ -188,12 +203,12 @@ public:
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        label_5 = new QLabel(personinfodialog);
+        label_5 = new QLabel(centralWidget);
         label_5->setObjectName(QStringLiteral("label_5"));
 
         horizontalLayout_7->addWidget(label_5);
 
-        lineEditRealName = new QLineEdit(personinfodialog);
+        lineEditRealName = new QLineEdit(centralWidget);
         lineEditRealName->setObjectName(QStringLiteral("lineEditRealName"));
 
         horizontalLayout_7->addWidget(lineEditRealName);
@@ -203,12 +218,12 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        label_6 = new QLabel(personinfodialog);
+        label_6 = new QLabel(centralWidget);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         horizontalLayout_8->addWidget(label_6);
 
-        lineEditEmail = new QLineEdit(personinfodialog);
+        lineEditEmail = new QLineEdit(centralWidget);
         lineEditEmail->setObjectName(QStringLiteral("lineEditEmail"));
 
         horizontalLayout_8->addWidget(lineEditEmail);
@@ -218,12 +233,12 @@ public:
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
-        label_7 = new QLabel(personinfodialog);
+        label_7 = new QLabel(centralWidget);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         horizontalLayout_9->addWidget(label_7);
 
-        lineEditPhone = new QLineEdit(personinfodialog);
+        lineEditPhone = new QLineEdit(centralWidget);
         lineEditPhone->setObjectName(QStringLiteral("lineEditPhone"));
 
         horizontalLayout_9->addWidget(lineEditPhone);
@@ -231,14 +246,14 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_9);
 
-        line = new QFrame(personinfodialog);
+        line = new QFrame(centralWidget);
         line->setObjectName(QStringLiteral("line"));
         line->setFrameShape(QFrame::VLine);
         line->setFrameShadow(QFrame::Sunken);
 
         verticalLayout->addWidget(line);
 
-        lineFourth = new QFrame(personinfodialog);
+        lineFourth = new QFrame(centralWidget);
         lineFourth->setObjectName(QStringLiteral("lineFourth"));
         lineFourth->setMinimumSize(QSize(0, 20));
         lineFourth->setFrameShape(QFrame::HLine);
@@ -248,12 +263,12 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        pushButtonSave = new QPushButton(personinfodialog);
+        pushButtonSave = new QPushButton(centralWidget);
         pushButtonSave->setObjectName(QStringLiteral("pushButtonSave"));
 
         horizontalLayout_2->addWidget(pushButtonSave);
 
-        pushButtonCancel = new QPushButton(personinfodialog);
+        pushButtonCancel = new QPushButton(centralWidget);
         pushButtonCancel->setObjectName(QStringLiteral("pushButtonCancel"));
 
         horizontalLayout_2->addWidget(pushButtonCancel);
@@ -264,15 +279,16 @@ public:
 
         verticalLayout_2->addLayout(verticalLayout);
 
+        personinfodialog->setCentralWidget(centralWidget);
 
         retranslateUi(personinfodialog);
 
         QMetaObject::connectSlotsByName(personinfodialog);
     } // setupUi
 
-    void retranslateUi(QDialog *personinfodialog)
+    void retranslateUi(QMainWindow *personinfodialog)
     {
-        personinfodialog->setWindowTitle(QApplication::translate("personinfodialog", "Dialog", 0));
+        personinfodialog->setWindowTitle(QApplication::translate("personinfodialog", "MainWindow", 0));
         labelPhoto->setText(QApplication::translate("personinfodialog", "\345\244\264\345\203\217", 0));
         pushButtonPhoto->setText(QApplication::translate("personinfodialog", "\346\233\264\346\215\242\345\244\264\345\203\217", 0));
         label->setText(QApplication::translate("personinfodialog", "    \346\230\265\347\247\260\357\274\232", 0));
