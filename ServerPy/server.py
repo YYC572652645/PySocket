@@ -4,6 +4,7 @@ from protocol import PROTOCOL
 from messagehandler import MessageHandler
 import json
 
+
 # 处理来自客户端的消息
 class DataHandler(BaseRequestHandler):
     # 客户端列表
