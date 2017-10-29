@@ -1,9 +1,12 @@
 #include "friendmanger.h"
 #include "ui_friendmanger.h"
+#include "globaldef.h"
 
 FriendManger::FriendManger(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::friendmanger)
+    QMainWindow(parent)
+  ,titleBar(NULL)
+  ,addFriend(NULL)
+  ,ui(new Ui::friendmanger)
 {
     ui->setupUi(this);
 
@@ -21,7 +24,7 @@ void FriendManger::showWidget()
 }
 
 /*******************   设置好友列表          ***********************/
-void FriendManger::setFriendList(const QMap<QString, QString> &mapData)
+void FriendManger::setData(const QMap<QString, QString> &mapData)
 {
     ui->treeWidget->clear();
     for(auto iter = mapData.begin(); iter != mapData.end(); iter ++)
@@ -41,11 +44,14 @@ void FriendManger::initControl()
     //新建标题栏
     titleBar = new TitleBar(this);
 
-    titleBar->setIcon(":/image/image/image.png");
+    titleBar->setIcon(APPICOPATH);
     titleBar->setTitle("好友");
     titleBar->subButton(TITLEBAR::MAXMINWIDGET);
 
     ui->labelTitle->setAlignment(Qt::AlignCenter);
+
+    //添加好友
+    addFriend = new AddFriend(this);
 
     //设置单行选中
     ui->treeWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -70,4 +76,14 @@ void FriendManger::initControl()
 void FriendManger::resizeEvent(QResizeEvent *event)
 {
     titleBar->resize(this->width(), TitleBar::TITLEBARHEIGHT);
+}
+
+void FriendManger::on_pushButtonAddFriend_clicked()
+{
+    addFriend->show();
+}
+
+AddFriend *FriendManger::getAddFriend() const
+{
+    return addFriend;
 }

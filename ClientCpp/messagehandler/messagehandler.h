@@ -44,6 +44,7 @@ private:
     void receiveLoginData(QMap<QString, QString> &mapData);
     void receivePersonInfo(QMap<QString, QString> &mapData);
     void receiveFriendList(QMap<QString, QString> &mapData);
+    void receiveFriendInfo(QMap<QString, QString> &mapData);
 };
 
 #endif // MESSAGEHANDLER_H

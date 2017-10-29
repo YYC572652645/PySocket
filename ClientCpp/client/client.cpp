@@ -91,7 +91,7 @@ void Client::netSend(int protocol, QString userName, QMap<QString, QString> &map
     QJsonObject jsonData;
 
     jsonData.insert("protocol", QString::number(protocol));
-    jsonData.insert("username", userName);
+    jsonData.insert("user", userName);
 
     for(auto iter = mapData.begin(); iter != mapData.end(); ++ iter)
     {

@@ -17,8 +17,10 @@ enum TCPPROTOCOL
 
 
     /*****************   好友相关   ***************/
-    FRIENDLISYREQ  = 10,  //好友列表请求
-    FRIENDLISTINFO = 11,  //好友列表信息
+    FRIENDLISYREQ  = 10,   //好友列表请求
+    FRIENDLISTINFO = 11,   //好友列表信息
+    SELECTFRIENDREQ = 12,  //查找好友
+    SELECTFRIENDINFO = 13, //查找好友信息
 };
 
 }

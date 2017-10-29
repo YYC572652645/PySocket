@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "titlebar/titlebar.h"
+#include "addfriend/addfriend.h"
 
 namespace Ui {
 class friendmanger;
@@ -17,11 +18,17 @@ public:
     ~FriendManger();
 
     void showWidget();
-    void setFriendList(const QMap<QString, QString> &mapData);
+    void setData(const QMap<QString, QString> &mapData);
+
+    AddFriend *getAddFriend() const;
+
+private slots:
+    void on_pushButtonAddFriend_clicked();
 
 private:
     Ui::friendmanger *ui;
     TitleBar * titleBar;
+    AddFriend * addFriend;
 
     void initControl();
     void resizeEvent(QResizeEvent *event);

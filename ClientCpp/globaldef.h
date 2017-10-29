@@ -1,9 +1,15 @@
 #ifndef GLOBALDEF_H
 #define GLOBALDEF_H
 #include <QString>
+#include "client/client.h"
+#include "mainwindow/mainwindow.h"
+#include "logindialog/logindialog.h"
+#include "protocol.h"
 
 #define MSGSIZE  100
 #define BUFFERSIZE 4096 * 1024
+
+#define DATA(str) new QTableWidgetItem(str)
 
 #define LOADQSS(qssFile)                      \
 {                                             \
@@ -26,6 +32,9 @@ const static int posMaxY=40;
 
 const static int TITLEBARHEIGHT = 50;
 const static int TITLECONTROLWIDTH = 40;
+
+
+const static QString APPICOPATH = ":/image/image/image.png";
 
 enum NODETEXT
 {

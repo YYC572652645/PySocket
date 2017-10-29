@@ -15,6 +15,8 @@ class MainWindow;
 class MainTitleBar;
 
 #define MAINWINDOW MainWindow::getInstance()
+#define PERSONINFODIALOG MainWindow::getInstance()->getPersonInfoDialog()
+#define FRIENDMANGER MainWindow::getInstance()->getFriendeManger()
 
 class MainWindow : public QMainWindow
 {

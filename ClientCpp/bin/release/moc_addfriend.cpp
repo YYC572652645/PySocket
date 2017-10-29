@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'friendmanger.h'
+** Meta object code from reading C++ file 'addfriend.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.6.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../friendmanger/friendmanger.h"
+#include "../../friendmanger/addfriend/addfriend.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'friendmanger.h' doesn't include <QObject>."
+#error "The header file 'addfriend.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.6.1. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,28 +18,28 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_FriendManger_t {
+struct qt_meta_stringdata_AddFriend_t {
     QByteArrayData data[3];
-    char stringdata0[45];
+    char stringdata0[39];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_FriendManger_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_AddFriend_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_FriendManger_t qt_meta_stringdata_FriendManger = {
+static const qt_meta_stringdata_AddFriend_t qt_meta_stringdata_AddFriend = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "FriendManger"
-QT_MOC_LITERAL(1, 13, 30), // "on_pushButtonAddFriend_clicked"
-QT_MOC_LITERAL(2, 44, 0) // ""
+QT_MOC_LITERAL(0, 0, 9), // "AddFriend"
+QT_MOC_LITERAL(1, 10, 27), // "on_pushButtonSelect_clicked"
+QT_MOC_LITERAL(2, 38, 0) // ""
 
     },
-    "FriendManger\0on_pushButtonAddFriend_clicked\0"
+    "AddFriend\0on_pushButtonSelect_clicked\0"
     ""
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_FriendManger[] = {
+static const uint qt_meta_data_AddFriend[] = {
 
  // content:
        7,       // revision
@@ -61,41 +61,41 @@ static const uint qt_meta_data_FriendManger[] = {
        0        // eod
 };
 
-void FriendManger::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void AddFriend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        FriendManger *_t = static_cast<FriendManger *>(_o);
+        AddFriend *_t = static_cast<AddFriend *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButtonAddFriend_clicked(); break;
+        case 0: _t->on_pushButtonSelect_clicked(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-const QMetaObject FriendManger::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_FriendManger.data,
-      qt_meta_data_FriendManger,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject AddFriend::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_AddFriend.data,
+      qt_meta_data_AddFriend,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *FriendManger::metaObject() const
+const QMetaObject *AddFriend::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *FriendManger::qt_metacast(const char *_clname)
+void *AddFriend::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_FriendManger.stringdata0))
-        return static_cast<void*>(const_cast< FriendManger*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_AddFriend.stringdata0))
+        return static_cast<void*>(const_cast< AddFriend*>(this));
+    return QWidget::qt_metacast(_clname);
 }
 
-int FriendManger::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int AddFriend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

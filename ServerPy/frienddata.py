@@ -30,12 +30,25 @@ class FriendData():
     def subFriend(self):
         pass
 
-    # 查询好友
+    # 查询好友列表
     def selectFriends(self, userName):
         try:
             self.dataConn()
 
             str = "select * from " + globaldef.TABLEFRIENDDATA +  "  where userFirst = '" + userName + "';"
+            data = self.cursor.execute(str)
+            self.conn.commit()
+            return data
+        except Exception as e:
+            print(e.args)
+            return None
+
+    # 查询好友列表
+    def selectFriend(self, userName):
+        try:
+            self.dataConn()
+
+            str = "select username from " + globaldef.TABLEUSER + "  where username like '%" + userName + "%';"
             data = self.cursor.execute(str)
             self.conn.commit()
             return data

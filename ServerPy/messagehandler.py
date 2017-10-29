@@ -24,6 +24,7 @@ class MessageHandler():
         self.commandList[PROTOCOL.PERSONINFOREQ] = self.receivePersonInfoRequest
         self.commandList[PROTOCOL.SAVEPERSONREQ] = self.receiveSavePersonRequest
         self.commandList[PROTOCOL.FRIENDLISTREQ] = self.friendListRequest
+        self.commandList[PROTOCOL.SELECTFRIENDREQ] = self.selectFriendRequest
 
     # 所有接收客户端数据函数的调用
     def onCommand(self, protocolNumber, dict, sock):
@@ -85,6 +86,18 @@ class MessageHandler():
                 sendDict[item[2]] = item[2]
 
         sock.netSend(PROTOCOL.FRIENDLISTINFO, sendDict)
+
+    # 查找好友请求
+    def selectFriendRequest(self, dict, sock):
+        data = self.friendeData.selectFriend(dict.get(globaldef.userName))
+
+        sendDict = {}
+
+        if(data != None):
+            for item in data:
+                sendDict[item[0]] = item[0]
+
+        sock.netSend(PROTOCOL.SELECTFRIENDINFO, sendDict)
 
     # 添加好友请求
     def addFriendRequest(self, dict, sock):

@@ -30,8 +30,8 @@ public:
     explicit PersonInfoDialog(QWidget *parent = 0);
     ~PersonInfoDialog();
 
-    void showDialog();                           //显示当前窗口
-    void setPersonData(const PersonData &value); //设置个人信息
+    void showDialog();                                   //显示当前窗口
+    void setData(const QMap<QString, QString> &mapData); //设置个人信息
 
 private slots:
     void on_pushButtonPhoto_clicked();           //更换头像

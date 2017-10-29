@@ -44,7 +44,7 @@ class DataHandler(BaseRequestHandler):
 
                 # 读取json包
                 self.data = self.readJson(jsonStr)
-                self.userDict[self.data.get(globaldef.userName)] = connSock
+                self.userDict[self.data.get(globaldef.user)] = connSock
                 self.messageHandler.onCommand(self.protocolNumber, self.data, self)
 
                 # 如果客户端退出了，则去除该套接字
@@ -62,9 +62,9 @@ class DataHandler(BaseRequestHandler):
     # 去除已经关闭的Socket
     def removeSock(self):
         try:
-            print("已关闭...", self.userDict[self.data.get(globaldef.userName)].getpeername())
+            print("已关闭...", self.userDict[self.data.get(globaldef.user)].getpeername())
 
-            del self.userDict[self.data.get(globaldef.userName)]
+            del self.userDict[self.data.get(globaldef.user)]
         except Exception as e:
             print(e.args)
 
@@ -92,7 +92,7 @@ class DataHandler(BaseRequestHandler):
 
         print(encodejson)
 
-        self.userDict[self.data.get(globaldef.userName)].sendall(encodejson.encode())
+        self.userDict[self.data.get(globaldef.user)].sendall(encodejson.encode())
 
     # 做一个广播
     def netSendAll(self, protocol, dataDictionary):

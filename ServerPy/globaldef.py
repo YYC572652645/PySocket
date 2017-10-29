@@ -19,6 +19,7 @@ TABLEFRIENDDATA = "friend"      # friend表
 userName  = "username"
 passWord  = "password"
 countData = "countData"
+user = "user"
 
 #***************************   对应3号和4号协议，登录请求，和登陆数据   ****************************#
 personUserName  = "username"

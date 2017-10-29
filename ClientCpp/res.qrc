@@ -28,6 +28,7 @@
         <file>image/color.png</file>
         <file>image/Btn_Return_Icon.png</file>
         <file>image/folder.png</file>
+        <file>image/addto.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file>qss/style.qss</file>

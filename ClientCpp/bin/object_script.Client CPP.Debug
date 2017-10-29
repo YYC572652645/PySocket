@@ -8,6 +8,7 @@ INPUT(
 ./debug\titlebar.o
 ./debug\maintitlebar.o
 ./debug\friendmanger.o
+./debug\addfriend.o
 ./debug\qrc_res.o
 ./debug\moc_client.o
 ./debug\moc_logindialog.o
@@ -16,4 +17,5 @@ INPUT(
 ./debug\moc_titlebar.o
 ./debug\moc_maintitlebar.o
 ./debug\moc_friendmanger.o
+./debug\moc_addfriend.o
 );

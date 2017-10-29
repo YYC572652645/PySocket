@@ -17,11 +17,11 @@ class PROTOCOL:
     #*************   好友相关   *************
     FRIENDLISTREQ = 10    # 好友列表请求
     FRIENDLISTINFO = 11    # 好友列表信息
-    ADDFRIENDREQ  = 12     # 添加好友
-    ADDFRIENDINFO = 13     # 添加好友回馈
-    SUBFRIENDREQ  = 14     # 删除好友
-    SUBFRIENDINFO = 15     # 删除好友回馈
-    SELECTFRIENDREQ = 16   # 查询好友
-    SELECTFRIENDINFO = 17  # 查询好友回馈
+    SELECTFRIENDREQ = 12  #查找好友
+    SELECTFRIENDINFO = 13 #查找好友信息
+    ADDFRIENDREQ  = 14     # 添加好友
+    ADDFRIENDINFO = 15     # 添加好友回馈
+    SUBFRIENDREQ  = 16     # 删除好友
+    SUBFRIENDINFO = 17     # 删除好友回馈
 
 

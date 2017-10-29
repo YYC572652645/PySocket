@@ -51,9 +51,17 @@ PersonInfoDialog::~PersonInfoDialog()
 }
 
 /************************   设置个人信息    ************************/
-void PersonInfoDialog::setPersonData(const PersonData &value)
+void PersonInfoDialog::setData(const QMap<QString, QString> &mapData)
 {
-    personData = value;
+    personData.personUserName = mapData[Protocol::personUserName];
+    personData.name           = mapData[Protocol::name];
+    personData.sex            = mapData[Protocol::sex];
+    personData.address        = mapData[Protocol::address];
+    personData.personInfo     = mapData[Protocol::personInfo];
+    personData.realName       = mapData[Protocol::realName];
+    personData.email          = mapData[Protocol::email];
+    personData.phone          = mapData[Protocol::phone];
+    personData.photo          = mapData[Protocol::photo];
 }
 
 /************************   显示窗口    ************************/

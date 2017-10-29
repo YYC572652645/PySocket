@@ -8,6 +8,7 @@ INPUT(
 ./release\titlebar.o
 ./release\maintitlebar.o
 ./release\friendmanger.o
+./release\addfriend.o
 ./release\qrc_res.o
 ./release\moc_client.o
 ./release\moc_logindialog.o
@@ -16,4 +17,5 @@ INPUT(
 ./release\moc_titlebar.o
 ./release\moc_maintitlebar.o
 ./release\moc_friendmanger.o
+./release\moc_addfriend.o
 );

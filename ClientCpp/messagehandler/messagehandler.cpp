@@ -12,6 +12,7 @@ MessageHandler::MessageHandler()
     dataMessageList[Protocol::LOGININFO]  = DataMessage("logindata", &MessageHandler::receiveLoginData);
     dataMessageList[Protocol::PERSONINFO] = DataMessage("personinfo", &MessageHandler::receivePersonInfo);
     dataMessageList[Protocol::FRIENDLISTINFO] = DataMessage("friendinfo", &MessageHandler::receiveFriendList);
+    dataMessageList[Protocol::SELECTFRIENDINFO] = DataMessage("friendselectinfo", &MessageHandler::receiveFriendInfo);
 }
 
 /*************************   根据协议号调取对应函数       *********************/
@@ -40,25 +41,19 @@ void MessageHandler::receiveLoginData(QMap<QString, QString> &mapData)
 /*************************   接收到个人信息          *********************/
 void MessageHandler::receivePersonInfo(QMap<QString, QString> &mapData)
 {
-    PersonData personData;
-
-    personData.personUserName = mapData[Protocol::personUserName];
-    personData.name           = mapData[Protocol::name];
-    personData.sex            = mapData[Protocol::sex];
-    personData.address        = mapData[Protocol::address];
-    personData.personInfo     = mapData[Protocol::personInfo];
-    personData.realName       = mapData[Protocol::realName];
-    personData.email          = mapData[Protocol::email];
-    personData.phone          = mapData[Protocol::phone];
-    personData.photo          = mapData[Protocol::photo];
-
-
-    MAINWINDOW->getPersonInfoDialog()->setPersonData(personData);
-    MAINWINDOW->getPersonInfoDialog()->showDialog();
+    PERSONINFODIALOG->setData(mapData);
+    PERSONINFODIALOG->showDialog();
 }
 
+/*************************   接收好友列表          *********************/
 void MessageHandler::receiveFriendList(QMap<QString, QString> &mapData)
 {
-    MAINWINDOW->getFriendeManger()->setFriendList(mapData);
-    MAINWINDOW->getFriendeManger()->showWidget();
+    FRIENDMANGER->setData(mapData);
+    FRIENDMANGER->showWidget();
+}
+
+/*************************   接收查询好友信息          *********************/
+void MessageHandler::receiveFriendInfo(QMap<QString, QString> &mapData)
+{
+    FRIENDMANGER->getAddFriend()->setData(mapData);
 }
