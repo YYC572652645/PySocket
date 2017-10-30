@@ -8,6 +8,14 @@
 namespace Ui {
 class friendmanger;
 }
+typedef struct MessageData
+{
+    QString userName;
+    QString textContent;
+    QString font;
+    QString fontSize;
+    QString fontColor;
+}MessageData;
 
 class FriendManger : public QMainWindow
 {
@@ -25,18 +33,25 @@ public:
 
 private slots:
     void on_pushButtonAddFriend_clicked();
-
     void on_pushButtonSend_clicked();
-
     void on_treeWidget_doubleClicked(const QModelIndex &index);
+
+    void on_pushButtonColor_clicked();
+
+    void on_fontComboBoxFont_currentIndexChanged(const QString &arg1);
+
+    void on_comboBoxSize_activated(const QString &arg1);
 
 private:
     Ui::friendmanger *ui;
     TitleBar * titleBar;
     AddFriend * addFriend;
     QString selectUser;
+    QColor fontColor;
 
     void initControl();
+    void setText(const MessageData &messageData);
+    void setTextEdit();
     void resizeEvent(QResizeEvent *event);
 };
 

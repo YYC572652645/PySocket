@@ -1,6 +1,7 @@
 #include "friendmanger.h"
 #include "ui_friendmanger.h"
 #include "globaldef.h"
+#include <QColorDialog>
 
 FriendManger::FriendManger(QWidget *parent) :
     QMainWindow(parent)
@@ -37,7 +38,17 @@ void FriendManger::setData(const QMap<QString, QString> &mapData)
 
 void FriendManger::setMessage(const QMap<QString, QString> &mapData)
 {
-    ui->textEditContent->setText(mapData[Protocol::sendContext]);
+    selectUser = mapData.value(Protocol::user);
+
+    MessageData messageData;
+
+    messageData.userName    = mapData.value(Protocol::user);
+    messageData.font        = mapData.value(Protocol::font);
+    messageData.fontSize    = mapData.value(Protocol::fontSize);
+    messageData.fontColor   = mapData.value(Protocol::fontColor);
+    messageData.textContent = mapData.value(Protocol::sendContext);
+
+    this->setText(messageData);
 }
 
 /*******************   初始化控件          ***********************/
@@ -74,6 +85,20 @@ void FriendManger::initControl()
 
     //去掉表头
     ui->treeWidget->header()->setVisible(false);
+
+    fontColor = QColor(0, 0, 0);
+}
+
+void FriendManger::setText(const MessageData &messageData)
+{
+    ui->textBrowserContent->setTextColor(Qt::blue);
+    ui->textBrowserContent->setCurrentFont(QFont("ZYsong", 14, true));
+    ui->textBrowserContent->append(" [" + messageData.userName + "]   " + QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"));
+
+
+    ui->textBrowserContent->setTextColor(QColor::fromRgb(messageData.fontColor.toUInt()));
+    ui->textBrowserContent->setCurrentFont(QFont(messageData.font, messageData.fontSize.toInt()));
+    ui->textBrowserContent->append(messageData.textContent);
 }
 
 /************************   改变事件              ************************/
@@ -88,6 +113,7 @@ void FriendManger::on_pushButtonAddFriend_clicked()
     addFriend->show();
 }
 
+/************************   获取添加好友对象        ************************/
 AddFriend *FriendManger::getAddFriend() const
 {
     return addFriend;
@@ -102,8 +128,23 @@ void FriendManger::on_pushButtonSend_clicked()
 
     mapData[Protocol::sendContext] = ui->textEditSendText->toPlainText();
     mapData[Protocol::userName] = selectUser;
+    mapData[Protocol::font] = ui->fontComboBoxFont->currentFont().toString();
+    mapData[Protocol::fontSize] = ui->comboBoxSize->currentText();
+    mapData[Protocol::fontColor] = QString::number(fontColor.rgb());
 
     CLIENT->netSend(Protocol::SENDMESSAGEREQ, LOGIN->getUserName(), mapData);
+
+    MessageData messageData;
+
+    messageData.userName = LOGIN->getUserName();
+    messageData.font = ui->fontComboBoxFont->currentFont().toString();
+    messageData.fontSize = ui->comboBoxSize->currentText();
+    messageData.fontColor = QString::number(fontColor.rgb());
+    messageData.textContent = ui->textEditSendText->toPlainText();
+
+    this->setText(messageData);
+
+    ui->textEditSendText->clear();
 }
 
 /************************   双击树形控件              ************************/
@@ -111,3 +152,46 @@ void FriendManger::on_treeWidget_doubleClicked(const QModelIndex &index)
 {
     selectUser = ui->treeWidget->currentItem()->text(0);
 }
+
+/************************   字体颜色              ************************/
+void FriendManger::on_pushButtonColor_clicked()
+{
+    QColor color = QColorDialog::getColor(Qt::black, this);
+
+    if (color.isValid())  fontColor = color;
+
+    QPalette palette = ui->pushButtonColor->palette();
+    palette.setColor(QPalette::Button, color);
+    ui->pushButtonColor->setPalette(palette);
+    ui->pushButtonColor->setAutoFillBackground(true);
+    ui->pushButtonColor->setFlat(true);
+
+    this->setTextEdit();
+}
+
+/************************   字体改变              ************************/
+void FriendManger::on_fontComboBoxFont_currentIndexChanged(const QString &arg1)
+{
+this->setTextEdit();
+}
+
+/************************   字体大小              ************************/
+void FriendManger::on_comboBoxSize_activated(const QString &arg1)
+{
+    this->setTextEdit();
+}
+
+/************************   设置文本框              ************************/
+void FriendManger::setTextEdit()
+{
+    QFont font = ui->fontComboBoxFont->currentFont();
+
+    font.setPointSize(ui->comboBoxSize->currentText().toInt());
+
+    ui->textEditSendText->setFont(font);
+
+    ui->textEditSendText->setTextColor(fontColor);
+
+    ui->textEditSendText->setTextColor(fontColor);
+}
+

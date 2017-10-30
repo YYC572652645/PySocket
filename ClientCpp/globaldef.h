@@ -55,18 +55,22 @@ const static QString passWord = "password";
 
 /***************************   对应3号和4号协议，个人信息请求，和个人信息数据   ****************************/
 const static QString personUserName  = "username";
-const static QString name  = "name";
-const static QString sex = "sex";
-const static QString address = "address";
-const static QString personInfo = "personinfo";
-const static QString realName = "realname";
-const static QString email = "email";
-const static QString phone = "phone";
-const static QString photo = "photo";
+const static QString name            = "name";
+const static QString sex             = "sex";
+const static QString address         = "address";
+const static QString personInfo      = "personinfo";
+const static QString realName        = "realname";
+const static QString email           = "email";
+const static QString phone           = "phone";
+const static QString photo           = "photo";
 
 
 /***************************   好友相关   ****************************/
 const static QString sendContext  = "text";
+const static QString user = "user";
+const static QString font = "font";
+const static QString fontSize = "fontSize";
+const static QString fontColor = "fontColor";
 }
 
 

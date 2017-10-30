@@ -13,6 +13,8 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QFontComboBox>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -22,6 +24,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -50,12 +53,13 @@ public:
     QWidget *widget;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_3;
-    QTextEdit *textEditContent;
+    QTextBrowser *textBrowserContent;
     QFrame *frame;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
-    QPushButton *pushButtonFont;
-    QPushButton *pushButtonFile;
+    QFontComboBox *fontComboBoxFont;
+    QComboBox *comboBoxSize;
+    QPushButton *pushButtonColor;
     QSpacerItem *horizontalSpacer_2;
     QTextEdit *textEditSendText;
     QHBoxLayout *horizontalLayout_2;
@@ -99,6 +103,7 @@ public:
         widget_2->setSizePolicy(sizePolicy);
         verticalLayout_5 = new QVBoxLayout(widget_2);
         verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         labelTitle = new QLabel(widget_2);
@@ -155,34 +160,41 @@ public:
         widget->setSizePolicy(sizePolicy1);
         verticalLayout_8 = new QVBoxLayout(widget);
         verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
+        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        textEditContent = new QTextEdit(widget);
-        textEditContent->setObjectName(QStringLiteral("textEditContent"));
+        textBrowserContent = new QTextBrowser(widget);
+        textBrowserContent->setObjectName(QStringLiteral("textBrowserContent"));
 
-        verticalLayout_3->addWidget(textEditContent);
+        verticalLayout_3->addWidget(textBrowserContent);
 
         frame = new QFrame(widget);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setStyleSheet(QLatin1String("background-color:#2c3e50;\n"
-"color:white;"));
+        frame->setStyleSheet(QStringLiteral(""));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         verticalLayout_2 = new QVBoxLayout(frame);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        pushButtonFont = new QPushButton(frame);
-        pushButtonFont->setObjectName(QStringLiteral("pushButtonFont"));
-        pushButtonFont->setStyleSheet(QStringLiteral("color:white;"));
+        fontComboBoxFont = new QFontComboBox(frame);
+        fontComboBoxFont->setObjectName(QStringLiteral("fontComboBoxFont"));
 
-        horizontalLayout->addWidget(pushButtonFont);
+        horizontalLayout->addWidget(fontComboBoxFont);
 
-        pushButtonFile = new QPushButton(frame);
-        pushButtonFile->setObjectName(QStringLiteral("pushButtonFile"));
-        pushButtonFile->setStyleSheet(QStringLiteral("color:white;"));
+        comboBoxSize = new QComboBox(frame);
+        comboBoxSize->setObjectName(QStringLiteral("comboBoxSize"));
+        comboBoxSize->setMinimumSize(QSize(80, 0));
+        comboBoxSize->setEditable(true);
 
-        horizontalLayout->addWidget(pushButtonFile);
+        horizontalLayout->addWidget(comboBoxSize);
+
+        pushButtonColor = new QPushButton(frame);
+        pushButtonColor->setObjectName(QStringLiteral("pushButtonColor"));
+        pushButtonColor->setMinimumSize(QSize(80, 0));
+        pushButtonColor->setStyleSheet(QStringLiteral("background-color: rgb(0, 0, 0);"));
+
+        horizontalLayout->addWidget(pushButtonColor);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -240,8 +252,29 @@ public:
         labelTitle->setText(QApplication::translate("friendmanger", "\345\245\275\345\217\213\345\210\227\350\241\250", 0));
         pushButtonAddFriend->setText(QApplication::translate("friendmanger", "  \346\267\273\345\212\240\345\245\275\345\217\213", 0));
         pushButtonFriendTj->setText(QApplication::translate("friendmanger", "    \345\245\275\345\217\213\346\216\250\350\215\220", 0));
-        pushButtonFont->setText(QApplication::translate("friendmanger", "\345\255\227\344\275\223", 0));
-        pushButtonFile->setText(QApplication::translate("friendmanger", "\346\226\207\344\273\266", 0));
+        comboBoxSize->clear();
+        comboBoxSize->insertItems(0, QStringList()
+         << QApplication::translate("friendmanger", "2", 0)
+         << QApplication::translate("friendmanger", "4", 0)
+         << QApplication::translate("friendmanger", "6", 0)
+         << QApplication::translate("friendmanger", "8", 0)
+         << QApplication::translate("friendmanger", "10", 0)
+         << QApplication::translate("friendmanger", "12", 0)
+         << QApplication::translate("friendmanger", "14", 0)
+         << QApplication::translate("friendmanger", "16", 0)
+         << QApplication::translate("friendmanger", "18", 0)
+         << QApplication::translate("friendmanger", "20", 0)
+         << QApplication::translate("friendmanger", "22", 0)
+         << QApplication::translate("friendmanger", "24", 0)
+         << QApplication::translate("friendmanger", "26", 0)
+         << QApplication::translate("friendmanger", "28", 0)
+         << QApplication::translate("friendmanger", "30", 0)
+         << QApplication::translate("friendmanger", "32", 0)
+         << QApplication::translate("friendmanger", "34", 0)
+         << QApplication::translate("friendmanger", "36", 0)
+        );
+        comboBoxSize->setCurrentText(QApplication::translate("friendmanger", "12", 0));
+        pushButtonColor->setText(QString());
         pushButtonSend->setText(QApplication::translate("friendmanger", "\345\217\221\351\200\201", 0));
     } // retranslateUi
 
