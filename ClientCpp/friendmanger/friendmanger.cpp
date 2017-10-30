@@ -35,6 +35,11 @@ void FriendManger::setData(const QMap<QString, QString> &mapData)
     }
 }
 
+void FriendManger::setMessage(const QMap<QString, QString> &mapData)
+{
+    ui->textEditContent->setText(mapData[Protocol::sendContext]);
+}
+
 /*******************   初始化控件          ***********************/
 void FriendManger::initControl()
 {
@@ -71,13 +76,13 @@ void FriendManger::initControl()
     ui->treeWidget->header()->setVisible(false);
 }
 
-
 /************************   改变事件              ************************/
 void FriendManger::resizeEvent(QResizeEvent *event)
 {
     titleBar->resize(this->width(), TitleBar::TITLEBARHEIGHT);
 }
 
+/************************   添加好友              ************************/
 void FriendManger::on_pushButtonAddFriend_clicked()
 {
     addFriend->show();
@@ -86,4 +91,23 @@ void FriendManger::on_pushButtonAddFriend_clicked()
 AddFriend *FriendManger::getAddFriend() const
 {
     return addFriend;
+}
+
+/************************   发送消息              ************************/
+void FriendManger::on_pushButtonSend_clicked()
+{
+    if(!CLIENT->isConnect()) CLIENT->connectServer();
+
+    QMap<QString, QString> mapData;
+
+    mapData[Protocol::sendContext] = ui->textEditSendText->toPlainText();
+    mapData[Protocol::userName] = selectUser;
+
+    CLIENT->netSend(Protocol::SENDMESSAGEREQ, LOGIN->getUserName(), mapData);
+}
+
+/************************   双击树形控件              ************************/
+void FriendManger::on_treeWidget_doubleClicked(const QModelIndex &index)
+{
+    selectUser = ui->treeWidget->currentItem()->text(0);
 }

@@ -13,6 +13,8 @@ MessageHandler::MessageHandler()
     dataMessageList[Protocol::PERSONINFO] = DataMessage("personinfo", &MessageHandler::receivePersonInfo);
     dataMessageList[Protocol::FRIENDLISTINFO] = DataMessage("friendinfo", &MessageHandler::receiveFriendList);
     dataMessageList[Protocol::SELECTFRIENDINFO] = DataMessage("friendselectinfo", &MessageHandler::receiveFriendInfo);
+    dataMessageList[Protocol::ADDFRIENDINFO] = DataMessage("addfriendinfo", &MessageHandler::receiveAddFriendInfo);
+    dataMessageList[Protocol::SENDMESSAGEINFO] = DataMessage("sendmessageinfo", &MessageHandler::receiveSendMessageInfo);
 }
 
 /*************************   根据协议号调取对应函数       *********************/
@@ -56,4 +58,16 @@ void MessageHandler::receiveFriendList(QMap<QString, QString> &mapData)
 void MessageHandler::receiveFriendInfo(QMap<QString, QString> &mapData)
 {
     FRIENDMANGER->getAddFriend()->setData(mapData);
+}
+
+/*************************   接收添加好友信息          *********************/
+void MessageHandler::receiveAddFriendInfo(QMap<QString, QString> &mapData)
+{
+
+}
+
+/*************************   接收发送信息          *********************/
+void MessageHandler::receiveSendMessageInfo(QMap<QString, QString> &mapData)
+{
+    FRIENDMANGER->setMessage(mapData);
 }

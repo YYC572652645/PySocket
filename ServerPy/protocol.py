@@ -15,13 +15,15 @@ class PROTOCOL:
     SAVEPERSONREQ = 5  # 保存个人信息
 
     #*************   好友相关   *************
-    FRIENDLISTREQ = 10    # 好友列表请求
+    FRIENDLISTREQ = 10     # 好友列表请求
     FRIENDLISTINFO = 11    # 好友列表信息
-    SELECTFRIENDREQ = 12  #查找好友
-    SELECTFRIENDINFO = 13 #查找好友信息
+    SELECTFRIENDREQ = 12   # 查找好友
+    SELECTFRIENDINFO = 13  # 查找好友信息
     ADDFRIENDREQ  = 14     # 添加好友
     ADDFRIENDINFO = 15     # 添加好友回馈
     SUBFRIENDREQ  = 16     # 删除好友
     SUBFRIENDINFO = 17     # 删除好友回馈
+    SENDMESSAGEREQ = 18    # 发送消息请求
+    SENDMESSAGEINFO = 19   # 发送消息信息
 
 

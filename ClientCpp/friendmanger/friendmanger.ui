@@ -84,21 +84,35 @@
              </widget>
             </item>
             <item>
-             <widget class="QTreeWidget" name="treeWidget"/>
+             <widget class="QTreeWidget" name="treeWidget">
+              <column>
+               <property name="text">
+                <string notr="true">1</string>
+               </property>
+              </column>
+             </widget>
             </item>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_3">
               <item>
                <widget class="QPushButton" name="pushButtonAddFriend">
                 <property name="text">
-                 <string>添加好友</string>
+                 <string>  添加好友</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../res.qrc">
+                  <normaloff>:/image/image/addto.png</normaloff>:/image/image/addto.png</iconset>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QPushButton" name="pushButtonFriendTj">
                 <property name="text">
-                 <string>好友推荐</string>
+                 <string>    好友推荐</string>
+                </property>
+                <property name="icon">
+                 <iconset resource="../res.qrc">
+                  <normaloff>:/image/image/timg.jpg</normaloff>:/image/image/timg.jpg</iconset>
                 </property>
                </widget>
               </item>
@@ -175,7 +189,7 @@ color:white;</string>
              </widget>
             </item>
             <item>
-             <widget class="QTextEdit" name="textEdit_2">
+             <widget class="QTextEdit" name="textEditSendText">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -220,6 +234,8 @@ color:white;</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
  <connections/>
 </ui>

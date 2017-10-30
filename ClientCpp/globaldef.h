@@ -65,6 +65,8 @@ const static QString phone = "phone";
 const static QString photo = "photo";
 
 
+/***************************   好友相关   ****************************/
+const static QString sendContext  = "text";
 }
 
 

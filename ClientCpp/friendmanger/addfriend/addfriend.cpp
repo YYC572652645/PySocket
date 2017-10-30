@@ -86,3 +86,21 @@ void AddFriend::on_pushButtonSelect_clicked()
 
     CLIENT->netSend(Protocol::SELECTFRIENDREQ, LOGIN->getUserName(), mapData);
 }
+
+/************************   设置单行选中              ************************/
+void AddFriend::on_tableWidget_clicked(const QModelIndex &index)
+{
+    selectUserName = ui->tableWidget->item(index.row(), 0)->text();
+}
+
+/************************   发送添加请求              ************************/
+void AddFriend::on_pushButton_clicked()
+{
+    if(!CLIENT->isConnect()) CLIENT->connectServer();
+
+    QMap<QString, QString> mapData;
+
+    mapData[Protocol::userName] = selectUserName;
+
+    CLIENT->netSend(Protocol::ADDFRIENDREQ, LOGIN->getUserName(), mapData);
+}

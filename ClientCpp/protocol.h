@@ -21,6 +21,12 @@ enum TCPPROTOCOL
     FRIENDLISTINFO = 11,   //好友列表信息
     SELECTFRIENDREQ = 12,  //查找好友
     SELECTFRIENDINFO = 13, //查找好友信息
+    ADDFRIENDREQ = 14,     //添加好友请求
+    ADDFRIENDINFO = 15,    //添加好友信息
+    SUBFRIENDREQ  = 16,    //删除好友
+    SUBFRIENDINFO = 17,    //删除好友回馈
+    SENDMESSAGEREQ = 18,   //发送消息请求
+    SENDMESSAGEINFO = 19,  //发送消息信息
 };
 
 }

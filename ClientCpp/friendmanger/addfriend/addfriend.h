@@ -20,10 +20,15 @@ public:
 private slots:
     void on_pushButtonSelect_clicked();
 
+    void on_tableWidget_clicked(const QModelIndex &index);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::addfriend *ui;
 
     TitleBar *titleBar;
+    QString selectUserName;
 
     void initControl();
     void resizeEvent(QResizeEvent *event);

@@ -25,6 +25,10 @@ class MessageHandler():
         self.commandList[PROTOCOL.SAVEPERSONREQ] = self.receiveSavePersonRequest
         self.commandList[PROTOCOL.FRIENDLISTREQ] = self.friendListRequest
         self.commandList[PROTOCOL.SELECTFRIENDREQ] = self.selectFriendRequest
+        self.commandList[PROTOCOL.ADDFRIENDREQ] = self.addFriendRequest
+        self.commandList[PROTOCOL.SUBFRIENDREQ] = self.deleteFriendRequest
+        self.commandList[PROTOCOL.SENDMESSAGEREQ] = self.sendMessageRequest
+
 
     # 所有接收客户端数据函数的调用
     def onCommand(self, protocolNumber, dict, sock):
@@ -101,8 +105,15 @@ class MessageHandler():
 
     # 添加好友请求
     def addFriendRequest(self, dict, sock):
+        sock.netSend(PROTOCOL.ADDFRIENDINFO, dict, dict.get(globaldef.userName))
+
+    # 删除好友请求
+    def deleteFriendRequest(self, dict, sock):
         pass
 
+    # 发送消息请求
+    def sendMessageRequest(self, dict, sock):
+        sock.netSend(PROTOCOL.SENDMESSAGEINFO, dict, dict.get(globaldef.userName))
 
 
 

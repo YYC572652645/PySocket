@@ -80,7 +80,7 @@ class DataHandler(BaseRequestHandler):
         return data
 
     # 向客户端发送消息
-    def netSend(self, protocol, dataDictionary):
+    def netSend(self, protocol, dataDictionary, user = None):
         self.dataTotal = {}       # 总的json数据
 
         # json组包
@@ -92,7 +92,10 @@ class DataHandler(BaseRequestHandler):
 
         print(encodejson)
 
-        self.userDict[self.data.get(globaldef.user)].sendall(encodejson.encode())
+        if(user == None):
+            self.userDict[self.data.get(globaldef.user)].sendall(encodejson.encode())
+        else:
+            self.userDict[user].sendall(encodejson.encode())
 
     # 做一个广播
     def netSendAll(self, protocol, dataDictionary):

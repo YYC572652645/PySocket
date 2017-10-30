@@ -57,7 +57,7 @@ public:
     QPushButton *pushButtonFont;
     QPushButton *pushButtonFile;
     QSpacerItem *horizontalSpacer_2;
-    QTextEdit *textEdit_2;
+    QTextEdit *textEditSendText;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButtonSend;
@@ -114,6 +114,9 @@ public:
         verticalLayout_4->addWidget(labelTitle);
 
         treeWidget = new QTreeWidget(widget_2);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setText(0, QStringLiteral("1"));
+        treeWidget->setHeaderItem(__qtreewidgetitem);
         treeWidget->setObjectName(QStringLiteral("treeWidget"));
 
         verticalLayout_4->addWidget(treeWidget);
@@ -122,11 +125,17 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         pushButtonAddFriend = new QPushButton(widget_2);
         pushButtonAddFriend->setObjectName(QStringLiteral("pushButtonAddFriend"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/image/image/addto.png"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButtonAddFriend->setIcon(icon);
 
         horizontalLayout_3->addWidget(pushButtonAddFriend);
 
         pushButtonFriendTj = new QPushButton(widget_2);
         pushButtonFriendTj->setObjectName(QStringLiteral("pushButtonFriendTj"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/image/image/timg.jpg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButtonFriendTj->setIcon(icon1);
 
         horizontalLayout_3->addWidget(pushButtonFriendTj);
 
@@ -185,11 +194,11 @@ public:
 
         verticalLayout_3->addWidget(frame);
 
-        textEdit_2 = new QTextEdit(widget);
-        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
-        textEdit_2->setMaximumSize(QSize(16777215, 100));
+        textEditSendText = new QTextEdit(widget);
+        textEditSendText->setObjectName(QStringLiteral("textEditSendText"));
+        textEditSendText->setMaximumSize(QSize(16777215, 100));
 
-        verticalLayout_3->addWidget(textEdit_2);
+        verticalLayout_3->addWidget(textEditSendText);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
@@ -229,8 +238,8 @@ public:
     {
         friendmanger->setWindowTitle(QApplication::translate("friendmanger", "MainWindow", 0));
         labelTitle->setText(QApplication::translate("friendmanger", "\345\245\275\345\217\213\345\210\227\350\241\250", 0));
-        pushButtonAddFriend->setText(QApplication::translate("friendmanger", "\346\267\273\345\212\240\345\245\275\345\217\213", 0));
-        pushButtonFriendTj->setText(QApplication::translate("friendmanger", "\345\245\275\345\217\213\346\216\250\350\215\220", 0));
+        pushButtonAddFriend->setText(QApplication::translate("friendmanger", "  \346\267\273\345\212\240\345\245\275\345\217\213", 0));
+        pushButtonFriendTj->setText(QApplication::translate("friendmanger", "    \345\245\275\345\217\213\346\216\250\350\215\220", 0));
         pushButtonFont->setText(QApplication::translate("friendmanger", "\345\255\227\344\275\223", 0));
         pushButtonFile->setText(QApplication::translate("friendmanger", "\346\226\207\344\273\266", 0));
         pushButtonSend->setText(QApplication::translate("friendmanger", "\345\217\221\351\200\201", 0));
