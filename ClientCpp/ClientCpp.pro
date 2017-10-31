@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     titlebar/titlebar.cpp \
     maintitlebar/maintitlebar.cpp \
     friendmanger/friendmanger.cpp \
-    friendmanger/addfriend/addfriend.cpp
+    friendmanger/addfriend/addfriend.cpp \
+    messagebox/messagedialog.cpp
 
 HEADERS  += client/client.h \
     messagehandler/messagehandler.h \
@@ -33,7 +34,8 @@ HEADERS  += client/client.h \
     titlebar/titlebar.h \
     maintitlebar/maintitlebar.h \
     friendmanger/friendmanger.h \
-    friendmanger/addfriend/addfriend.h
+    friendmanger/addfriend/addfriend.h \
+    messagebox/messagedialog.h
 
 
 FORMS    += \
@@ -41,7 +43,8 @@ FORMS    += \
     mainwindow/mainwindow.ui \
     personinfodialog/personinfodialog.ui \
     friendmanger/friendmanger.ui \
-    friendmanger/addfriend/addfriend.ui
+    friendmanger/addfriend/addfriend.ui \
+    messagebox/messagedialog.ui
 
 RESOURCES += \
     res.qrc

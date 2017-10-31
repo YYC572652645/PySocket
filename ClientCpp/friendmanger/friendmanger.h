@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "titlebar/titlebar.h"
 #include "addfriend/addfriend.h"
+#include "messagebox/messagedialog.h"
 
 namespace Ui {
 class friendmanger;
@@ -28,6 +29,7 @@ public:
     void showWidget();
     void setData(const QMap<QString, QString> &mapData);
     void setMessage(const QMap<QString, QString> &mapData);
+    void setAddFriendInfo(const QMap<QString, QString> &mapData);
 
     AddFriend *getAddFriend() const;
 
@@ -48,6 +50,7 @@ private:
     AddFriend * addFriend;
     QString selectUser;
     QColor fontColor;
+    MessageDialog messageDialog;
 
     void initControl();
     void setText(const MessageData &messageData);

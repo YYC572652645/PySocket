@@ -30,6 +30,11 @@
         <file>image/folder.png</file>
         <file>image/addto.png</file>
         <file>image/timg.jpg</file>
+        <file>image/fail.png</file>
+        <file>image/happy.png</file>
+        <file>image/messagebackground.png</file>
+        <file>image/messagecolor.png</file>
+        <file>image/ok.png</file>
     </qresource>
     <qresource prefix="/qss">
         <file>qss/style.qss</file>

@@ -4,6 +4,7 @@
 #include "client/client.h"
 #include "mainwindow/mainwindow.h"
 #include "logindialog/logindialog.h"
+#include "messagebox/messagedialog.h"
 #include "protocol.h"
 
 #define MSGSIZE  100
@@ -34,7 +35,11 @@ const static int TITLEBARHEIGHT = 50;
 const static int TITLECONTROLWIDTH = 40;
 
 
-const static QString APPICOPATH = ":/image/image/image.png";
+const static QString APPICOPATH   = ":/image/image/image.png";    //Logo
+const static QString SUCCESSIMAGE = ":/image/image/ok.png";       //成功图片
+const static QString FAILIMAGE    = ":/image/image/fail.png";     //失败图片
+const static QString SYSTEMINFO    = "系统提示";                    //失败图片
+
 
 enum NODETEXT
 {

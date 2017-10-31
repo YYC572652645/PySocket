@@ -63,7 +63,7 @@ void MessageHandler::receiveFriendInfo(QMap<QString, QString> &mapData)
 /*************************   接收添加好友信息          *********************/
 void MessageHandler::receiveAddFriendInfo(QMap<QString, QString> &mapData)
 {
-
+    FRIENDMANGER->setAddFriendInfo(mapData);
 }
 
 /*************************   接收发送信息          *********************/

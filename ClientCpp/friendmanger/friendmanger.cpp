@@ -1,7 +1,7 @@
 #include "friendmanger.h"
 #include "ui_friendmanger.h"
-#include "globaldef.h"
 #include <QColorDialog>
+#include "globaldef.h"
 
 FriendManger::FriendManger(QWidget *parent) :
     QMainWindow(parent)
@@ -21,7 +21,7 @@ FriendManger::~FriendManger()
 
 void FriendManger::showWidget()
 {
-    this->showMaximized();
+    this->show();
 }
 
 /*******************   设置好友列表          ***********************/
@@ -51,6 +51,21 @@ void FriendManger::setMessage(const QMap<QString, QString> &mapData)
     this->setText(messageData);
 }
 
+/*******************   接收添加好友信息       ***********************/
+void FriendManger::setAddFriendInfo(const QMap<QString, QString> &mapData)
+{
+    this->show();
+
+    QString info = mapData.value(Protocol::user) + "添加您为好友";
+
+    int ok = messageDialog.setInfo(SYSTEMINFO, info, QPixmap(SUCCESSIMAGE), false, this);
+
+    if(ok == QDialog::Accepted)
+    {
+
+    }
+}
+
 /*******************   初始化控件          ***********************/
 void FriendManger::initControl()
 {
@@ -62,7 +77,7 @@ void FriendManger::initControl()
 
     titleBar->setIcon(APPICOPATH);
     titleBar->setTitle("好友");
-    titleBar->subButton(TITLEBAR::MAXMINWIDGET);
+    titleBar->subButton(TITLEBAR::MINWIDGET);
 
     ui->labelTitle->setAlignment(Qt::AlignCenter);
 
@@ -156,12 +171,10 @@ void FriendManger::on_treeWidget_doubleClicked(const QModelIndex &index)
 /************************   字体颜色              ************************/
 void FriendManger::on_pushButtonColor_clicked()
 {
-    QColor color = QColorDialog::getColor(Qt::black, this);
-
-    if (color.isValid())  fontColor = color;
+    fontColor = QColorDialog::getColor(Qt::black, this);
 
     QPalette palette = ui->pushButtonColor->palette();
-    palette.setColor(QPalette::Button, color);
+    palette.setColor(QPalette::Button, fontColor);
     ui->pushButtonColor->setPalette(palette);
     ui->pushButtonColor->setAutoFillBackground(true);
     ui->pushButtonColor->setFlat(true);
@@ -172,7 +185,7 @@ void FriendManger::on_pushButtonColor_clicked()
 /************************   字体改变              ************************/
 void FriendManger::on_fontComboBoxFont_currentIndexChanged(const QString &arg1)
 {
-this->setTextEdit();
+    this->setTextEdit();
 }
 
 /************************   字体大小              ************************/
@@ -193,5 +206,11 @@ void FriendManger::setTextEdit()
     ui->textEditSendText->setTextColor(fontColor);
 
     ui->textEditSendText->setTextColor(fontColor);
+
+    QString text = ui->textEditSendText->toPlainText();
+
+    ui->textEditSendText->clear();
+
+    ui->textEditSendText->setText(text);
 }
 
