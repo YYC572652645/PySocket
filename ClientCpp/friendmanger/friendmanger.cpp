@@ -67,6 +67,7 @@ void FriendManger::setAddFriendInfo(const QMap<QString, QString> &mapData)
     if(NULL == ui->treeWidget->currentItem()) return;
     if(!CLIENT->isConnect()) CLIENT->connectServer();
 
+    //是否同意添加为好友
     {
         QMap<QString, QString> mapData;
 
