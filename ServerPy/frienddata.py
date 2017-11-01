@@ -35,9 +35,17 @@ class FriendData():
         try:
             self.dataConn()
 
-            str = "select * from " + globaldef.TABLEFRIENDDATA +  "  where userFirst = '" + userName + "';"
+            str  = "select username , name from " + globaldef.TABLEFRIENDDATA + "," +  globaldef.TABLEPERSONDATA
+
+            str +=  "  where " + globaldef.TABLEFRIENDDATA + ".userSecond = " + globaldef.TABLEPERSONDATA
+
+            str +=  ".username" + " and userFirst = '" + userName + "';"
+
+            print(str)
+
             data = self.cursor.execute(str)
             self.conn.commit()
+
             return data
         except Exception as e:
             print(e.args)

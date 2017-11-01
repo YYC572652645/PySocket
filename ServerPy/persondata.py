@@ -56,7 +56,7 @@ class PersonData():
             self.dataConn()
 
             str  = "update "             + globaldef.TABLEPERSONDATA       + " set "
-            str += "name = '"            + dict[globaldef.personUserName]  + "', "
+            str += "name = '"            + dict[globaldef.name]  + "', "
             str += "sex = '"             + dict[globaldef.sex]             + "', "
             str += "address = '"         + dict[globaldef.address]         + "', "
             str += "personinfo = '"      + dict[globaldef.personInfo]      + "', "

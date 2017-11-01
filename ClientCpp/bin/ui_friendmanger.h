@@ -53,6 +53,7 @@ public:
     QWidget *widget;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_3;
+    QLabel *labelFriendName;
     QTextBrowser *textBrowserContent;
     QFrame *frame;
     QVBoxLayout *verticalLayout_2;
@@ -163,6 +164,18 @@ public:
         verticalLayout_8->setContentsMargins(0, 0, 0, 0);
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        labelFriendName = new QLabel(widget);
+        labelFriendName->setObjectName(QStringLiteral("labelFriendName"));
+        labelFriendName->setMinimumSize(QSize(0, 40));
+        labelFriendName->setStyleSheet(QLatin1String("QLabel\n"
+"{\n"
+"    font-size:20px;\n"
+"	background-color:#2c3e50;\n"
+"	color:white;\n"
+"}"));
+
+        verticalLayout_3->addWidget(labelFriendName);
+
         textBrowserContent = new QTextBrowser(widget);
         textBrowserContent->setObjectName(QStringLiteral("textBrowserContent"));
 
@@ -252,6 +265,7 @@ public:
         labelTitle->setText(QApplication::translate("friendmanger", "\345\245\275\345\217\213\345\210\227\350\241\250", 0));
         pushButtonAddFriend->setText(QApplication::translate("friendmanger", "  \346\267\273\345\212\240\345\245\275\345\217\213", 0));
         pushButtonFriendTj->setText(QApplication::translate("friendmanger", "    \345\245\275\345\217\213\346\216\250\350\215\220", 0));
+        labelFriendName->setText(QString());
         comboBoxSize->clear();
         comboBoxSize->insertItems(0, QStringList()
          << QApplication::translate("friendmanger", "2", 0)

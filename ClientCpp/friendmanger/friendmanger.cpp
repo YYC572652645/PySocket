@@ -27,15 +27,19 @@ void FriendManger::showWidget()
 /*******************   设置好友列表          ***********************/
 void FriendManger::setData(const QMap<QString, QString> &mapData)
 {
+    userList.clear();
     ui->treeWidget->clear();
     for(auto iter = mapData.begin(); iter != mapData.end(); iter ++)
     {
         QTreeWidgetItem* parentItem = new QTreeWidgetItem(ui->treeWidget);
 
         parentItem->setText(0, iter.value());
+
+        userList.append(iter.key());
     }
 }
 
+/*******************   设置接收消息          ***********************/
 void FriendManger::setMessage(const QMap<QString, QString> &mapData)
 {
     selectUser = mapData.value(Protocol::user);
@@ -60,9 +64,22 @@ void FriendManger::setAddFriendInfo(const QMap<QString, QString> &mapData)
 
     int ok = messageDialog.setInfo(SYSTEMINFO, info, QPixmap(SUCCESSIMAGE), false, this);
 
-    if(ok == QDialog::Accepted)
-    {
+    if(NULL == ui->treeWidget->currentItem()) return;
+    if(!CLIENT->isConnect()) CLIENT->connectServer();
 
+    {
+        QMap<QString, QString> mapData;
+
+        if(ok == QDialog::Accepted)
+        {
+            mapData[Protocol::agreeFriend] = "1";
+        }
+        else
+        {
+            mapData[Protocol::agreeFriend] = "0";
+        }
+
+        CLIENT->netSend(Protocol::AGREERIENDREQ, LOGIN->getUserName(), mapData);
     }
 }
 
@@ -102,8 +119,35 @@ void FriendManger::initControl()
     ui->treeWidget->header()->setVisible(false);
 
     fontColor = QColor(0, 0, 0);
+
+    this->createActions();
 }
 
+
+/*******************        创建菜单              ***********************/
+void FriendManger::createActions()
+{
+    menu       = new QMenu(this);
+    personInfo = new QAction("查看资料", this);
+
+    connect(personInfo, SIGNAL(triggered(bool)), this,SLOT(lookPersonInfo()));
+}
+
+/*******************        显示菜单              ***********************/
+void FriendManger::contextMenuEvent(QContextMenuEvent *event)
+{
+    if(NULL == ui->treeWidget->currentItem()) return;
+
+    menu->clear();
+
+    menu->addAction(personInfo);
+
+    menu->exec(QCursor::pos());
+
+    event->accept();
+}
+
+/*******************        设置文本              ***********************/
 void FriendManger::setText(const MessageData &messageData)
 {
     ui->textBrowserContent->setTextColor(Qt::blue);
@@ -132,6 +176,19 @@ void FriendManger::on_pushButtonAddFriend_clicked()
 AddFriend *FriendManger::getAddFriend() const
 {
     return addFriend;
+}
+
+/************************   查看资料              ************************/
+void FriendManger::lookPersonInfo()
+{
+    if(NULL == ui->treeWidget->currentItem()) return;
+    if(!CLIENT->isConnect()) CLIENT->connectServer();
+
+    QMap<QString, QString> mapData;
+
+    mapData[Protocol::userName] = ui->treeWidget->currentItem()->text(0);
+
+    CLIENT->netSend(Protocol::PERSONINFOREQ, LOGIN->getUserName(), mapData);
 }
 
 /************************   发送消息              ************************/
@@ -165,7 +222,8 @@ void FriendManger::on_pushButtonSend_clicked()
 /************************   双击树形控件              ************************/
 void FriendManger::on_treeWidget_doubleClicked(const QModelIndex &index)
 {
-    selectUser = ui->treeWidget->currentItem()->text(0);
+    selectUser = userList.at(index.row());
+    ui->labelFriendName->setText("聊天对象：" + ui->treeWidget->currentItem()->text(0));
 }
 
 /************************   字体颜色              ************************/

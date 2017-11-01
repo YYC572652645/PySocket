@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>389</width>
-    <height>484</height>
+    <width>400</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>389</width>
-    <height>484</height>
+    <width>400</width>
+    <height>576</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>389</width>
-    <height>484</height>
+    <width>400</width>
+    <height>576</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -94,7 +94,9 @@
            </size>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">background-color:transparent;
+color: rgb(0, 170, 255);
+font: 10pt &quot;宋体&quot;;</string>
           </property>
           <property name="text">
            <string>更换头像</string>
@@ -122,6 +124,24 @@
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_10">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="text">
+           <string>    用户：</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditUserName">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">

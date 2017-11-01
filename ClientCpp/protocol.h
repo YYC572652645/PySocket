@@ -13,7 +13,8 @@ enum TCPPROTOCOL
     CLOSEREQ       = 2,  //关闭套接字
     PERSONINFOREQ  = 3,  //个人信息请求
     PERSONINFO     = 4,  //个人信息数据
-    SAVEPERSONREQ  = 5,  //保存个人信息
+    SAVEPERSONREQ  = 5,  //保存个人信息请求
+    SAVEPERSONINFO  = 6, //保存个人信息
 
 
     /*****************   好友相关   ***************/
@@ -23,11 +24,12 @@ enum TCPPROTOCOL
     SELECTFRIENDINFO = 13, //查找好友信息
     ADDFRIENDREQ = 14,     //添加好友请求
     ADDFRIENDINFO = 15,    //添加好友信息
-
-    SUBFRIENDREQ  = 16,    //删除好友
-    SUBFRIENDINFO = 17,    //删除好友回馈
-    SENDMESSAGEREQ = 18,   //发送消息请求
-    SENDMESSAGEINFO = 19,  //发送消息信息
+    AGREERIENDREQ = 16,    //同意好友请求
+    AGREERIENDINFO = 17,   //同意好友信息
+    SUBFRIENDREQ  = 18,    //删除好友
+    SUBFRIENDINFO = 19,    //删除好友回馈
+    SENDMESSAGEREQ = 20,   //发送消息请求
+    SENDMESSAGEINFO = 21,  //发送消息信息
 };
 
 }

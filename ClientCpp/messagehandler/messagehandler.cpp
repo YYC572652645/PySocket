@@ -14,6 +14,7 @@ MessageHandler::MessageHandler()
     dataMessageList[Protocol::FRIENDLISTINFO] = DataMessage("friendinfo", &MessageHandler::receiveFriendList);
     dataMessageList[Protocol::SELECTFRIENDINFO] = DataMessage("friendselectinfo", &MessageHandler::receiveFriendInfo);
     dataMessageList[Protocol::ADDFRIENDINFO] = DataMessage("addfriendinfo", &MessageHandler::receiveAddFriendInfo);
+    dataMessageList[Protocol::AGREERIENDINFO] = DataMessage("agreefriendinfo", &MessageHandler::receiveSendMessageInfo);
     dataMessageList[Protocol::SENDMESSAGEINFO] = DataMessage("sendmessageinfo", &MessageHandler::receiveSendMessageInfo);
 }
 
@@ -70,4 +71,10 @@ void MessageHandler::receiveAddFriendInfo(QMap<QString, QString> &mapData)
 void MessageHandler::receiveSendMessageInfo(QMap<QString, QString> &mapData)
 {
     FRIENDMANGER->setMessage(mapData);
+}
+
+/*************************   好友添加结果信息          *********************/
+void MessageHandler::receiveAgreeFriendInfo(QMap<QString, QString> &mapData)
+{
+
 }

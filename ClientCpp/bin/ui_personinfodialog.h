@@ -40,6 +40,9 @@ public:
     QPushButton *pushButtonPhoto;
     QFrame *line_4;
     QFrame *lineFirst;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_8;
+    QLineEdit *lineEditUserName;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label;
     QLineEdit *lineEditName;
@@ -73,9 +76,9 @@ public:
     {
         if (personinfodialog->objectName().isEmpty())
             personinfodialog->setObjectName(QStringLiteral("personinfodialog"));
-        personinfodialog->resize(389, 484);
-        personinfodialog->setMinimumSize(QSize(389, 484));
-        personinfodialog->setMaximumSize(QSize(389, 484));
+        personinfodialog->resize(400, 576);
+        personinfodialog->setMinimumSize(QSize(400, 576));
+        personinfodialog->setMaximumSize(QSize(400, 576));
         centralWidget = new QWidget(personinfodialog);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout_2 = new QVBoxLayout(centralWidget);
@@ -103,7 +106,9 @@ public:
         pushButtonPhoto->setObjectName(QStringLiteral("pushButtonPhoto"));
         pushButtonPhoto->setMinimumSize(QSize(90, 0));
         pushButtonPhoto->setMaximumSize(QSize(90, 16777215));
-        pushButtonPhoto->setStyleSheet(QStringLiteral(""));
+        pushButtonPhoto->setStyleSheet(QString::fromUtf8("background-color:transparent;\n"
+"color: rgb(0, 170, 255);\n"
+"font: 10pt \"\345\256\213\344\275\223\";"));
 
         horizontalLayout->addWidget(pushButtonPhoto);
 
@@ -124,6 +129,22 @@ public:
         lineFirst->setFrameShadow(QFrame::Sunken);
 
         verticalLayout->addWidget(lineFirst);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
+        label_8 = new QLabel(centralWidget);
+        label_8->setObjectName(QStringLiteral("label_8"));
+
+        horizontalLayout_10->addWidget(label_8);
+
+        lineEditUserName = new QLineEdit(centralWidget);
+        lineEditUserName->setObjectName(QStringLiteral("lineEditUserName"));
+        lineEditUserName->setEnabled(false);
+
+        horizontalLayout_10->addWidget(lineEditUserName);
+
+
+        verticalLayout->addLayout(horizontalLayout_10);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -291,6 +312,7 @@ public:
         personinfodialog->setWindowTitle(QApplication::translate("personinfodialog", "MainWindow", 0));
         labelPhoto->setText(QApplication::translate("personinfodialog", "\345\244\264\345\203\217", 0));
         pushButtonPhoto->setText(QApplication::translate("personinfodialog", "\346\233\264\346\215\242\345\244\264\345\203\217", 0));
+        label_8->setText(QApplication::translate("personinfodialog", "    \347\224\250\346\210\267\357\274\232", 0));
         label->setText(QApplication::translate("personinfodialog", "    \346\230\265\347\247\260\357\274\232", 0));
         label_2->setText(QApplication::translate("personinfodialog", "    \346\200\247\345\210\253\357\274\232", 0));
         label_3->setText(QApplication::translate("personinfodialog", "    \345\234\260\345\214\272\357\274\232", 0));

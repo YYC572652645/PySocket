@@ -157,6 +157,27 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_3">
             <item>
+             <widget class="QLabel" name="labelFriendName">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel
+{
+    font-size:20px;
+	background-color:#2c3e50;
+	color:white;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QTextBrowser" name="textBrowserContent"/>
             </item>
             <item>

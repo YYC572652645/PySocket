@@ -45,9 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     this->initControl();
 
-
     personInfoDialog = new PersonInfoDialog();
-
     friendeManger = new FriendManger(this);
 }
 
@@ -174,7 +172,6 @@ void MainWindow::newFloderSlot()
     childItem->setIcon(0, QIcon(":/image/image/folder.png"));
     ui->treeWidget->expandItem(ui->treeWidget->currentItem());
 
-    //ui->treeWidget->openPersistentEditor(childItem);
 }
 
 /************************   新建笔记               ************************/

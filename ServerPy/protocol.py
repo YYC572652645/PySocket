@@ -21,9 +21,11 @@ class PROTOCOL:
     SELECTFRIENDINFO = 13  # 查找好友信息
     ADDFRIENDREQ  = 14     # 添加好友
     ADDFRIENDINFO = 15     # 添加好友回馈
-    SUBFRIENDREQ  = 16     # 删除好友
-    SUBFRIENDINFO = 17     # 删除好友回馈
-    SENDMESSAGEREQ = 18    # 发送消息请求
-    SENDMESSAGEINFO = 19   # 发送消息信息
+    AGREERIENDREQ = 16     # 同意好友请求
+    AGREERIENDINFO = 17    # 同意好友信息
+    SUBFRIENDREQ  = 18     # 删除好友
+    SUBFRIENDINFO = 19     # 删除好友回馈
+    SENDMESSAGEREQ = 20    # 发送消息请求
+    SENDMESSAGEINFO = 21   # 发送消息信息
 
 

@@ -28,6 +28,7 @@ class MessageHandler():
         self.commandList[PROTOCOL.ADDFRIENDREQ] = self.addFriendRequest
         self.commandList[PROTOCOL.SUBFRIENDREQ] = self.deleteFriendRequest
         self.commandList[PROTOCOL.SENDMESSAGEREQ] = self.sendMessageRequest
+        self.commandList[PROTOCOL.AGREERIENDREQ] = self.agreeFriendRequest
 
 
     # 所有接收客户端数据函数的调用
@@ -85,9 +86,9 @@ class MessageHandler():
 
         sendDict = {}
 
-        if(data != None):
+        if (data != None):
             for item in data:
-                sendDict[item[2]] = item[2]
+                sendDict[item[0]] = item[1]
 
         sock.netSend(PROTOCOL.FRIENDLISTINFO, sendDict)
 
@@ -106,6 +107,10 @@ class MessageHandler():
     # 添加好友请求
     def addFriendRequest(self, dict, sock):
         sock.netSend(PROTOCOL.ADDFRIENDINFO, dict, dict.get(globaldef.userName))
+
+    # 添加好友结果请求
+    def agreeFriendRequest(self, dict, sock):
+        sock.netSend(PROTOCOL.AGREERIENDINFO, dict, dict.get(globaldef.userName))
 
     # 删除好友请求
     def deleteFriendRequest(self, dict, sock):

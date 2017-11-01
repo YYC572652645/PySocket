@@ -67,6 +67,7 @@ void PersonInfoDialog::setData(const QMap<QString, QString> &mapData)
 /************************   显示窗口    ************************/
 void PersonInfoDialog::showDialog()
 {
+    ui->lineEditUserName->setText(personData.personUserName);
     ui->lineEditName->setText(personData.name);
     ui->lineEditAddress->setText(personData.address);
     ui->lineEditEmail->setText(personData.email);
@@ -76,6 +77,11 @@ void PersonInfoDialog::showDialog()
     ui->textEditPersonInfo->setText(personData.personInfo);
     photoImage = QImage::fromData(QByteArray::fromHex(personData.photo.toLatin1()));
     ui->labelPhoto->setPixmap(QPixmap::fromImage(photoImage));
+
+    if(!this->isActiveWindow())
+    {
+        this->activateWindow();
+    }
 
     this->show();
 }

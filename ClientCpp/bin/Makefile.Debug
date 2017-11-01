@@ -153,6 +153,7 @@ debug/qrc_res.cpp: ../res.qrc \
 		../image/background.png \
 		../image/color.png \
 		../image/folder.png \
+		../image/ok.png \
 		../image/Icon_Category_ShareToMe.png \
 		../image/addto.png \
 		../image/Icon_Category_LastMod.png \
@@ -168,6 +169,8 @@ debug/qrc_res.cpp: ../res.qrc \
 		../image/Icon_Notebook_shared.png \
 		../image/down.png \
 		../image/image.png \
+		../image/fail.png \
+		../image/messagebackground.png \
 		../image/loginbackground.png \
 		../image/Icon_ShareToMe.png \
 		../image/top.png \
@@ -175,6 +178,8 @@ debug/qrc_res.cpp: ../res.qrc \
 		../image/Icon_Category_Tags.png \
 		../image/Icon_Category_Lock.png \
 		../image/Icon_Folder_open.png \
+		../image/happy.png \
+		../image/messagecolor.png \
 		../image/Btn_Input_Search.png \
 		../image/Icon_Attachment@2x.png \
 		../image/logo.png \
@@ -647,158 +652,22 @@ debug/moc_mainwindow.cpp: D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
 		../friendmanger/friendmanger.h \
 		../friendmanger/addfriend/addfriend.h \
-		../globaldef.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QString \
-		../client/client.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qabstractsocket.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QHostAddress \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QThread \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthread.h \
-		../mainwindow/mainwindow.h \
-		../logindialog/logindialog.h \
+		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXmlDepends \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QtCore \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QtCoreDepends \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractanimation.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qanimationgroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qparallelanimationgroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qpauseanimation.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qpropertyanimation.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qvariantanimation.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeasingcurve.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsequentialanimationgroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtextcodec.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qendian.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qlibraryinfo.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qdatetime.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbuffer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qdir.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfileinfo.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qdiriterator.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfileselector.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QStringList \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfilesystemwatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qlockfile.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qloggingcategory.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qprocess.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qresource.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsavefile.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsettings.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstandardpaths.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstorageinfo.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtemporarydir.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QScopedPointer \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtemporaryfile.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractproxymodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qidentityproxymodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsortfilterproxymodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstringlistmodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonarray.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonvalue.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsondocument.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonobject.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstracteventdispatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractnativeeventfilter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbasictimer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmath.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmetaobject.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmimedata.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qobjectcleanuphandler.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qpointer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsharedmemory.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsignalmapper.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsocketnotifier.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsystemsemaphore.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtimer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtranslator.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qwineventnotifier.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmimedatabase.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmimetype.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfactoryinterface.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qlibrary.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qplugin.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qpluginloader.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/quuid.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractstate.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstracttransition.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeventtransition.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfinalstate.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qhistorystate.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsignaltransition.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstate.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstatemachine.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qexception.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfuture.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfutureinterface.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qrunnable.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qresultstore.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfuturesynchronizer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfuturewatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qreadwritelock.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsemaphore.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthreadpool.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthreadstorage.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qwaitcondition.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qarraydataops.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qarraydatapointer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbitarray.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbytearraymatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcache.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcollator.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcommandlineoption.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcommandlineparser.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcryptographichash.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qelapsedtimer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qlinkedlist.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmessageauthenticationcode.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qqueue.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qscopedvaluerollback.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstack.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtextboundaryfinder.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtimeline.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtimezone.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qversionnumber.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qxmlstream.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtcoreversion.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/qtxmlglobal.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/qdom.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/qxml.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/qtxmlversion.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
-		../protocol.h \
 		../mainwindow/mainwindow.h
 	D:\SoftWare\QtCreater\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/SoftWare/QtCreater/5.6/mingw49_32/mkspecs/win32-g++ -ID:/Program/PySocket/PySocket/ClientCpp -ID:/SoftWare/QtCreater/5.6/mingw49_32/include -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtANGLE -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore -I. ..\mainwindow\mainwindow.h -o debug\moc_mainwindow.cpp
 
@@ -1312,6 +1181,7 @@ debug/moc_friendmanger.cpp: D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidge
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qicon.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
 		../titlebar/titlebar.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QObject \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QWidget \
@@ -1341,166 +1211,23 @@ debug/moc_friendmanger.cpp: D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidge
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
 		../friendmanger/addfriend/addfriend.h \
-		../globaldef.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QString \
-		../client/client.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qabstractsocket.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QHostAddress \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QThread \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthread.h \
-		../mainwindow/mainwindow.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMenu \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmenu.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QAction \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
-		../personinfodialog/personinfodialog.h \
-		../friendmanger/friendmanger.h \
-		../logindialog/logindialog.h \
+		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXmlDepends \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QtCore \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QtCoreDepends \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractanimation.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qanimationgroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qparallelanimationgroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qpauseanimation.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qpropertyanimation.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qvariantanimation.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeasingcurve.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsequentialanimationgroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtextcodec.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qendian.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qlibraryinfo.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qdatetime.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbuffer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qdir.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfileinfo.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qdiriterator.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfileselector.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QStringList \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfilesystemwatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qlockfile.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qloggingcategory.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qprocess.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qresource.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsavefile.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsettings.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstandardpaths.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstorageinfo.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtemporarydir.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QScopedPointer \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtemporaryfile.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractproxymodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qidentityproxymodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsortfilterproxymodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstringlistmodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonarray.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonvalue.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsondocument.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonobject.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstracteventdispatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractnativeeventfilter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbasictimer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmath.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmetaobject.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmimedata.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qobjectcleanuphandler.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qpointer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsharedmemory.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsignalmapper.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsocketnotifier.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsystemsemaphore.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtimer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtranslator.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qwineventnotifier.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmimedatabase.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmimetype.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfactoryinterface.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qlibrary.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qplugin.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qpluginloader.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/quuid.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractstate.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstracttransition.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeventtransition.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfinalstate.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qhistorystate.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsignaltransition.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstate.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstatemachine.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qexception.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfuture.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfutureinterface.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qrunnable.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qresultstore.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfuturesynchronizer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfuturewatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qreadwritelock.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsemaphore.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthreadpool.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthreadstorage.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qwaitcondition.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qarraydataops.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qarraydatapointer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbitarray.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbytearraymatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcache.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcollator.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcommandlineoption.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcommandlineparser.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcryptographichash.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qelapsedtimer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qlinkedlist.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmessageauthenticationcode.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qqueue.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qscopedvaluerollback.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstack.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtextboundaryfinder.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtimeline.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtimezone.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qversionnumber.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qxmlstream.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtcoreversion.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/qtxmlglobal.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/qdom.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/qxml.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/qtxmlversion.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
-		../protocol.h \
+		../personinfodialog/personinfodialog.h \
 		../friendmanger/friendmanger.h
 	D:\SoftWare\QtCreater\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -ID:/SoftWare/QtCreater/5.6/mingw49_32/mkspecs/win32-g++ -ID:/Program/PySocket/PySocket/ClientCpp -ID:/SoftWare/QtCreater/5.6/mingw49_32/include -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtANGLE -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork -ID:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore -I. ..\friendmanger\friendmanger.h -o debug\moc_friendmanger.cpp
 
@@ -1950,29 +1677,29 @@ debug/main.o: ../main.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
 		../friendmanger/friendmanger.h \
 		../friendmanger/addfriend/addfriend.h \
-		../globaldef.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QString \
-		../client/client.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qabstractsocket.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QHostAddress \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QThread \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthread.h \
-		../logindialog/logindialog.h \
+		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
+		../logindialog/logindialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
@@ -2059,6 +1786,7 @@ debug/main.o: ../main.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qfuturewatcher.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qreadwritelock.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsemaphore.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthread.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthreadpool.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthreadstorage.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qwaitcondition.h \
@@ -2090,21 +1818,20 @@ debug/main.o: ../main.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
-		../protocol.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QApplication \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qapplication.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qinputmethod.h
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qinputmethod.h \
+		../client/client.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qabstractsocket.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QHostAddress \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QThread \
+		../globaldef.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QString \
+		../protocol.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\main.cpp
 
 debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
@@ -2252,8 +1979,55 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
 		../friendmanger/friendmanger.h \
 		../friendmanger/addfriend/addfriend.h \
-		../globaldef.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QString \
+		../messagebox/messagedialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
+		ui_mainwindow.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QVariant \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QApplication \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qapplication.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeventloop.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qguiapplication.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qinputmethod.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QHeaderView \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QLineEdit \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextcursor.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextformat.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QListWidget \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qlistwidget.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qlistview.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QSpacerItem \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QSplitter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qsplitter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStatusBar \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QTreeWidget \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreewidget.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreeview.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreewidgetitemiterator.h \
 		../client/client.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/QTcpSocket \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qtcpsocket.h \
@@ -2262,19 +2036,15 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtNetwork/qhostaddress.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QThread \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qthread.h \
+		../protocol.h \
+		../globaldef.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QString \
 		../logindialog/logindialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
@@ -2313,7 +2083,6 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtemporaryfile.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractproxymodel.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qidentityproxymodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsortfilterproxymodel.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstringlistmodel.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonarray.h \
@@ -2321,10 +2090,8 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsondocument.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonobject.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstracteventdispatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeventloop.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractnativeeventfilter.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbasictimer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmath.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmetaobject.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmimedata.h \
@@ -2392,46 +2159,6 @@ debug/mainwindow.o: ../mainwindow/mainwindow.cpp ../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
-		../protocol.h \
-		ui_mainwindow.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QVariant \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QApplication \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QListWidget \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qlistwidget.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qlistview.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QSpacerItem \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QSplitter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qsplitter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStatusBar \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QTreeWidget \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreewidget.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreeview.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreewidgetitemiterator.h \
 		../maintitlebar/maintitlebar.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\mainwindow\mainwindow.cpp
 
@@ -2597,19 +2324,29 @@ debug/client.o: ../client/client.cpp ../client/client.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
 		../friendmanger/friendmanger.h \
 		../friendmanger/addfriend/addfriend.h \
-		../logindialog/logindialog.h \
+		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
+		../logindialog/logindialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
@@ -2723,16 +2460,6 @@ debug/client.o: ../client/client.cpp ../client/client.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
 		../protocol.h \
 		../messagehandler/messagehandler.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QMap
@@ -2895,19 +2622,29 @@ debug/messagehandler.o: ../messagehandler/messagehandler.cpp ../messagehandler/m
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
 		../friendmanger/friendmanger.h \
 		../friendmanger/addfriend/addfriend.h \
-		../logindialog/logindialog.h \
+		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
+		../logindialog/logindialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
@@ -3025,16 +2762,6 @@ debug/messagehandler.o: ../messagehandler/messagehandler.cpp ../messagehandler/m
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
 		../protocol.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\messagehandler.o ..\messagehandler\messagehandler.cpp
@@ -3550,17 +3277,25 @@ debug/personinfodialog.o: ../personinfodialog/personinfodialog.cpp ../personinfo
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
 		../friendmanger/friendmanger.h \
 		../friendmanger/addfriend/addfriend.h \
-		../logindialog/logindialog.h \
+		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
+		../logindialog/logindialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
@@ -3672,14 +3407,6 @@ debug/personinfodialog.o: ../personinfodialog/personinfodialog.cpp ../personinfo
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
 		../protocol.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\personinfodialog.o ..\personinfodialog\personinfodialog.cpp
 
@@ -3990,19 +3717,28 @@ debug/maintitlebar.o: ../maintitlebar/maintitlebar.cpp ../maintitlebar/maintitle
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QVBoxLayout \
 		../friendmanger/friendmanger.h \
 		../friendmanger/addfriend/addfriend.h \
-		../logindialog/logindialog.h \
+		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
+		../logindialog/logindialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
@@ -4119,15 +3855,6 @@ debug/maintitlebar.o: ../maintitlebar/maintitlebar.cpp ../maintitlebar/maintitle
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
 		../protocol.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\maintitlebar.o ..\maintitlebar\maintitlebar.cpp
 
@@ -4239,6 +3966,7 @@ debug/friendmanger.o: ../friendmanger/friendmanger.cpp ../friendmanger/friendman
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qicon.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
 		../titlebar/titlebar.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QObject \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QWidget \
@@ -4268,6 +3996,65 @@ debug/friendmanger.o: ../friendmanger/friendmanger.cpp ../friendmanger/friendman
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
 		../friendmanger/addfriend/addfriend.h \
+		../messagebox/messagedialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
+		../personinfodialog/personinfodialog.h \
+		ui_friendmanger.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QVariant \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QAction \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qaction.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QApplication \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qapplication.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeventloop.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qguiapplication.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qinputmethod.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QFontComboBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qfontcombobox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qfontdatabase.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QFrame \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QHeaderView \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QSpacerItem \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QSplitter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qsplitter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStatusBar \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QTextBrowser \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtextbrowser.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtextedit.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextdocument.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextcursor.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextformat.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QTextEdit \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QTreeWidget \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreewidget.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreeview.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreewidgetitemiterator.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QColorDialog \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcolordialog.h \
 		../globaldef.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QString \
 		../client/client.h \
@@ -4281,24 +4068,12 @@ debug/friendmanger.o: ../friendmanger/friendmanger.cpp ../friendmanger/friendman
 		../mainwindow/mainwindow.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMenu \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmenu.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QAction \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
-		../personinfodialog/personinfodialog.h \
 		../logindialog/logindialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
@@ -4337,7 +4112,6 @@ debug/friendmanger.o: ../friendmanger/friendmanger.cpp ../friendmanger/friendman
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qtemporaryfile.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractproxymodel.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qidentityproxymodel.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qsortfilterproxymodel.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qstringlistmodel.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonarray.h \
@@ -4345,10 +4119,8 @@ debug/friendmanger.o: ../friendmanger/friendmanger.cpp ../friendmanger/friendman
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsondocument.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qjsonobject.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstracteventdispatcher.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qeventloop.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qabstractnativeeventfilter.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qbasictimer.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmath.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmetaobject.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/qmimedata.h \
@@ -4416,52 +4188,7 @@ debug/friendmanger.o: ../friendmanger/friendmanger.cpp ../friendmanger/friendman
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpen.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
-		../protocol.h \
-		ui_friendmanger.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QVariant \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QApplication \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QFontComboBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qfontcombobox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qfontdatabase.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QFrame \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QSpacerItem \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QSplitter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qsplitter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStatusBar \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QTextBrowser \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtextbrowser.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtextedit.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextdocument.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QTextEdit \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QTreeWidget \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreewidget.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreeview.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtreewidgetitemiterator.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QColorDialog \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcolordialog.h
+		../protocol.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\friendmanger.o ..\friendmanger\friendmanger.cpp
 
 debug/addfriend.o: ../friendmanger/addfriend/addfriend.cpp ../friendmanger/addfriend/addfriend.h \
@@ -4646,18 +4373,26 @@ debug/addfriend.o: ../friendmanger/addfriend/addfriend.cpp ../friendmanger/addfr
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QContextMenuEvent \
 		../personinfodialog/personinfodialog.h \
 		../friendmanger/friendmanger.h \
-		../logindialog/logindialog.h \
+		../messagebox/messagedialog.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDialog \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qdialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QToolButton \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPixmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
+		../logindialog/logindialog.h \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QMessageBox \
+		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QDesktopWidget \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QPoint \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QMoveEvent \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPaintEvent \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QTextStream \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QList \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QtXml \
@@ -4772,14 +4507,6 @@ debug/addfriend.o: ../friendmanger/addfriend/addfriend.cpp ../friendmanger/addfr
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QFile \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtCore/QIODevice \
 		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtXml/QDomNodeList \
-		../messagebox/messagedialog.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QCheckBox \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/qcheckbox.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QPainter \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qpainter.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/QBitmap \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtGui/qbitmap.h \
-		D:/SoftWare/QtCreater/5.6/mingw49_32/include/QtWidgets/QStyle \
 		../protocol.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\addfriend.o ..\friendmanger\addfriend\addfriend.cpp
 

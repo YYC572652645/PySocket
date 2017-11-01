@@ -76,6 +76,7 @@ const static QString user = "user";
 const static QString font = "font";
 const static QString fontSize = "fontSize";
 const static QString fontColor = "fontColor";
+const static QString agreeFriend = "agreeFriend";
 }
 
 
