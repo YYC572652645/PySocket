@@ -3,19 +3,22 @@
 # 功能：消息处理
 # 日期：2017-10-28
 #****************************************************
-from protocol import PROTOCOL
-from persondata import PersonData
+
 import globaldef
+from globaldef import DATABASETYPE
 from globaldef import PERSONINFO
-from frienddata import FriendData
+from server.protocol import PROTOCOL
+from db.databasefactory import DataBaseFactory
+from role.role import Role
 
 class MessageHandler():
     # 构造函数
     def __init__(self):
         self.commandList = [None] * globaldef.FUNSIZE
         self.initCommandList()
-        self.personData =  PersonData()
-        self.friendeData = FriendData()
+        dataBase = DataBaseFactory()
+        self.personData =  dataBase.createDataBase(DATABASETYPE.PERSONDATA)
+        self.friendeData = dataBase.createDataBase(DATABASETYPE.FRIENDDATA)
 
     # 所有接收客户端数据函数存储到列表
     def initCommandList(self):

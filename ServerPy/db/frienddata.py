@@ -1,26 +1,18 @@
 #****************************************************
 # 作者：YYC
-# 功能：好友管理
+# 功能：好友信息数据库
 # 日期：2017-10-28
 #****************************************************
 
 import sqlite3
 import globaldef
+from  db.database import DataBase
 
-
-class FriendData():
+class FriendData(DataBase):
 
     # 构造函数
     def __init__(self):
         self.dataConn()
-
-    # 连接数据库
-    def dataConn(self):
-        try:
-            self.conn = sqlite3.connect("student.db")
-            self.cursor = self.conn.cursor()
-        except Exception as e:
-            print(e.args)
 
     # 添加好友
     def addFriend(self):

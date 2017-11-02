@@ -6,8 +6,9 @@
 
 from socketserver  import  BaseRequestHandler
 import globaldef
-from protocol import PROTOCOL
-from messagehandler import MessageHandler
+from server.protocol import PROTOCOL
+from server.messagehandler import MessageHandler
+from role.role import Role
 import json
 import time
 
@@ -15,8 +16,10 @@ import time
 # 处理来自客户端的消息
 class DataHandler(BaseRequestHandler):
     # 客户端列表
-    userDict = {}
     data = {}
+
+    # 创建用户管理对象
+    role = Role()
 
     # 处理客户端请求
     def handle(self):
@@ -44,7 +47,7 @@ class DataHandler(BaseRequestHandler):
 
                 # 读取json包
                 self.data = self.readJson(jsonStr)
-                self.userDict[self.data.get(globaldef.user)] = connSock
+                self.role.addRole(self.data.get(globaldef.user), connSock)
                 self.messageHandler.onCommand(self.protocolNumber, self.data, self)
 
                 # 如果客户端退出了，则去除该套接字
@@ -57,14 +60,15 @@ class DataHandler(BaseRequestHandler):
 
         except Exception as e:
             self.removeSock()
-            print(e.args)
+            print("出错了" , e.args)
 
     # 去除已经关闭的Socket
     def removeSock(self):
         try:
-            print("已关闭...", self.userDict[self.data.get(globaldef.user)].getpeername())
+            print("已关闭...", self.role.getRole(self.data.get(globaldef.user)).getpeername())
 
-            del self.userDict[self.data.get(globaldef.user)]
+            self.role.deleteRole(self.data.get(globaldef.user))
+
         except Exception as e:
             print(e.args)
 
@@ -81,21 +85,25 @@ class DataHandler(BaseRequestHandler):
 
     # 向客户端发送消息
     def netSend(self, protocol, dataDictionary, user = None):
-        self.dataTotal = {}       # 总的json数据
+        try:
+            self.dataTotal = {}       # 总的json数据
 
-        # json组包
-        dataDictionary[globaldef.PROTOCOLNAME] = str(protocol)
-        self.dataTotal[globaldef.DATANAME] = dataDictionary
+            # json组包
+            dataDictionary[globaldef.PROTOCOLNAME] = str(protocol)
+            self.dataTotal[globaldef.DATANAME] = dataDictionary
 
-        # 编码成json格式的数据
-        encodejson = json.dumps(self.dataTotal, ensure_ascii = False)
+            # 编码成json格式的数据
+            encodejson = json.dumps(self.dataTotal, ensure_ascii = False)
 
-        print(encodejson)
+            print(encodejson)
 
-        if(user == None):
-            self.userDict[self.data.get(globaldef.user)].sendall(encodejson.encode())
-        else:
-            self.userDict[user].sendall(encodejson.encode())
+            if(user == None):
+                self.role.getRole(self.data.get(globaldef.user)).sendall(encodejson.encode())
+            else:
+                self.role.getRole(user).sendall(encodejson.encode())
+
+        except Exception as e:
+            print(e.args)
 
     # 做一个广播
     def netSendAll(self, protocol, dataDictionary):
@@ -110,5 +118,5 @@ class DataHandler(BaseRequestHandler):
 
         print(encodejson)
 
-        for key, value in self.userDict.items():
+        for key, value in self.role.getAllRole().items():
             value.sendall(encodejson.encode())

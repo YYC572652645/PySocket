@@ -4,10 +4,10 @@
 # 日期：2017-10-28
 #****************************************************
 
-import globaldef
 import socketserver
-from server import DataHandler
 
+import globaldef
+from server.server import DataHandler
 
 # 主函数入口
 if __name__ == '__main__':

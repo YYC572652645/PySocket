@@ -225,6 +225,7 @@ void FriendManger::on_treeWidget_doubleClicked(const QModelIndex &index)
 {
     selectUser = userList.at(index.row());
     ui->labelFriendName->setText("聊天对象：" + ui->treeWidget->currentItem()->text(0));
+    ui->textBrowserContent->clear();
 }
 
 /************************   字体颜色              ************************/

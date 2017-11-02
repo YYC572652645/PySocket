@@ -1,24 +1,17 @@
 #****************************************************
 # 作者：YYC
-# 功能：数据库
+# 功能：个人信息数据库
 # 日期：2017-10-28
 #****************************************************
 
 import sqlite3
 import globaldef
+from db.database import DataBase
 
-class PersonData():
+class PersonData(DataBase):
     # 构造函数
     def __init__(self):
         self.dataConn()
-
-    # 连接数据库
-    def dataConn(self):
-        try:
-            self.conn = sqlite3.connect("student.db")
-            self.cursor = self.conn.cursor()
-        except Exception as e:
-            print(e.args)
 
     # 查询登录数据
     def dataSelectUser(self, userName, passWord):
@@ -73,16 +66,3 @@ class PersonData():
         except Exception as e:
             print(e.args)
             return None
-
-    # 添加好友
-    def insertFriendData(self):
-        pass
-
-
-    # 删除好友
-    def deleteFriendData(self):
-        pass
-
-    # 查询好友
-    def selectFriendData(self):
-        pass

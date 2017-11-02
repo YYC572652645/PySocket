@@ -4,6 +4,8 @@
 # 日期：2017-10-28
 #****************************************************
 
+ROLE = None                    # 用户全局对象
+
 FUNSIZE = 100                  # 列表函数长度
 DATASIZE = 4096 * 1024         # 接收消息的最大长度
 IP = "127.0.0.1"               # IP地址
@@ -32,6 +34,12 @@ email = "email"
 phone = "phone"
 photo = "photo"
 
+# 数据库对象类型
+class DATABASETYPE:
+    PERSONDATA = 0
+    FRIENDDATA = 1
+
+# personinfo数据库字段
 class PERSONINFO:
     USERNAME   = 0      # 用户名
     NAME       = 1      # 昵称
